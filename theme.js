@@ -1,16 +1,23 @@
 // theme.js
 import { extendTheme } from "@chakra-ui/react";
 
+const breakpoints = {
+  sm: "0em",    // mobile
+  md: "0em",    // iPad ikut mobile
+  lg: "62em",   // desktop
+  xl: "80em",
+};
+
 const theme = extendTheme({
   colors: {
     brand: {
       50: "#e0f7ff",
       100: "#b3ecff",
       200: "#80e0ff",
-      300: "#4dd4ff",
-      400: "#26c9ff",
+      300: "#90cdf4",
+      400: "#90cdf4",
       500: "#ceff00", // primary
-      600: "#1bb0cc",
+      600: "#90cdf4",
       700: "#138799",
       800: "#0b5e66",
       900: "#033333",
@@ -23,12 +30,13 @@ const theme = extendTheme({
     useSystemColorMode: false,
   },
 
+  // ✅ cuma ini yang diganti
   fonts: {
-    heading:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", Inter, system-ui, sans-serif',
-    body:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", Inter, system-ui, sans-serif',
+    heading: '"Proxima Nova", system-ui, sans-serif',
+    body: '"Proxima Nova", system-ui, sans-serif',
   },
+
+  breakpoints,
 });
 
 export default theme;

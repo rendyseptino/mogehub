@@ -3,18 +3,20 @@
   "register": "Daftar",
   "dashboard": "Dashboard",
   "logout": "Keluar",
-  "freeAd": "Pasang Iklan Gratis",
+  "freeAd": "Iklan Gratis",
   "searchPlaceholder": "Cari moge, merk, tipe...",
 
-  "loginBanner": "All you need is a wild riding.",
-  "signInGoogle": "Masuk dengan Google",
+  "loginBanner": "Built For Riders.",
+  "signInGoogle": "Masuk via Google",
+  "signInFacebook":"Masuk via Facebook",
   "or": "atau",
-  "emailOrUsername": "Email / Username",
+  "emailOrUsername": "Email atau Username",
   "emailPlaceholder": "email",
   "password": "Password",
   "passwordPlaceholder": "password",
   "togglePassword": "Tampilkan / sembunyikan password",
   "forgotPassword": "Lupa password?",
+  "passwordResetSentWithEmail": "Link reset password berhasil dikirim ke {{email}}",
   "noAccount": "Belum punya akun?",
   "registerNow": "Daftar sekarang",
   "backToHome": "Kembali ke Beranda",
@@ -23,10 +25,218 @@
   "loginSuccess": "Login berhasil",
   "serverError": "Terjadi kesalahan server",
 
+   "back": "Kembali",
+  "not_found": "Iklan tidak ditemukan",
+  "copied": "Link berhasil disalin",
+
+  "premiumAdDescription": "Iklan premium tampil di listing khusus premium. Iklan yang di-boost juga bisa muncul paling atas untuk pembeli terdekat.",
+  "freeAdDescription": "Iklan gratis akan kami rekomendasikan.",
+
+  
+  "rental_date": "Tanggal Sewa",
+  "duration": "Durasi",
+
+   "address_detail": "Alamat Lengkap",
+
+  
+  "marketplace": "Marketplace",
+  
+
+  "join_discussion": "Gabung Diskusi",
+
+  "year": "Tahun",
+
+  "typeDesc":"Pilih apakah produk ingin dijual atau disewakan",
+
+  "durationDesc":"Kamu memilih mode durasi hari untuk rental produk. Silakan masukan angka saja.",
+
+  "licenseIsRequired":"License wajib di pilih",
+  "previewAd":"Lihat Iklan",
+
+  "adsHelpDesc": "Kamu dapat membuat iklan untuk menampilkan berbagai produk atau layanan yang kamu tawarkan di MogeHub, seperti motor, helm, apparel, jasa service, dan lainnya. Pilih kategori yang paling sesuai agar iklan kamu lebih mudah ditemukan oleh calon pembeli.\n\nSetiap iklan akan menampilkan informasi lengkap seperti deskripsi, harga, foto, dan kontak yang bisa dihubungi. Calon pembeli akan menghubungi kamu langsung melalui nomor WhatsApp yang kamu cantumkan, sehingga komunikasi dan transaksi dapat dilakukan secara langsung.\n\nPastikan informasi yang kamu tampilkan akurat, jelas, dan sesuai dengan kondisi produk yang sebenarnya agar memberikan pengalaman terbaik bagi calon pembeli. Dengan iklan yang lengkap dan terpercaya, peluang produk kamu untuk diminati akan semakin besar.",
+"adsHelpSubtitle":"Cara Kerja Iklan di MogeHub",
+"adsHelpTitle":"Informasi Iklan",
+
+ "searchDashboard": "Cari menu dashboard...",
+
+  "basicInfo":"Untuk paket Basic, iklan akan di review terlebih dahulu sebelum ditampilkan.",
+  "understand":"Saya Mengerti",
+
+  "linkYoutubeAd":"Jika produk kamu ada di youtube dan ingin di tampilkan di MogeHub, silahkan copy URL nya dan tempel disini.",
+  "motorYear":"Tahun Motor",
+  "apply": "Terapkan",
+  "clearSearch": "Hapus pencarian",
+  "adsNotFound": "Iklan tidak ditemukan",
+  "tryAnotherKeyword": "Coba kata kunci lain",
+  "totalUsers": "Total User",
+  "totalAds": "Total Iklan",
+  "verificationRequest": "Request Verivikasi",
+  "adsRequest": "Request Iklan",
+  "threadsUser": "Forum",
+  "accountSettings": "Pengaturan Akun",
+  "blog": "Blog",
+  "welcomeAdmin": "Welcome Admin MogeHub",
+  "contentFor": "Konten Untuk",
+
+  "adminUsers": "User MogeHub",
+  "totalActive": "Total Active",
+  "totalSuspended": "Total Suspended",
+
+  "postAd": "Buat Iklan",
+
+  "searchUser": "Cari user...",
+  
+  "suspended": "Ditangguhkan",
+
+  "tableNo": "No",
+  "tableUsername": "Username",
+  "tableEmail": "Email",
+  "tableLogin": "Login Dengan",
+  "tableLastLogin": "Login Terakhir",
+  "tableOnline": "Online",
+  "tableStatus": "Status",
+  "tableAction": "Aksi",
+
+  "manual": "Manual",
+
+  "online": "Online",
+  "offline": "Offline",
+
+  "userUnsuspended": "User berhasil diaktifkan kembali",
+
+  "suspend": "Suspend",
+  "unsuspend": "Unsuspend",
+
+  "headsUp":"Heads up — we’re MogeHub!",
+  "forMyTeam": "For My Team",
+  "teamSpirit1": "The only way to do great work is to love what you do. – Steve Jobs. Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+  "teamSpirit2": "It always seems impossible until it’s done. – Nelson Mandela. Coming together is a beginning, staying together is progress, and working together is success. – Henry Ford",
+  "teamSpirit3": "Believe you can and you're halfway there. – Theodore Roosevelt. Act as if what you do makes a difference. It does. – William James",
+  "teamSpirit4": "Don't watch the clock; do what it does. Keep going. – Sam Levenson",
+  "visionTitle": "Visi",
+  "visionContent": "Menjadi marketplace moge terlengkap dan terpercaya di Indonesia, menghubungkan semua penggemar motor besar dengan aman dan mudah.",
+  "missionTitle": "Misi",
+  "mission1Team": "Mempermudah proses jual beli motor besar di seluruh Indonesia",
+  "mission2Team": "Menyediakan fitur aman, transparan, dan cepat",
+  "mission3Team": "Membangun komunitas moge yang solid dan terpercaya",
+  "teamSpiritTitle": "Semangat Team",
+  "teamSpiritContent": "\"Bersama kita lebih kuat, maju bareng, dan sukses bareng; kolaborasi, kreativitas, dan dedikasi tim adalah kunci untuk membangun marketplace yang hebat.\"",
+
+
+  "adminForum": "Admin Forum",
+  "adminForumThreads": "Thread Forum Admin",
+  "createThread": "Buat Thread",
+  
+  "threadTitlePlaceholder": "Judul thread",
+  
+  "selectCategoryOptional": "Pilih kategori (opsional)",
+  "content": "Isi",
+  "threadContentPlaceholder": "Tulis isi thread...",
+  "publish": "Publish",
+  "allCategories": "Semua kategori",
+  "allTags": "Semua tag",
+  "noThreadsYet": "Belum ada diskusi",
+  "by": "oleh",
+  "unknown": "Tidak dikenal",
+  "editThread": "Edit Thread",
+  "editThreadContentPlaceholder": "Edit isi thread...",
+  "save": "Simpan",
+  "titleAndContentRequired": "Judul dan isi wajib diisi",
+  "failedFetchThreads": "Gagal fetch threads",
+  "failedFetchCategories": "Gagal fetch categories",
+  "failedFetchTags": "Gagal fetch tags",
+  "failedLoadForum": "Gagal load forum",
+  "failedCreateThread": "Gagal membuat thread",
+  "threadCreated": "Thread berhasil dibuat",
+  "failedUpdateThread": "Gagal update thread",
+  "threadUpdated": "Thread berhasil diupdate",
+  "confirmDeleteThread": "Yakin mau hapus thread ini?",
+  "failedDeleteThread": "Gagal hapus thread",
+
+
+  "adminAdsBannersApproval": "Persetujuan Iklan & Banner Admin",
+  
+  "seller": "Penjual",
+  "categorySubcategory": "Kategori / Subkategori",
+  "media": "Media",
+  "status": "Status",
+  "action": "Aksi",
+  "pendingReview": "Menunggu Review",
+  "approve": "Setujui",
+  "reject": "Tolak",
+  "ad": "Iklan",
+  "banner": "Banner",
+  "approved": "berhasil disetujui",
+  "rejectReasonPrompt": "Masukkan alasan penolakan:",
+  "fetchAdsFailed": "Gagal memuat daftar iklan",
+  "fetchBannersFailed": "Gagal memuat daftar banner",
+  "approveFailed": "Gagal menyetujui",
+  "rejectFailed": "Gagal menolak",
+  "rejectedLabel":"Media yang di tolak",
+  
+  
+
+"tour": {
+    "step1": {
+      "title": "Welcome to Dashboard",
+      "desc": "Di sini kamu bisa mulai membangun bisnis kamu dengan membuat iklan produk dan banner secara mudah dan cepat.",
+      "cta": "Silakan masuk ke menu iklan produk atau iklan banner di sidebar untuk memulai."
+    },
+    "step2": {
+      "title": "Subscription Package",
+      "desc": "Upgrade paket kamu untuk memasang lebih dari satu iklan, akses fitur premium, dan tingkatkan jangkauan penjualan.",
+      "cta": "Klik menu “Subscription” di sidebar untuk melihat paket."
+    },
+    "step3": {
+      "title": "Boost Your Ads",
+      "desc": "Setelah membuat iklan produk maka akan tampil tombol boost. Silakan klik untuk meningkatkan performa iklan",
+      "cta": "Buat Iklan produk untuk mulai boost."
+    },
+    "step4": {
+      "title": "Verification Account",
+      "desc": "Dapatkan centang biru verified untuk meningkatkan kepercayaan, kredibilitas, dan performa akun kamu di marketplace.",
+      "cta": "Silakan klik menu “Verification” di sidebar untuk memulai proses."
+    },
+    "step5": {
+      "title": "Profile Settings",
+      "desc": "Di sini kamu bisa mengatur profil, mengganti foto, email, dan password agar akun kamu selalu aman dan terupdate.",
+      "cta": "Masuk ke menu “Profile Settings” di sidebar untuk edit akun kamu."
+    },
+    "skip": "Skip Tour",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish"
+  },
+
+  "all_ads": "Semua Iklan",
+  "filter": "Filter",
+  "searchProducts": "Cari iklan...",
+  "category": "Kategori",
+  "subcategory": "Subkategori",
+  "all": "Semua",
+  "highlight": "Highlight",
+  "regular": "Reguler",
+  "allTypes": "Semua Tipe",
+  "reset": "Reset",
+  "user": "User",
+  "daysAgo": "hari lalu",
+  "hoursAgo": "jam lalu",
+  "minutesAgo": "menit lalu",
+
+  "safe_transaction": "Tips Bertransaksi Aman",
+  "safe_tip_1": "Hindari membayar sebelum bertemu penjual",
+  "safe_tip_2": "Lakukan transaksi di tempat umum",
+  "safe_tip_3": "Periksa profil dan reputasi penjual",
+  "safe_tip_4": "Waspadai harga yang terlalu murah",
+  "safe_tip_5": "Laporkan iklan mencurigakan ke MogeHub",
+  "mogehub_warning": "MogeHub tidak pernah meminta pembayaran di luar platform.",
+
   "joinCommunity": "Gabung komunitas, atau pasang iklan Gratis!",
-  "signUpGoogle": "Daftar dengan Google",
+  "signUpGoogle": "Daftar via Google",
+  "signUpFacebook":"Daftar via Facebook",
   "username": "Username",
   "usernamePlaceholder": "cth: Rendy Septino",
+  "fullNamePlaceholder": "ex: Rendy Septino",
   "email": "Email",
   "emailPlaceholderReg": "email",
   "phone": "Nomor Telepon",
@@ -40,25 +250,38 @@
   "redirectingToLogin": "Sedang mengarahkan Anda ke halaman login",
 
   "forgotPasswordTitle": "Temukan Akunmu",
-  "forgotPasswordDesc": "Masukkan email agar kami dapat mengirimkan password baru.",
+  "forgotPasswordDesc": "Masukkan email agar kami dapat mengirimkan link untuk membuat password baru.",
   "sendNewPassword": "Kirim Password Baru",
   "cancel": "Batal",
   "passwordResetSent": "Link reset password telah dikirim ke emailmu",
 
   "resetPassword": "Reset Password",
   "resetPasswordDesc": "Masukkan password baru untuk akunmu.",
-  "newPassword": "Password Baru",
+  "newPassword": "Buat Password Baru (untuk login dengan email)",
   "newPasswordPlaceholder": "Masukkan password baru",
   "confirmPassword": "Konfirmasi Password",
   "confirmPasswordPlaceholder": "Masukkan ulang password baru",
   "passwordsDoNotMatch": "Password tidak cocok",
   "passwordResetSuccess": "Password berhasil diubah! Mengarahkan ke halaman login...",
+  "accountNotFound": "Akun tidak ditemukan. Silakan cek kembali username atau email.",
+  "wrongPassword": "Password salah",
+  "identityAndPasswordRequired": "Email atau Username dan password wajib diisi",
+  "emailNotFound": "Email tidak ditemukan",
+  "emailExists": "Email sudah terdaftar",
+  "usernameExists": "Username sudah digunakan",
+  "usernameAvailable": "Username tersedia",
+  "usernameNotAvailable": "Username sudah digunakan",
+  "emailAvailable": "Email tersedia",
+  "emailNotAvailable": "Email sudah terdaftar",
+  "currentUsername":"Username Anda saat ini",
+
+  "accountSettingsDesc": "Kelola profil dan preferensi kamu",
 
   "ads": "Iklan Produk",
   "adsBanner": "Iklan Banner",
-  "subscription": "Paket Berlangganan",
+  "subscription": "Berlangganan",
   "verification": "Verifikasi Akun",
-  "profileSettings": "Pengaturan Profil",
+  "profileSettings": "Pengaturan",
   "manageProfileDesc": "Kelola informasi akun dan keamanan profilmu",
   "changePhoto": "Ganti Foto",
   "removePhoto": "Hapus Foto",
@@ -71,6 +294,278 @@
   "error": "Error",
   "info": "Info",
 
+"dashboard_fetch_failed": "Gagal mengambil dashboard",
+
+  "dashboard_main_title": "Statistik MogeHub",
+
+  "dashboard_total_active_users": "Total User Aktif Saat Ini",
+
+  "dashboard_total_historical_users": "Total Historical Users Daftar Di MogeHub",
+
+  "dashboard_total_ads": "Total Iklan (Product & Banner)",
+
+  "dashboard_total_boost_ads": "Total Iklan Boost",
+
+  "dashboard_boost_overview": "Overview Iklan Boost",
+
+  "dashboard_active_boost_ads": "Iklan Boost Aktif",
+
+  "dashboard_expired_boost_ads": "Iklan Boost Expired",
+
+  "dashboard_revenue_breakdown": "Rincian Pendapatan",
+
+  "dashboard_revenue_subscription": "Pendapatan Paket Subscription",
+
+  "dashboard_revenue_boost": "Pendapatan Iklan Boost",
+
+  "dashboard_total_revenue": "Total Pendapatan",
+
+  "dashboard_ads_overview": "Overview Pembuatan Iklan",
+
+  "revenueChart":"Pendapatan",
+
+  "dashboard_ads_product": "Iklan Produk",
+
+  "dashboard_ads_banner": "Iklan Banner",
+
+  "dashboard_user_growth": "Pertumbuhan User",
+
+  "dashboard_monthly_users": "User Register (bulan ini)",
+
+  "dashboard_revenue_trend": "Trend Pendapatan",
+
+  "dashboard_subscription_packages": "Paket Subscription",
+
+  "dashboard_boost_packages": "Paket Boost",
+
+  "dashboard_top_forum_threads": "Top Forum Threads",
+
+  "dashboard_comments": "komentar",
+
+  "dashboard_top_blog_posts": "Top Blog Posts",
+
+  "dashboard_created_label": "Dibuat",
+
+  "dashboard_top_help_articles": "Top Artikel Help Center",
+
+  "dashboard_boosted_ads_performance": "Performa Iklan Boost",
+
+  "dashboard_ad_label": "Iklan",
+
+  "dashboard_user_label": "User",
+
+  "dashboard_impression": "Dilihat",
+
+  "dashboard_click": "Klik",
+
+  "dashboard_seller_label": "Seller",
+
+  
+
+
+  "maintenance_submit_failed": "Gagal submit maintenance",
+
+  "maintenance_created": "Maintenance berhasil dibuat",
+
+  "maintenance_updated": "Maintenance berhasil diupdate",
+
+  "maintenance_delete_failed": "Gagal hapus maintenance",
+
+  "maintenance_deleted": "Maintenance dihapus",
+
+  "maintenance_page_title": "Maintenance Mode",
+
+  "maintenance_active_label": "Maintenance Aktif:",
+
+  "maintenance_title_placeholder": "Judul",
+
+  "maintenance_start_label": "Mulai Maintenance",
+
+  "maintenance_start_placeholder": "Mulai Maintenance",
+
+  "maintenance_end_label": "Selesai Maintenance",
+
+  "maintenance_end_placeholder": "Selesai Maintenance",
+
+  "maintenance_create_button": "Aktifkan Maintenance",
+
+  "maintenance_update_button": "Update Maintenance",
+
+  "maintenance_list_title": "List Maintenance",
+
+  "common_active": "Aktif",
+
+  "common_admin_only": "Khusus admin",
+
+
+  "admin_profile_not_found": "Loading...",
+
+  "admin_profile_title": "Profil Admin",
+  "admin_profile_subtitle": "Kelola keamanan akun administrator",
+
+  "admin_profile_failed_load": "Gagal load profile admin",
+
+  "admin_profile_no_changes": "Tidak ada perubahan",
+
+  "admin_profile_failed_update": "Gagal update profile",
+
+  "admin_profile_updated": "Profile admin berhasil diperbarui",
+
+  "admin_profile_invalid_format": "Format tidak didukung",
+  "admin_profile_invalid_format_desc": "Gunakan PNG, JPG, atau WEBP saja",
+
+  "admin_profile_failed_remove_photo": "Gagal hapus foto",
+
+  "admin_profile_photo_removed": "Foto profil berhasil dihapus",
+
+  "admin_profile_administrator": "Administrator",
+
+  "admin_profile_change_photo": "Ganti foto",
+
+  "admin_profile_remove_avatar": "hapus avatar",
+
+  "admin_profile_role": "Role",
+
+  "admin_profile_account_security": "Keamanan Akun",
+
+  "admin_profile_new_password": "Password baru",
+
+  "admin_profile_new_password_placeholder": "Masukkan password baru",
+
+  "common_info": "Info",
+
+ "common_email": "Email",
+
+  "common_save": "Simpan",
+
+
+  "notification_settings_fetch_failed": "Gagal mengambil pengaturan",
+
+  "notification_settings_login_required": "Token tidak ditemukan, login dulu",
+
+  "notification_settings_update_failed": "Gagal memperbarui pengaturan",
+
+  "notification_settings_saved": "Pengaturan berhasil disimpan",
+
+  "notification_settings_loading": "Loading settings...",
+
+  "notification_settings_title": "Pengaturan Notifikasi",
+
+  "notification_settings_subtitle": "Atur suara notifikasi dan preferensi Anda",
+
+  "notification_settings_enable_sound": "Aktifkan Suara Notifikasi",
+
+  "notification_settings_choose_sound": "Pilih Suara",
+
+  "notification_settings_volume": "Volume",
+
+  "notification_settings_test_sound": "Tes Suara",
+
+  "notification_settings_save": "Simpan Pengaturan",
+
+  "notification_settings_preview": "Preview Notifikasi",
+
+  "notification_settings_status": "Status",
+
+  "notification_settings_sound": "Suara",
+
+  "common_enabled": "Aktif",
+
+  "common_disabled": "Nonaktif",
+
+
+  "blog_admin_login_required": "User belum terautentikasi. Login dulu bro!",
+
+  "blog_admin_fetch_failed": "Gagal mengambil blog",
+
+  "blog_admin_required_fields": "Semua field wajib diisi",
+
+  "blog_admin_create_failed": "Gagal membuat blog",
+
+  "blog_admin_created": "Blog berhasil dibuat",
+
+  "blog_admin_delete_failed": "Gagal menghapus blog",
+
+  "blog_admin_deleted": "Blog dihapus",
+
+  "blog_admin_title": "Manajemen Blog",
+
+  "blog_admin_title_placeholder": "Judul Blog",
+
+  "blog_admin_excerpt_placeholder": "Excerpt (deskripsi SEO)",
+
+  "blog_admin_cover_placeholder": "URL Cover Image",
+
+  "blog_admin_preview_cover": "Preview Cover",
+
+  "blog_admin_invalid_image": "Gambar tidak valid atau gagal dimuat",
+
+  "blog_admin_create_button": "Publish Blog",
+
+  "blog_admin_list_title": "Daftar Blog",
+
+
+
+  "admin_forum_page_title": "Admin Forum – Mogehub",
+
+  "admin_forum_subtitle": "Diskusi, tanya jawab, dan sharing seputar dunia moge",
+
+  "admin_forum_create_thread": "Buat Thread",
+
+  "admin_forum_all_categories": "Semua Kategori",
+  "admin_forum_all_tags": "Semua Tag",
+
+  "admin_forum_edit_thread": "Edit Thread",
+  "admin_forum_new_thread": "Thread Baru",
+
+  "admin_forum_title": "Judul",
+  "admin_forum_category": "Kategori",
+  "admin_forum_select_category": "Pilih kategori",
+
+  "admin_forum_content": "Isi",
+
+  "admin_forum_tag": "Tag",
+  "admin_forum_add_tag": "Tambah tag",
+
+  "admin_forum_selected_tags": "Tag Terpilih",
+
+  "admin_forum_publish": "Publish",
+  "admin_forum_update_thread": "Update Thread",
+
+  "admin_forum_empty_title": "Belum ada thread",
+  "admin_forum_empty_description": "Buat thread pertama untuk kategori ini",
+  "admin_forum_create_first_thread": "Buat Thread Sekarang",
+
+  "admin_forum_failed_load_forum": "Gagal load forum",
+
+  "admin_forum_title_content_required": "Judul dan isi wajib diisi",
+
+  "admin_forum_failed_get_user_id": "Gagal mendapatkan user ID",
+
+  "admin_forum_thread_created": "Thread berhasil dibuat",
+  "admin_forum_thread_updated": "Thread berhasil diupdate",
+
+  "admin_forum_failed_submit_thread": "Gagal submit thread",
+
+  "admin_forum_delete_confirm": "Yakin mau hapus thread ini?",
+
+  "admin_forum_thread_deleted": "Thread berhasil dihapus",
+  "admin_forum_failed_delete_thread": "Gagal hapus thread",
+
+  "admin_forum_failed_load_thread": "Gagal load thread",
+
+  "common_error": "Error",
+  "common_success": "Berhasil",
+
+  "common_cancel": "Batal",
+  "common_edit": "Edit",
+  "common_delete": "Hapus",
+
+  "common_unknown": "Unknown",
+  "common_tag": "Tag",
+
+  "auth_login_required": "Login terlebih dahulu",
+
   "welcomeDashboard": "Selamat datang di MogeHub",
   "dashboardDesc": "Ini adalah dashboard seller. Konten dashboard akan ditampilkan di sini.",
   "statsActivity": "Statistik & Aktivitas",
@@ -82,11 +577,30 @@
 
   "loginWith": "Login dengan",
   "lastLogin": "Terakhir login",
+  "usingDay": "Gunakan Durasi Hari",
+  "durationDays": "Durasi (hari)",
+  "durationRequired": "Durasi wajib diisi",
+  "startDate":"Tanggal Mulai Sewa",
+  "endDate":"Tanggal Akhir Sewa",
 
-  
+  "deleteAccount": "Hapus Akun",
+  "deleteAccountDesc": "Peringatan: Menghapus akun Anda akan secara permanen menghapus semua aktivitas, langganan, dan konten yang telah Anda buat. Setelah dihapus, username Anda bisa digunakan oleh orang lain. Tindakan ini tidak dapat dibatalkan.",
+  "enterCode": "Jika Anda ingin melanjutkan, masukkan kode berikut untuk konfirmasi",
+  "enterCodePlaceholder": "Masukkan kode di sini",
+  "agreeTerms": "Saya setuju dengan Privasi dan T&C MogeHub",
+  "deleteAccountButton": "Hapus Akun",
+  "accountDeleted": "Akun Dihapus",
+  "accountDeletedDesc": "Akun dan semua data Anda telah dihapus.",
+  "tokenNotFound": "Token tidak ditemukan",
+  "invalidResponse": "Respon dari server tidak valid",
+  "deleteFailed": "Gagal menghapus akun",
+  "somethingWentWrong": "Terjadi kesalahan saat menghapus akun",
+
+  "license":"Lisensi",
   "failedLoadData": "Gagal load data",
   "wait": "Tunggu sebentar",
   "ktpRequired": "KTP / SIM wajib di-upload",
+  "productRequired": "Selfie KTP / SIM wajib di upload",
   "failedSubmit": "Gagal submit verifikasi",
   "verificationSent": "Data verifikasi berhasil dikirim, silakan cek email secara berkala",
   "pending": "Pending",
@@ -94,15 +608,25 @@
   "rejected": "Ditolak",
   "notVerified": "Belum Verifikasi",
   "accountVerification": "Verifikasi Akun",
-  "verificationDesc": "Upload dokumen KTP / SIM, contoh produk yang ingin di iklankan, dan link YouTube (opsional)",
+  "verificationDesc": "Dapatkan centang biru dengan cara upload KTP / SIM, selfie KTP, dan link sosial media (opsional)",
   "verificationStatus": "Status Verifikasi",
   "rejectionReason": "Alasan penolakan",
   "ktpSim": "KTP / SIM *",
-  "productExample": "Contoh Produk Untuk Iklan",
+  "productExample": "Selfie KTP /SIM *",
   "removeFile": "Hapus file",
   "addFile": "+ Tambah File",
   "socialLink": "Link Sosial Media (Opsional)",
+  "socialLinkPlaceholder": "https://instagram.com/usernamekamu",
   "submitVerification": "Submit Verifikasi",
+  "login_to_view_location": "login untuk melihat lokasi di map",
+
+  "home": "Home",
+  "browse": "Cari",
+  "activity": "Aktivitas",
+  "profile": "Profil",
+
+  "motorBaru": "Motor Baru",
+  "motorBekas": "Motor Bekas",
 
   "subscriptionPackages": "Paket Berlangganan",
   "activePackage": "Paket Aktif",
@@ -117,6 +641,7 @@
   "reviewPriority": "Prioritas Review",
   "fasterDisplay": "Iklan Tampil Langsung",
   "upgradePackage": "Upgrade Paket",
+  "downgradePackage":"Downgrade Paket",
   "subscriptionHistory": "History Subscription",
   "close": "Close",
   "failedFetch": "Gagal fetch subscription",
@@ -125,7 +650,178 @@
   "upgradedTo": "Berhasil upgrade ke",
   "forever": "Selamanya",
 
+
+  "ad_reports_title": "Laporan Iklan",
+
+  "ad_reports_search_placeholder": "Cari laporan...",
+
+  "ad_reports_filter_all": "Semua",
+  "ad_reports_filter_ads": "Iklan",
+  "ad_reports_filter_banner": "Banner",
+
+  "ad_reports_status_pending": "Pending",
+  "ad_reports_status_resolved": "Diselesaikan",
+  "ad_reports_status_ignored": "Diabaikan",
+  "ad_reports_status_unknown": "Tidak Diketahui",
+
+  "ad_reports_label_type": "Tipe",
+  "ad_reports_label_user": "User",
+  "ad_reports_label_reason": "Alasan",
+  "ad_reports_label_detail": "Detail",
+
+  
+  "table_type": "Tipe",
+  "table_user": "User",
+  "table_target": "Target",
+  "table_reason": "Alasan",
+  "table_detail": "Detail",
+  "table_evidence": "Bukti",
+  
+  "button_resolve": "Selesaikan",
+  "button_ignore": "Abaikan",
+
+  
+  "toast_failed_update_report": "Gagal mengupdate laporan",
+  "toast_report_updated": "Laporan berhasil diupdate",
+
+
+  "transaction_title": "💰 Transaction Dashboard",
+
+  "transaction_search_placeholder": "Cari nomor referensi / customer",
+
+  "transaction_filter_all": "All",
+  "transaction_filter_pending": "PENDING",
+  "transaction_filter_paid": "DIBAYAR",
+  "transaction_filter_expired": "KADALUARSA",
+
+  "transaction_status_paid": "DIBAYAR",
+  "transaction_status_pending": "PENDING",
+  "transaction_status_expired": "KADALUARSA",
+
+  "transaction_label_reference": "Nomor Referensi",
+  "transaction_label_buyer": "Pembeli",
+  "transaction_label_created": "Created",
+  "transaction_label_expired": "Expired",
+
+  "transaction_toggle_hide_detail": "Sembunyikan Detail",
+  "transaction_toggle_view_detail": "Lihat Detail",
+
+  "transaction_payment_code": "Kode Pembayaran",
+
+  "transaction_payment_method": "Metode Pembayaran",
+  
+  "transaction_amount_received": "Uang Masuk",
+
+  "transaction_fee_title": "Biaya Payment Gateway",
+  "transaction_fee_merchant": "Di bayar MogeHub",
+  "transaction_fee_customer": "Di bayar Customer",
+  "transaction_fee_total": "Total",
+
+  "transaction_items": "Items",
+  "transaction_customer": "Customer",
+  
+  "toast_error_title": "Error",
+
+
+
+  "user_role_title": "Manajemen User & Role",
+  "user_add_button": "Tambah User",
+
+  "user_search_placeholder": "Cari user...",
+
+  "user_input_username_placeholder": "Username",
+  "user_input_email_placeholder": "Email",
+  "user_input_password_placeholder": "Password Sementara",
+
+  "user_input_username_help": "Berikan username untuk user yang ingin ditambahkan",
+  "user_input_email_help": "Masukkan email user yang ingin ditambahkan",
+  "user_input_password_help": "Buat password sementara untuk user yang ingin ditambahkan",
+
+  "user_type_label": "Tipe User",
+
+  "role_user": "User",
+  "role_moderator": "Moderator",
+  "role_admin": "Admin",
+  "role_editor": "Editor",
+  "role_staff_verification": "Staff Verifikasi",
+  "role_staff_ads": "Staff Iklan",
+
+  "role_desc_user": "User akan mendapatkan akses login ke mogehub.com",
+  "role_desc_moderator": "Moderator dapat melihat dashboard admin namun memiliki akses terbatas untuk edit dan delete halaman penting",
+  "role_desc_editor": "Editor dapat mengelola hampir semua role kecuali admin serta dapat melakukan create, edit, dan delete di halaman penting",
+  "role_desc_staff_verification": "Staff Verifikasi bertugas melakukan verifikasi akun user termasuk approve dan reject",
+  "role_desc_staff_ads": "Staff Iklan bertugas melakukan persetujuan terhadap request iklan dari user",
+
+  "tooltip_admin_only": "Hanya Admin",
+
+  "confirm_delete_user": "Apakah kamu yakin ingin menghapus user ini?",
+
+  "toast_fetch_failed_users": "Gagal mengambil data user",
+  "toast_required_fields": "Harap isi semua field yang wajib diisi",
+  "toast_invalid_role": "Role yang dipilih tidak valid",
+
+  "toast_user_created": "User berhasil dibuat",
+  "toast_user_updated": "User berhasil diupdate",
+  "toast_user_deleted": "User berhasil dihapus",
+  "toast_request_failed": "Terjadi kesalahan",
+
+  "button_update": "Update",
+  "button_give_access": "Berikan Akses",
+  "button_cancel": "Batal",
+
+  "table_role": "Role",
+  "table_actions": "Aksi",
+
+
+  "verification_title": "Permintaan Verifikasi",
+  "verification_session_expired": "Sesi berakhir, silakan login dulu",
+  "verification_fetch_error": "Gagal fetch data verifikasi",
+  "verification_update_failed": "Gagal update status",
+
+  "verification_success": "Berhasil",
+  "verification_approved_success": "Status berhasil diubah menjadi approved",
+  "verification_rejected_success": "Status berhasil diubah menjadi rejected",
+
+  "verification_reason_required": "Alasan penolakan wajib diisi",
+
+  "verification_requests": "Verification Requests",
+
+  "verification_filter_placeholder": "Filter Status",
+  "verification_search_placeholder": "Cari Username / Email",
+
+  "status_pending": "Pending",
+  "status_verified": "Verified",
+  "status_rejected": "Ditolak",
+  "status_not_verified": "Belum Verifikasi",
+
+  "table_no": "No",
+  "table_username": "Username",
+  "table_email": "Email",
+  "table_status": "Status",
+  "table_document": "KTP / SIM",
+  "table_selfie": "Selfie KTP / SIM",
+  "table_social": "Social Media Link",
+  "table_action": "Action",
+
+  "action_view": "Lihat",
+  "action_approve": "Approve",
+  "action_reject": "Reject",
+
+  "tooltip_role_only": "Hanya Admin / Editor / Staff Verifikasi",
+
+  "modal_document_title": "Dokumen / File",
+  "modal_close": "Tutup",
+
+  "modal_reject_title": "Alasan Penolakan",
+  "modal_reject_placeholder": "Masukkan alasan penolakan",
+  "modal_reject_submit": "Submit Reject",
+  "modal_cancel": "Cancel",
+
+
+
   "failedFetchMaster": "Gagal mengambil data master.",
+  "adDeleted":"Iklan di hapus",
+  "adDeletedDescription":"Iklan Anda berhasil di hapus.",
   "failedFetchBanners": "Gagal mengambil banner.",
   "failedFetchHistory": "Gagal mengambil riwayat.",
   "fillRequiredFields": "Silakan isi semua field yang wajib.",
@@ -135,9 +831,146 @@
   "confirmDelete": "Apakah Anda yakin ingin menghapus banner ini?",
   "failedDeleteBanner": "Gagal menghapus banner.",
   "bannerDeleted": "Banner berhasil dihapus.",
+  "locationAds":"Lokasi",
+  "dragMarker":"Masukan nama kota di map (Search location) lalu drag marker untuk alamat yang lebih spesifik",
+  "errorDragMap":"Silakan drag marker untuk alamat spesifik",
+  "detailAddressMap":"Alamat Lengkap",
+  "changeSpesificAddress":"Kamu dapat mengubah Alamat ini jika lokasi kurang spesifik di map",
+  "fillDetailAddress":"Silakan isi alamat lengkap iklan Anda",
+
+  "invalidImageTitle": "Gambar tidak valid",
+  "imageMinSize": "Minimal ukuran gambar adalah 1200 x 275 px. Kamu bisa menggunakan tools edit gambar seperti Canva",
+  "imageRatio": "Rasio gambar harus (1200 x 275 px). Kamu bisa menggunakan tools edit ukuran gambar seperti Canva",
+  "imageInvalidGeneric": "Gunakan ukuran minimal 1200 x 275 px (banner horizontal)",
+
+   "desktopPreview":"Tampilan Desktop",
+   "mobilePreview":"Tampilan Mobile",
+
+   "boostedAds": "Iklan Boost",
+  "viewAll": "Lihat Semua",
+  "mostViewed": "Paling Sering Dilihat",
+
+  "premiumProducts": "Iklan Premium",
+  "freeProducts": "Rekomendasi Untuk Kamu",
+  "viewAllForum": "Lihat Semua Forum",
+  "latestForum": "Forum Terbaru",
+
+  "wishlist_empty_description": "Simpan motor favorit, riding gear, sparepart, dan listing premium untuk akses lebih cepat kapan saja di MogeHub.",
+
+  "payment_title": "Metode Pembayaran Tersedia",
+  "payment_subtitle": "Pilih metode pembayaran yang paling sesuai untuk kamu. Semua transaksi di Mogehub diproses secara otomatis dan dilindungi dengan enkripsi SSL",
+  "payment_channels": "Channel Pembayaran",
+  "payment_selected": "Dipilih",
+  "payment_loading": "Memuat metode pembayaran...",
+  "payment_footer": "Pilihan metode pembayaran dapat berubah sewaktu-waktu mengikuti kebijakan provider.",
+  "payment_back": "Kembali",
+
+  "mogehubTitle": "MogeHub — Platform Moge #1 di Indonesia",
+  "mogehubDescription": "MogeHub adalah platform periklanan dan forum komunitas untuk para pecinta motor gede (Moge) di Indonesia. Di sini pengguna dapat menjual, membeli, dan mempromosikan motor, sparepart, serta layanan terkait dengan mudah. Selain itu, MogeHub juga menjadi tempat diskusi dan berbagi informasi antar rider dari seluruh Indonesia.",
+  "mogehubFeaturesTitle": "Fitur yang tersedia di MogeHub",
+
+  "featureSearchTitle": "Fitur Pencarian",
+  "featureSearchDesc": "Fitur pencarian di MogeHub memungkinkan pengguna menemukan motor, sparepart, dan iklan dengan cepat dan akurat berdasarkan keyword, kategori, harga, dan lokasi.",
+
+  "featureFilterTitle": "Fitur Filter Pencarian",
+  "featureFilterDesc": "Pengguna dapat menyaring hasil pencarian berdasarkan kategori, kondisi barang, harga, dan lokasi untuk mendapatkan hasil yang lebih relevan.",
+
+  "featureProductAdsTitle": "Fitur Periklanan Produk",
+  "featureProductAdsDesc": "Pengguna dapat membuat iklan untuk motor, sparepart, atau jasa dengan mudah, lengkap dengan gambar, deskripsi, harga, dan lokasi.",
+
+  "featureBannerAdsTitle": "Fitur Iklan Banner",
+  "featureBannerAdsDesc": "Fitur ini memungkinkan pengguna atau brand untuk memasang iklan banner di halaman utama agar lebih mudah menjangkau audiens MogeHub.",
+
+  "featureSubscriptionTitle": "Fitur Paket Berlangganan",
+  "featureSubscriptionDesc": "MogeHub menyediakan paket berlangganan yang memungkinkan pengguna membuat iklan dalam jumlah lebih banyak hingga unlimited. Dengan berlangganan, pengguna mendapatkan fleksibilitas lebih besar untuk mengembangkan bisnis atau penjualan di platform.",
+
+  "featureBoostTitle": "Fitur Iklan Boost",
+  "featureBoostDesc": "Fitur Boost memungkinkan pengguna meningkatkan visibilitas iklan agar tampil di posisi teratas dan mendapatkan lebih banyak perhatian dari calon pembeli. Iklan yang di-boost akan diprioritaskan sehingga peluang transaksi lebih tinggi.",
+
+  "featureLocationTitle": "Fitur Lokasi Iklan Terdekat",
+  "featureLocationDesc": "MogeHub menampilkan iklan berdasarkan lokasi pengguna sehingga produk yang muncul lebih relevan dan dekat secara geografis. Sistem ini membantu pengguna menemukan barang atau motor di sekitar mereka dengan lebih cepat.",
+
+  "featureForumTitle": "Fitur Forum Komunitas",
+  "featureForumDesc": "Forum komunitas memungkinkan pengguna berdiskusi, berbagi pengalaman touring, review motor, hingga tips perawatan motor besar.",
+
+  "featureFavoriteTitle": "Fitur Favorite",
+  "featureFavoriteDesc": "Pengguna dapat menyimpan iklan atau postingan favorit untuk diakses kembali dengan mudah di lain waktu.",
+
+  "featureTransactionTitle": "Transaksi Langsung Penjual & Pembeli",
+  "featureTransactionDesc": "MogeHub tidak memproses pembayaran, namun mempertemukan penjual dan pembeli secara langsung melalui telepon atau WhatsApp untuk transaksi yang lebih cepat dan aman.",
+  
+"adHistory": {
+    "title": "History Iklan",
+    "empty": "Belum ada history",
+    "status": {
+      "pending": "Dalam Review",
+      "rejected": "Ditolak",
+      "active": "Aktif",
+      "inactive": "Nonaktif",
+      "expired": "Expired"
+    },
+    "type": {
+      "product": "Iklan Produk",
+      "banner": "Iklan Banner"
+    },
+    "pagination": {
+      "prev": "Prev",
+      "next": "Next"
+    }
+  },
+
+
+  "checkoutLoginTitle": "Login untuk melanjutkan checkout",
+
+  "loginGoogle": "Login atau Daftar dengan Google",
+  "loginFacebook": "Login atau Daftar dengan Facebook",
+  
+  "loginButton": "Login & Lanjut",
+
+  "errorRequired": "Wajib diisi",
+
+  "accountNotFoundStay":"Kami tidak menemukan akun Kamu. Silakan lanjutkan menggunakan login sosial.",
+
+  "agreementText": "Dengan melanjutkan, kamu menyetujui",
+  "and": "dan",
+  "termsLabel": "Syarat & Ketentuan",
+  "privacyLabel": "Kebijakan Privasi",
+
+  "no_ads_found": "Tidak ada iklan ditemukan",
+  "no_ads_found_desc": "Coba gunakan kata kunci yang berbeda",
+  "no_ads_for_keyword": "Tidak ada iklan untuk \"{keyword}\"",
+  "no_ads_for_keyword_desc": "Coba gunakan kata kunci yang lain",
+
+
+  "info_ad_help_button": "Bantuan",
+   "info_ad_help_title": "Info Iklan di MogeHub",
+  "info_ad_help_how_it_works": "Apa saja yang bisa diiklankan?",
+
+  "info_ad_help_description_1": "Di MogeHub kamu bisa mengiklankan berbagai kebutuhan otomotif roda dua, mulai dari motor (moge), sparepart, riding gear, aksesoris, apparel, hingga jasa dan layanan terkait motor.",
+
+  "info_ad_help_description_2": "Termasuk showroom, bengkel, detailing, towing, modifikasi, service, custom part, rental motor, komunitas, dan berbagai layanan lainnya.",
+
+  "info_ad_help_product_ad": "Iklan produk & jasa motor",
+
+  "info_ad_help_banner_ad": "Banner promosi, event, launching, diskon, dan campaign bisnis",
+
+  "info_ad_help_description_3": "Selain iklan biasa, kamu juga bisa menggunakan banner ads untuk meningkatkan branding dan menjangkau lebih banyak pengguna di platform.",
+
+  "info_ad_help_description_4": "Produk yang sudah diiklankan juga dapat di-boost agar tampil paling atas dan mendapatkan exposure lebih tinggi kepada calon pembeli.",
+
+  "info_ad_help_description_5": "Sistem MogeHub juga membantu menampilkan iklan berdasarkan lokasi terdekat agar lebih relevan dan memudahkan pembeli menemukan produk atau layanan di sekitar mereka.",
+
+
+  "info_ad_help_understand": "Saya Mengerti",
+
+ 
+
+
   "editBanner": "Edit Banner",
-  "createBanner": "Buat Banner",
-  "bannerInfo": "Upload banner dengan benar. Ukuran rekomendasi: 1080x300px.",
+  "bannerPhone": "Nomor WhatsApp",
+  "bannerDescription": "Tulis detail mengenai banner ini",
+  "createBanner": "Buat Iklan Banner",
+  "bannerInfo": "Upload banner dengan benar. Ukuran rekomendasi: 1200 x 275 px.",
   "selectParent": "Pilih Kategori",
   "selectSub": "Pilih Subkategori",
   "bannerTitle": "Judul Banner",
@@ -151,5 +984,718 @@
   "statusUpdated": "Status diperbarui menjadi",
   "inReview": "Sedang Direview",
   "rejectedByAdmin": "Ditolak oleh admin:",
-  "failedUpdateStatus": "Gagal memperbarui status banner"
+  "failedUpdateStatus": "Gagal memperbarui status banner",
+  "terms": {
+    "title": "Syarat & Ketentuan Penggunaan – MogeHub",
+    "lastUpdated": "Terakhir diperbarui: 27 Februari 2026",
+    "sections": [
+      {
+        "title": "1. Pendahuluan",
+        "paragraphs": [
+          "Syarat dan Ketentuan ini mengatur penggunaan platform MogeHub, termasuk seluruh layanan forum komunitas dan layanan periklanan (advertising) yang disediakan melalui situs web dan/atau aplikasi MogeHub.",
+          "Dengan membuat akun, mengakses, atau menggunakan MogeHub, Pengguna dianggap telah membaca, memahami, menyetujui, dan terikat secara hukum pada seluruh isi Syarat dan Ketentuan ini.",
+          "Apabila Pengguna tidak menyetujui salah satu, sebagian, atau seluruh ketentuan di dalam dokumen ini, maka Pengguna tidak diperkenankan untuk menggunakan layanan MogeHub."
+        ]
+      },
+      {
+        "title": "2. Definisi",
+        "paragraphs": [
+          "Platform berarti MogeHub.",
+          "Pengguna berarti setiap individu atau badan hukum yang mengakses, mendaftar, dan/atau menggunakan layanan MogeHub.",
+          "Konten berarti seluruh data, informasi, teks, gambar, tautan, video, deskripsi, materi iklan, dan bentuk informasi lain yang diunggah, ditayangkan, atau dikirimkan oleh Pengguna.",
+          "Layanan Periklanan berarti fitur berbayar yang memungkinkan Pengguna menayangkan iklan produk, jasa, promosi, dan/atau banner kepada audiens MogeHub."
+        ]
+      },
+      {
+        "title": "3. Kelayakan Pengguna",
+        "paragraphs": [
+          "Layanan MogeHub ditujukan bagi Pengguna yang secara hukum cakap untuk bertindak dan memahami konsekuensi hukum dari aktivitas digital.",
+          "Dengan menggunakan MogeHub, Pengguna menyatakan bahwa dirinya memiliki usia dan kapasitas hukum yang cukup sesuai dengan peraturan perundang-undangan yang berlaku di Republik Indonesia.",
+          "Pengguna bertanggung jawab penuh atas penggunaan akun, termasuk seluruh aktivitas yang dilakukan melalui akunnya."
+        ]
+      },
+      {
+        "title": "4. Akun dan Keamanan",
+        "paragraphs": [
+          "Pengguna wajib memberikan informasi yang benar, lengkap, dan terkini pada saat pendaftaran dan selama menggunakan layanan.",
+          "Pengguna bertanggung jawab untuk menjaga kerahasiaan data akun, termasuk kata sandi dan akses ke akun.",
+          "Segala aktivitas yang terjadi melalui akun Pengguna dianggap sebagai perbuatan sah dari Pengguna yang bersangkutan."
+        ]
+      },
+      {
+        "title": "5. Layanan Forum Komunitas",
+        "paragraphs": [
+          "MogeHub menyediakan forum untuk berbagi pengalaman, cerita, diskusi, serta pengajuan pertanyaan terkait komunitas motor gede.",
+          "Pengguna dapat mengunggah konten berupa teks, gambar melalui tautan, tautan eksternal, dan video melalui fitur semat (embed).",
+          "MogeHub tidak melakukan verifikasi kebenaran, keakuratan, maupun keabsahan atas setiap konten yang diunggah oleh Pengguna."
+        ]
+      },
+      {
+        "title": "6. Layanan Periklanan",
+        "paragraphs": [
+          "MogeHub menyediakan layanan periklanan bagi Pengguna untuk mempromosikan produk, jasa, atau banner.",
+          "Pengguna wajib mengisi seluruh data iklan secara benar, lengkap, dan tidak menyesatkan.",
+          "Pengguna menyatakan dan menjamin bahwa produk atau jasa yang diiklankan adalah nyata, benar-benar ada, dan dapat dipertanggungjawabkan.",
+          "Pengguna menyatakan bahwa dirinya adalah pemilik sah produk atau perwakilan resmi dari pemilik produk atau merek yang diiklankan."
+        ]
+      },
+      {
+        "title": "7. Tanggung Jawab atas Konten dan Iklan",
+        "paragraphs": [
+          "Seluruh Konten yang diunggah oleh Pengguna sepenuhnya menjadi tanggung jawab Pengguna.",
+          "MogeHub tidak bertanggung jawab atas isi, kebenaran, legalitas, kualitas, keamanan, atau keabsahan dari Konten maupun iklan.",
+          "Pengguna bertanggung jawab atas segala klaim, tuntutan, kerugian, sengketa, atau proses hukum yang timbul akibat Konten atau iklan yang diunggahnya.",
+          "Pengguna membebaskan MogeHub dari segala tuntutan pihak mana pun yang timbul sehubungan dengan Konten dan iklan yang dipublikasikan oleh Pengguna."
+        ]
+      },
+      {
+        "title": "8. Larangan Konten",
+        "paragraphs": [
+          "Pengguna dilarang mengunggah konten yang mengandung ujaran kebencian, kekerasan, pornografi, diskriminasi, SARA, pelecehan, atau konten melanggar hukum.",
+          "Pengguna dilarang melakukan spam, promosi tidak sah, manipulasi trafik, atau aktivitas yang mengganggu kenyamanan komunitas.",
+          "Pengguna dilarang mengunggah konten yang mengandung penipuan, phishing, malware, atau upaya peretasan sistem."
+        ]
+      },
+      {
+        "title": "9. Moderasi dan Penegakan",
+        "paragraphs": [
+          "MogeHub berhak melakukan peninjauan, penyaringan, pembatasan, penghapusan, atau penyembunyian Konten.",
+          "MogeHub berhak menangguhkan atau mengakhiri akun Pengguna tanpa pemberitahuan sebelumnya apabila ditemukan pelanggaran.",
+          "Keputusan MogeHub bersifat final dan tidak dapat diganggu gugat."
+        ]
+      },
+      {
+        "title": "10. Lisensi Konten",
+        "paragraphs": [
+          "Dengan mengunggah Konten, Pengguna memberikan kepada MogeHub lisensi non-eksklusif, bebas royalti, dapat dialihkan, dan dapat disublisensikan untuk menggunakan, menampilkan, mendistribusikan, dan mempromosikan Konten tersebut dalam lingkup layanan MogeHub.",
+          "Hak kepemilikan atas Konten tetap berada pada Pengguna."
+        ]
+      },
+      {
+        "title": "11. Pembayaran dan Paket Iklan",
+        "paragraphs": [
+          "Layanan periklanan disediakan dalam bentuk paket dengan jumlah kuota iklan tertentu.",
+          "Setelah pembayaran berhasil dan kuota iklan diberikan kepada Pengguna, maka pembayaran tidak dapat dikembalikan dalam kondisi apa pun.",
+          "MogeHub menggunakan layanan pihak ketiga atau payment gateway untuk memproses transaksi.",
+          "MogeHub bukan merupakan penyelenggara jasa sistem pembayaran dan tidak bertanggung jawab atas gangguan yang terjadi pada sistem pihak ketiga."
+        ]
+      },
+      {
+        "title": "12. Hubungan antara MogeHub dan Pengguna",
+        "paragraphs": [
+          "MogeHub tidak bertindak sebagai penjual, distributor, agen, atau perwakilan dari Pengguna yang memasang iklan.",
+          "Segala transaksi, komunikasi, dan kesepakatan antara Pengguna dan pihak lain sepenuhnya berada di luar tanggung jawab MogeHub."
+        ]
+      },
+      {
+        "title": "13. Pembatasan Tanggung Jawab",
+        "paragraphs": [
+          "MogeHub tidak menjamin bahwa layanan akan selalu tersedia tanpa gangguan atau bebas dari kesalahan.",
+          "MogeHub tidak bertanggung jawab atas kerugian langsung maupun tidak langsung yang timbul akibat penggunaan atau ketidakmampuan menggunakan layanan.",
+          "MogeHub tidak bertanggung jawab atas kehilangan data, kerugian bisnis, atau kerugian reputasi."
+        ]
+      },
+      {
+        "title": "14. Ganti Rugi",
+        "paragraphs": [
+          "Pengguna setuju untuk mengganti kerugian, membela, dan membebaskan MogeHub dari seluruh tuntutan, klaim, kerugian, denda, atau biaya hukum yang timbul akibat pelanggaran Pengguna terhadap Syarat dan Ketentuan ini."
+        ]
+      },
+      {
+        "title": "15. Perubahan Layanan dan Ketentuan",
+        "paragraphs": [
+          "MogeHub berhak mengubah, menambah, atau mengurangi fitur dan isi Syarat dan Ketentuan sewaktu-waktu.",
+          "Perubahan akan berlaku sejak dipublikasikan pada halaman ini."
+        ]
+      },
+      {
+        "title": "16. Penghentian Layanan",
+        "paragraphs": [
+          "MogeHub berhak menghentikan sebagian atau seluruh layanan, baik sementara maupun permanen.",
+          "Pengguna memahami bahwa penghentian layanan tidak menimbulkan kewajiban kompensasi apa pun."
+        ]
+      },
+      {
+        "title": "17. Hukum yang Berlaku",
+        "paragraphs": [
+          "Syarat dan Ketentuan ini diatur dan ditafsirkan berdasarkan hukum Republik Indonesia."
+        ]
+      },
+      {
+        "title": "18. Kontak",
+        "paragraphs": [
+          "Untuk pertanyaan atau keluhan terkait Syarat dan Ketentuan ini, Pengguna dapat menghubungi MogeHub melalui email resmi yang akan diinformasikan kemudian."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Kebijakan Privasi (Privacy Policy) MogeHub",
+    "lastUpdated": "Terakhir diperbarui: 27 Februari 2026",
+    "sections": [
+      {
+        "title": "1. Pendahuluan",
+        "paragraphs": [
+          "Kebijakan Privasi ini menjelaskan bagaimana Pengelola Platform MogeHub mengumpulkan, menggunakan, menyimpan, memproses, melindungi, dan membagikan Data Pribadi pengguna dalam penggunaan platform MogeHub.",
+          "Dengan menggunakan MogeHub, Anda menyatakan telah membaca, memahami, dan menyetujui seluruh ketentuan dalam Kebijakan Privasi ini.",
+          "MogeHub merupakan platform komunitas motor gede (moge) yang menyediakan forum diskusi serta fitur periklanan (advertising) sebagai fitur inti."
+        ]
+      },
+      {
+        "title": "2. Ruang Lingkup Platform",
+        "paragraphs": [
+          "MogeHub menyediakan forum komunitas bagi pengguna untuk membuat thread, membagikan pengalaman, mengajukan pertanyaan, serta melakukan interaksi melalui konten berupa teks, tautan, gambar berbasis tautan, dan video melalui fitur embed dari YouTube.",
+          "MogeHub juga menyediakan fitur periklanan bagi pengguna untuk mempromosikan produk, jasa, promo, dan banner kepada audiens platform."
+        ]
+      },
+      {
+        "title": "3. Jenis Data yang Kami Kumpulkan",
+        "paragraphs": [
+          "Data identitas pengguna seperti nama, username, alamat email, dan informasi profil lainnya.",
+          "Data aktivitas pengguna di dalam platform, termasuk namun tidak terbatas pada posting forum, komentar, interaksi, histori penggunaan fitur, dan data teknis penggunaan.",
+          "Data konten yang diunggah oleh pengguna, termasuk teks, gambar, tautan, video embed, serta data iklan.",
+          "Data transaksi terkait pembelian paket iklan.",
+          "Data teknis seperti alamat IP, jenis perangkat, browser, sistem operasi, log sistem, cookies, dan informasi serupa."
+        ]
+      },
+      {
+        "title": "4. Cara Kami Mengumpulkan Data",
+        "paragraphs": [
+          "Data dikumpulkan secara langsung dari pengguna ketika melakukan pendaftaran, mengisi profil, membuat konten forum, mengunggah materi iklan, atau menggunakan fitur platform.",
+          "Data juga dapat dikumpulkan secara otomatis melalui sistem, cookie, dan teknologi pelacakan serupa."
+        ]
+      },
+      {
+        "title": "5. Tujuan Penggunaan Data",
+        "paragraphs": [
+          "Untuk menyediakan, mengelola, mengoperasikan, dan mengembangkan layanan MogeHub.",
+          "Untuk memproses dan menampilkan konten forum dan iklan.",
+          "Untuk memproses transaksi paket iklan melalui pihak ketiga.",
+          "Untuk keperluan keamanan, pencegahan penyalahgunaan, penipuan, dan pelanggaran kebijakan.",
+          "Untuk keperluan komunikasi terkait layanan, pembaruan, dan informasi penting platform."
+        ]
+      },
+      {
+        "title": "6. Dasar Pemrosesan Data",
+        "paragraphs": [
+          "Pemrosesan data dilakukan berdasarkan persetujuan pengguna, pelaksanaan perjanjian antara pengguna dan MogeHub, kewajiban hukum, serta kepentingan sah MogeHub dalam mengoperasikan platform."
+        ]
+      },
+      {
+        "title": "7. Penyimpanan dan Retensi Data",
+        "paragraphs": [
+          "Data pengguna disimpan selama akun masih aktif atau selama diperlukan untuk memenuhi tujuan pengumpulan data.",
+          "MogeHub dapat menyimpan data lebih lama apabila diwajibkan oleh peraturan perundang-undangan."
+        ]
+      },
+      {
+        "title": "8. Keamanan Data",
+        "paragraphs": [
+          "MogeHub menerapkan langkah-langkah teknis dan organisasi yang wajar untuk melindungi data pengguna dari akses tidak sah, kebocoran, penyalahgunaan, atau perubahan tanpa izin.",
+          "Namun, pengguna memahami bahwa tidak ada sistem elektronik yang sepenuhnya aman."
+        ]
+      },
+      {
+        "title": "9. Pembagian Data kepada Pihak Ketiga",
+        "paragraphs": [
+          "MogeHub dapat membagikan data pengguna kepada penyedia layanan pihak ketiga yang membantu operasional platform, termasuk penyedia payment gateway, layanan hosting, dan infrastruktur teknologi.",
+          "MogeHub tidak menjual data pribadi pengguna kepada pihak mana pun.",
+          "Pembagian data dilakukan sebatas yang diperlukan untuk tujuan operasional."
+        ]
+      },
+      {
+        "title": "10. Payment Gateway dan Pihak Ketiga",
+        "paragraphs": [
+          "Transaksi paket iklan dilakukan melalui payment gateway atau penyedia layanan pembayaran pihak ketiga.",
+          "MogeHub bukan penyelenggara jasa keuangan.",
+          "Kebijakan privasi dan ketentuan penyedia pembayaran sepenuhnya berlaku atas pemrosesan data oleh pihak tersebut."
+        ]
+      },
+      {
+        "title": "11. Konten dan Data yang Dibuat Pengguna",
+        "paragraphs": [
+          "Seluruh konten yang dibuat atau diunggah pengguna merupakan tanggung jawab penuh pengguna.",
+          "MogeHub hanya berperan sebagai penyedia platform dan tidak bertanggung jawab atas keakuratan, kebenaran, atau legalitas konten pengguna.",
+          "MogeHub dapat menyimpan, menampilkan, dan memproses konten pengguna sepanjang diperlukan untuk penyelenggaraan layanan."
+        ]
+      },
+      {
+        "title": "12. Hak Pengguna atas Data",
+        "paragraphs": [
+          "Pengguna berhak mengakses, memperbarui, dan memperbaiki data pribadinya melalui fitur akun.",
+          "Pengguna berhak meminta penghapusan akun sesuai kebijakan platform dan ketentuan hukum yang berlaku.",
+          "Permintaan tertentu dapat ditolak apabila bertentangan dengan kewajiban hukum MogeHub."
+        ]
+      },
+      {
+        "title": "13. Usia Minimum Pengguna",
+        "paragraphs": [
+          "Platform MogeHub hanya diperuntukkan bagi pengguna yang berusia minimal 17 (tujuh belas) tahun.",
+          "Dengan menggunakan platform, pengguna menyatakan bahwa dirinya telah memenuhi batas usia tersebut."
+        ]
+      },
+      {
+        "title": "14. Transfer dan Penyimpanan Data",
+        "paragraphs": [
+          "Data pengguna dapat diproses dan disimpan pada server yang berada di dalam atau di luar wilayah Indonesia sepanjang sesuai dengan ketentuan peraturan perundang-undangan yang berlaku."
+        ]
+      },
+      {
+        "title": "15. Perubahan Kebijakan Privasi",
+        "paragraphs": [
+          "MogeHub dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu.",
+          "Perubahan akan diumumkan melalui platform dan berlaku sejak tanggal pembaruan."
+        ]
+      },
+      {
+        "title": "16. Kontak Kami",
+        "paragraphs": [
+          "Untuk pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi kami melalui email: support@mogehub.com"
+        ]
+      },
+      {
+        "title": "17. Hukum yang Berlaku",
+        "paragraphs": [
+          "Kebijakan Privasi ini diatur dan ditafsirkan berdasarkan hukum Republik Indonesia."
+        ]
+      }
+    ]
+  },
+  "footer": {
+  "description": "Platform komunitas motor gede (moge) untuk berbagi pengalaman, diskusi, serta mempromosikan produk dan jasa kepada komunitas MogeHub.",
+  "legal": "Legal",
+  "terms": "Syarat & Ketentuan",
+  "privacy": "Kebijakan Privasi",
+  "rights": "Hak cipta dilindungi.",
+  "tagline": "Untuk pecinta Moge di Indonesia.",
+  "PaymentMethods":"Metode Pembayaran",
+  "about":"Tentang MogeHub",
+  "helpCenter":"Pusat Bantuan"
+},
+"notSignedIn": {
+    "title": "Anda belum masuk",
+    "subtitle": "Lihat profile dan konten dengan login",
+    "login": "Masuk",
+    "signup": "Daftar",
+    "language": "Bahasa",
+    "helpLegal": "Bantuan & Legal",
+    "privacy": "Privasi",
+    "terms": "Syarat & Ketentuan",
+    "subscriptions": "Langganan"
+  },
+  "infoAdHeroTitle": "Pasang iklan motor kamu di MogeHub",
+  "infoAdHeroSubtitle": "Gratis pasang iklan, jangkau komunitas motor yang tepat, dan tingkatkan peluang terjual lebih cepat.",
+  "postAdNow": "Buat iklan sekarang",
+  "seeExampleAds": "Lihat contoh iklan",
+  "exampleAds": "Contoh iklan di MogeHub",
+  "exampleAdsDesc": "Belum ada iklan? Tenang, ini hanya contoh tampilan iklan gratis dan berbayar.",
+  "adBenefits": "Kenapa posting iklan di MogeHub?",
+  "benefit1": "Gratis pasang iklan",
+  "benefit1Desc": "Mulai jual motor kamu tanpa biaya.",
+  "benefit2": "Komunitas tepat sasaran",
+  "benefit2Desc": "Pengunjung adalah pecinta moge.",
+  "benefit3": "Tampilan profesional",
+  "benefit3Desc": "Iklan kamu tampil rapi dan mudah dilihat.",
+  "benefit4": "Upgrade ke Premium",
+  "benefit4Desc": "Tampil di listing premium.",
+  "readyToPostAd": "Siap buat iklan sekarang?",
+  "readyToPostAdDesc": "Masuk ke dashboard kamu dan mulai pasang iklan pertamamu.",
+  "adTips": "Tips agar iklan cepat dilirik",
+  "tip1": "Gunakan foto yang jelas",
+  "tip1Desc": "Ambil foto motor dari beberapa sudut dengan pencahayaan bagus.",
+  "tip2": "Judul yang jujur dan singkat",
+  "tip2Desc": "Cantumkan tipe motor, tahun, dan kondisi utama.",
+  "tip3": "Harga yang realistis",
+  "tip3Desc": "Bandingkan dengan iklan lain agar cepat menarik minat.",
+  "footerHelp": "Bantuan",
+  "footerTerms": "Syarat & Ketentuan",
+  "footerPrivacy": "Kebijakan Privasi",
+  "helpCenter": "Pusat Bantuan",
+  "searchHelp": "Cari bantuan...",
+  "noArticles": "Artikel tidak ditemukan",
+  "helpBack": "Kembali ke Help Center",
+  "helpArticleNotFound": "Artikel tidak ditemukan",
+  "helpArticleFeedback": "Apakah artikel ini membantu?",
+  "helpYes": "Ya",
+  "helpNo": "Tidak",
+  "subscriptionHeroTitle": "Pilih Paket Langgananmu",
+  "subscriptionHeroSubtitle": "Pilih paket yang paling cocok untukmu dan nikmati manfaat eksklusif.",
+  "newsTickerItem": "Update Terbaru",
+  "subscriptionCTA": "Siap Tingkatkan Paketmu?",
+  "subscriptionCTADesc": "Dapatkan akses ke semua fitur dan konten premium dengan upgrade sekarang.",
+  "startFree": "Mulai Gratis",
+  "upgradeNow": "Upgrade Sekarang",
+  
+  "aboutHeroSubtitle": "Platform komunitas yang dibuat untuk pecinta motor gede agar bisa terhubung, berbagi, dan berkembang bersama.",
+  "aboutHeroButton": "Gabung Komunitas",
+
+  "aboutHeroTitle": "Tentang MogeHub",
+  "aboutHeroDesc": "MogeHub adalah platform komunitas digital yang dibuat khusus untuk para pecinta motor gede. Tempat bagi para rider untuk berdiskusi, berbagi pengalaman, dan mempromosikan produk atau layanan kepada sesama komunitas.",
+
+  "learnMore": "Pelajari Lebih Lanjut",
+
+  "ourStory": "Cerita Kami",
+  "ourStoryDesc": "MogeHub lahir dari satu ide sederhana: menciptakan ruang online bagi para pecinta motor gede untuk berkumpul dalam satu komunitas. Banyak rider yang kesulitan menemukan satu platform tempat mereka dapat berdiskusi, berbagi pengalaman, serta mempromosikan produk atau jasa yang berkaitan dengan dunia motor. Melalui MogeHub, kami ingin membangun komunitas yang aktif, terbuka, dan saling mendukung.",
+
+  "whatYouCanDo": "Apa Yang Bisa Dilakukan di MogeHub",
+
+  "feature1Title": "Forum Komunitas",
+  "feature1Desc": "Bergabung dalam diskusi dengan sesama rider dan berbagi pengalaman seputar dunia motor gede.",
+
+  "feature2Title": "Promosikan Produk",
+  "feature2Desc": "Anggota dapat mempromosikan produk, jasa, atau bisnis yang berkaitan dengan dunia motor kepada komunitas.",
+
+  "feature3Title": "Terhubung Dengan Rider",
+  "feature3Desc": "Temui orang-orang baru yang memiliki passion yang sama terhadap dunia motor.",
+
+  "feature4Title": "Berbagi Pengetahuan",
+  "feature4Desc": "Bagikan tips, pengalaman berkendara, serta pengetahuan tentang perawatan motor kepada komunitas.",
+
+  "ourVision": "Visi Kami",
+  "visionDesc": "Menjadi platform komunitas digital terdepan bagi para pecinta motor gede untuk terhubung, berbagi, dan berkembang bersama.",
+
+  "ourMission": "Misi Kami",
+
+  "mission1": "Membangun komunitas rider yang kuat dan saling mendukung.",
+  "mission2": "Mendorong diskusi terbuka serta berbagi pengetahuan tentang dunia motor.",
+  "mission3": "Memberikan ruang bagi anggota untuk mempromosikan produk dan layanan mereka.",
+  "mission4": "Terus mengembangkan platform berdasarkan kebutuhan komunitas.",
+
+  "communityFirst": "Komunitas Adalah Prioritas",
+  "communityDesc": "MogeHub dibangun dengan satu prinsip utama: komunitas adalah prioritas. Platform ini dirancang untuk mendorong interaksi yang sehat, kolaborasi antar anggota, serta mendukung perkembangan komunitas pecinta motor gede.",
+
+  "futureTitle": "Masa Depan MogeHub",
+  "futureDesc": "Seiring berkembangnya platform, MogeHub akan terus menghadirkan fitur baru yang membantu para rider untuk terhubung, berbagi pengalaman, dan mempromosikan passion mereka dalam dunia motor.",
+
+  "readyJoin": "Siap Bergabung Dengan Komunitas?",
+  "readyJoinDesc": "Jadilah bagian dari komunitas pecinta motor gede yang terus berkembang.",
+  "joinMogehub": "Gabung MogeHub",
+  "exploreForum": "Explore Forum",
+  "failedSaveAd": "Gagal menyimpan iklan",
+    "adUpdated": "Iklan berhasil diperbarui",
+    "adCreated": "Iklan berhasil dibuat",
+    "waitingAdminReview": "Tunggu review dari admin",
+    "failedDeleteAd": "Gagal menghapus iklan",
+    "confirmDeleteAd": "Apakah Anda yakin ingin menghapus iklan ini?",
+    "createNewAd": "Buat Iklan Produk Baru",
+    "editAd": "Edit Iklan",
+    "basicPackageNotice": "INFO: Untuk paket Basic iklan akan melalui proses review sebelum tampil",
+    "selectCategory": "Pilih Kategori",
+    "categoryRequired": "Kategori wajib diisi",
+    "selectSubcategory": "Pilih Subkategori",
+    "subcategoryRequired": "Subkategori wajib diisi",
+    "motorCC": "Kapasitas mesin (CC)",
+    "ccMin": "CC minimal 500",
+    "uploadImages":"Upload Beberapa Gambar Iklan",
+    "title": " Judul Iklan",
+    "Forumtitle":"Judul Thread Forum",
+    "titleRequired": "Judul iklan wajib diisi",
+    "description": "Deskripsi iklan",
+    "descriptionRequired": "Deskripsi iklan wajib diisi",
+    "type": "Tipe",
+    "typeRequired": "Tipe wajib diisi",
+    "sell": "Jual",
+    "rent": "Sewa",
+    "price": "Harga",
+    "priceRequired": "Harga wajib diisi",
+    "cityRequired": "Kota wajib diisi",
+    "rentalStartRequired": "Tanggal mulai sewa wajib diisi",
+    "rentalEndRequired": "Tanggal akhir sewa wajib diisi",
+    "youtubeLinkPlaceholder": "Link YouTube (opsional)",
+    "faqOptional": "FAQ Iklan (Opsional)",
+    "addFaq": "Tambah FAQ",
+    "noFaq": "Belum ada FAQ",
+    "faq": "Pertanyaan Umum",
+    "question": "Cth pertanyaan: Bisa Nego?",
+    "answer": "Cth jawaban: Bisa",
+    "deleteFaq": "Hapus FAQ",
+    "add": "Tambah",
+    "remove": "Hapus",
+    "minOneImage": "Minimal 1 gambar harus diunggah",
+    "createAd": "Buat Iklan",
+    "updateAd": "Perbarui Iklan",
+    "adsList": "Daftar Iklan",
+
+    "report_ad": "Laporkan Iklan",
+  "please_login_to_report": "Silakan login untuk melaporkan iklan ini",
+  "reason": "Alasan",
+  "description_optional": "Deskripsi (opsional)",
+  "evidence_required": "Bukti (wajib)",
+  "submit_report": "Kirim Report",
+
+  "select_reason": "Pilih alasan report",
+  "evidence_required_error": "Bukti wajib diupload",
+
+  "report_success": "Report berhasil dikirim",
+  "report_failed": "Gagal mengirim report",
+
+  "forum_subtitle": "Diskusi, tanya jawab, dan sharing seputar dunia moge",
+
+  "create_thread": "Buat Thread",
+  "create_thread_now": "Buat Thread Sekarang",
+
+  "all_categories": "Semua Kategori",
+  "all_tags": "Semua Tag",
+
+  "new_thread": "Thread baru",
+  "edit_thread": "Edit thread",
+
+  "tag": "Tag",
+  "selected_tag": "Tag terpilih",
+
+  "placeholder_title": "Masukkan judul thread",
+  "placeholder_category": "Pilih kategori",
+  "placeholder_tag": "Tambah tag",
+
+  
+  "update_thread": "Update Thread",
+
+  "image_modal_title": "Masukkan Gambar",
+  "image_modal_intro": "Anda bisa:",
+  "image_modal_step_desktop": "1. Komputer Desktop",
+  "image_modal_step_desktop_desc": "Cari di Google Image → klik kanan → Copy image address",
+  "image_modal_step_mobile": "2. Handphone",
+  "image_modal_step_mobile_desc": "Cari di Google Image → tekan gambar → buka gambar → copy link URL di bagian atas",
+  "image_modal_step_input": "3. Masukkan Link",
+  "image_modal_step_input_desc": "Masukkan link di kolom bawah ini lalu klik Insert",
+
+  "no_threads": "Belum ada thread",
+  "no_threads_desc": "Jadilah yang pertama membuat thread untuk kategori ini",
+
+  "unknown_user": "Tidak diketahui",
+
+  "validation_required": "Judul dan isi wajib diisi",
+
+  "confirm_delete": "Yakin mau hapus thread ini?",
+
+  "error_load_forum": "Gagal load forum",
+  "error_load_thread": "Gagal load thread",
+  "error_submit_thread": "Gagal submit thread",
+  "error_delete_thread": "Gagal delete thread",
+  "error_like": "Gagal update like",
+
+  "youtube_modal_title": "Masukkan Video YouTube",
+  "youtube_modal_intro": "Copy URL YouTube lalu tempel di sini.",
+  "youtube_modal_help": "Butuh bantuan?",
+  "youtube_modal_help_link": "klik di sini",
+
+  "link_modal_title": "Masukkan Link",
+  "link_modal_intro": "Silahkan pilih teks di editor terlebih dahulu.",
+  "link_modal_how": "Cara:",
+  "link_modal_step_1": "1. Blok atau Highlight teks yang ingin diberi link di dalam editor",
+  "link_modal_step_2": "2. Masukkan URL di bawah ini",
+  "link_modal_step_3": "3. Klik Apply",
+  
+  "success_create_thread": "Thread berhasil dibuat",
+  "success_update_thread": "Thread berhasil diupdate",
+  "success_delete_thread": "Thread dihapus",
+
+  "login_success": "Login berhasil",
+  "login_google": "Berhasil login dengan Google",
+
+  "activeads":"Iklan Aktif",
+"loadMore":"Lihat Lebih",
+  "scam": "Scam / Penipuan",
+  "fake": "Iklan palsu",
+  "spam": "Spam",
+  "inappropriate": "Tidak pantas",
+  "other": "Lainnya",
+
+  "login_required": "Silakan login untuk melaporkan iklan ini",
+
+  "describe_details": "Jelaskan detailnya...",
+
+  "similar_ads": "Iklan Serupa",
+"loading_similar_ads": "Memuat iklan...",
+
+    "member_since": "Bergabung sejak",
+  "hide_details": "Sembunyikan Detail",
+  "ago": "yang lalu",
+
+    "seller_details": "Detail Penjual",
+  "total_ads": "Total Iklan",
+  "see_all_ads": "Lihat Semua Iklan",
+  "verification_status": "Status Verifikasi",
+  
+  "unverified": "Belum Terverifikasi",
+  "active_packages": "Paket Aktif",
+
+  "wishlist_login_required": "Harus login",
+  "wishlist_login_desc": "Silakan login untuk menyimpan ke wishlist",
+  "wishlist_added": "Berhasil ditambahkan ke wishlist",
+  "wishlist_removed": "Berhasil dihapus dari wishlist",
+  "wishlist_error": "Terjadi kesalahan",
+  "wishlist_button": "Wishlist",
+
+  "wishlist_page_title": "Iklan Wishlist",
+  "wishlist_empty_title": "Belum ada wishlist",
+  "wishlist_empty_button": "Cari Iklan",
+
+  "checkout_title": "Checkout Paket Berlangganan",
+
+
+
+  "checkout_payment_required": "Pilih metode pembayaran terlebih dahulu",
+
+  "checkout_phone_required": "Nomor telepon wajib diisi",
+  "checkout_phone_required_desc": "Silakan isi nomor WhatsApp/telepon aktif",
+
+  "checkout_phone_invalid": "Format nomor tidak valid",
+  "checkout_phone_invalid_desc": "Contoh: 08123456789 atau +628123456789",
+
+  "checkout_server_not_json": "Server tidak merespons dengan format JSON",
+  "checkout_failed": "Checkout gagal",
+  "checkout_reference_not_found": "Nomor referensi tidak ditemukan",
+
+  "checkout_recommended": "Rekomendasi",
+  "checkout_free": "Gratis",
+
+  "checkout_user_info": "Informasi Pembeli",
+  "checkout_username": "Username",
+  "checkout_email": "Email",
+
+  "checkout_phone_label": "Nomor Telepon",
+  "checkout_phone_placeholder": "Masukkan nomor telepon",
+
+  "checkout_payment_title": "Pilih Metode Pembayaran & Lanjutkan",
+
+  "checkout_secure": "Aman dengan Enkripsi SSL",
+  "checkout_secure_desc": "Informasi pembayaran kamu dilindungi dan terenkripsi",
+
+  "checkout_confirm": "Konfirmasi Pembelian",
+  "checkout_cancel": "Batal",
+
+  "checkout_subscription_item": "Langganan",
+
+  "pagination_prev": "Sebelumnya",
+  "pagination_next": "Selanjutnya",
+  "pagination_page": "Halaman",
+
+  "wishlist_remove_button": "Hapus dari wishlist",
+
+    "support_ticket": {
+    "title": "Support Ticket",
+    "choose_subject": "Pilih Subjek",
+    "select_subject": "Pilih Subjek",
+    "custom_subject_placeholder": "Apa pertanyaan kamu?",
+    "priority_label": "Prioritas Masalah",
+    "message_placeholder": "Jelaskan masalah kamu...",
+    "choose_file": "Pilih File",
+    "create_ticket": "Buat Tiket",
+    "send": "Kirim",
+    "select_ticket": "Pilih tiket",
+    "reference_help": "Silakan lihat menu Transaksi pada sidebar untuk menemukan nomor referensi yang ingin dimasukkan.",
+
+    "validation": {
+    "subject_required": "Silakan pilih subject",
+    "reference_required": "Masukkan nomor referensi",
+    "message_required": "Jelaskan masalah kamu"
+  },
+  "reference_placeholder": "Masukkan nomor referensi pembayaran",
+
+
+    "toast": {
+      "success_create": "Tiket berhasil dibuat",
+      "error_create": "Gagal membuat tiket"
+    },
+
+    "subject_options": {
+      "payment": "Pembayaran",
+      "product_ads": "Iklan Produk",
+      "banner_ads": "Iklan Banner",
+      "subscription": "Paket Langganan",
+      "boost": "Paket Boost",
+      "others": "Lainnya"
+    },
+
+    "priority": {
+      "low": "Rendah",
+      "medium": "Sedang",
+      "high": "Tinggi"
+    }
+  },
+
+  "bannerNotFound": "Banner tidak ditemukan",
+  "goBack": "Kembali",
+  "visitLink": "Kunjungi Link",
+  "descriptionLabel": "Deskripsi",
+  "cityLabel": "Kota",
+  "categoryLabel": "Kategori",
+  "subcategoryLabel": "Subkategori",
+  "viewsLabel": "Dilihat",
+  "sellerInfo": "Info Penjual",
+  "usernameLabel": "Username",
+  "verifiedLabel": "Status Verifikasi",
+  "yesVerified": "Sudah Terverifikasi",
+  "noVerified": "Belum Terverifikasi",
+
+  "startDateLabel": "Tanggal Mulai",
+  "endDateLabel": "Tanggal Berakhir",
+  "useDateLabel": "Ingin menggunakan tanggal?",
+
+  "bannerHelpTitle": "Informasi Banner Promosi",
+  "bannerHelpSubtitle": "Cara kerja Iklan Banner di MogeHub",
+  "bannerHelpDesc": "Iklan Banner adalah fitur promosi yang memungkinkan kamu menampilkan iklan promo, event, service di halaman utama MogeHub.\n\nKamu juga bisa menggunakan banner ini untuk:\n- Promosi produk atau jasa\n- Event / campaign khusus\n- Diskon atau penawaran terbatas\n\nSaat membuat banner, kamu dapat mengatur:\n• Kategori yang sesuai dengan type promo\n• Subkategori yang sesuai dengan kategori yang kamu pilih sebelumnya\n• Judul Iklan banner yang ingin di promosikan\n• Deskripsi lengkap mengenai info banner yang ingin di tampilkan\n• Tanggal mulai promo dan selesai promo\n• Kota dimana promo, event, atau service sedang berlangsung \n• Link tujuan jika kamu ingin user melihat lebih detail mengenai promo atau event yang sedang kamu infokan (website / marketplace / WhatsApp / detail produk)\n\nPastikan upload banner dengan ukuran yang di rekomendasikan.",
+  "bannerPreview": "Lihat Preview",
+
+  "mytransactions": "Transaksi",
+
+  "transactions": {
+  "title": "Transaksi Saya",
+  "search_placeholder": "Cari nomor referensi",
+  "filter_all": "Semua",
+  "filter_pending": "Pending",
+  "filter_paid": "Lunas",
+  "filter_expired": "Kadaluarsa",
+  "view_detail": "Lihat Detail",
+  "hide_detail": "Sembunyikan Detail",
+  "payment_method": "Metode Pembayaran",
+  "items": "Produk",
+  "reference_label": "Nomor Referensi",
+  "created_at_label": "Waktu Dibuat",
+  "Badgeempty":"Belum Ada Pembelian",
+  "empty": "Transaksi pembelian kamu akan muncul disini",
+  "customer": "Pelanggan",
+  "open_payment": "Buka Pembayaran",
+  "no_data": "Tidak ada data",
+  "payment": {
+      "bank_label": "Virtual Account",
+      "va_number": "Nomor VA",
+      "wallet_label": "E-Wallet",
+      "retail_label": "Pembayaran Retail",
+      "payment_code": "Kode Pembayaran",
+      "qr_label": "Pembayaran QR",
+      "default_label": "Pembayaran"
+    },
+  "status": {
+    "pending": "Pending",
+    "paid": "Lunas",
+    "expired": "Kadaluarsa"
+    }
+},
+    "ad_number": "Nomor Iklan",
+    
+    "noAdsYet": "Belum ada iklan",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "adPendingReview": "Iklan sedang menunggu review admin",
+    "clickPencilToResubmit": "Klik ikon pensil untuk mengirim ulang",
+
+    "titleHelpSubscription": "Info Paket Berlangganan",
+  "section_title_help_subscription": "Apa yang kamu dapatkan",
+   "understood_button": "Saya Mengerti",
+   "floating_help": "Bantuan",
+
+   "choosePackage":"Pilih Paket",
+
+    "subscription_help": {
+  "description_paragraphs": [
+    "Saat pertama daftar atau bergabung di MogeHub maka kamu akan secara otomatis memiliki paket Basic secara GRATIS dan berlaku selamanya.",
+    "Dengan paket Basic, kamu dapat membuat iklan produk 1 dan iklan banner 1. Kamu dapat posting lebih dari satu iklan dengan cara membeli paket berlangganan. Jumlah kuota iklan tersedia di deskripsi paket.",
+    "Semakin tinggi paket yang kamu pilih, semakin banyak iklan yang dapat kamu posting di MogeHub dan juga dengan paket berbayar iklan kamu akan tampil instant setelah di buat.",
+    "Jika masa aktif paket berbayar berakhir dan tidak di lanjutkan, maka paket kamu akan otomatis kembali ke paket Basic tanpa kehilangan data akun, dan kamu tetap dapat membeli kembali paket berbayar kapanpun."
+  ]
 }
+
+}
+

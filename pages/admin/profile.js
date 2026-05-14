@@ -19,10 +19,16 @@ import {
 } from "@chakra-ui/react";
 import { SmallCloseIcon, EditIcon, LockIcon } from "@chakra-ui/icons";
 import { useState, useEffect, useRef } from "react";
+import { useLanguageContext } from "@/context/LanguageContext";
+import en from "@/locales/en.json";
+import id from "@/locales/id.json";
+const translations = { en, id };
 
 export default function AdminProfile() {
   const { colorMode } = useColorMode();
   const toast = useToast();
+  const { language } = useLanguageContext();
+  const t = translations[language] || translations.id;
 
   const [admin, setAdmin] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,6 +36,7 @@ export default function AdminProfile() {
   const [password, setPassword] = useState("");
   const [avatar, setAvatar] = useState(null);
   const [updating, setUpdating] = useState(false);
+  const [avatarPreview, setAvatarPreview] = useState(null);
 
   const backendUrl = process.env.NEXT_PUBLIC_API_URL;
 
@@ -40,7 +47,6 @@ export default function AdminProfile() {
   // ================= INIT LOCAL STORAGE =================
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // 🔴 FIX UTAMA → samakan dengan AdminDashboard
       const u = localStorage.getItem("user");
       setStoredAdmin(u ? JSON.parse(u) : null);
     }
@@ -49,7 +55,6 @@ export default function AdminProfile() {
   // ================= FETCH ADMIN =================
   useEffect(() => {
     if (!storedAdmin?.id) {
-      // 🔴 supaya spinner tidak muter selamanya
       setLoading(false);
       return;
     }
@@ -67,12 +72,7 @@ export default function AdminProfile() {
         const data = await res.json();
 
         setAdmin(data);
-
-        if (data.profilePhoto) {
-          setAvatar(`${backendUrl}${data.profilePhoto}`);
-        } else {
-          setAvatar(null);
-        }
+        setAvatar(data.profilePhoto || null);
       } catch (err) {
         console.error(err);
         toast({
@@ -96,8 +96,8 @@ export default function AdminProfile() {
 
     if (!password && !(avatar instanceof File)) {
       toast({
-        title: "Info",
-        description: "Tidak ada perubahan",
+        title: t.common_info,
+        description: t.admin_profile_no_changes,
         status: "info",
         duration: 2000,
         isClosable: true,
@@ -128,27 +128,22 @@ export default function AdminProfile() {
 
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error(err.message || "Gagal update profile");
+        throw new Error(err.message || t.admin_profile_failed_update);
       }
 
       const updated = await res.json();
-
       setAdmin(updated);
       setPassword("");
 
-      if (updated.profilePhoto) {
-        setAvatar(`${backendUrl}${updated.profilePhoto}`);
-      } else {
-        setAvatar(null);
-      }
+      setAvatar(updated.profilePhoto || null);
 
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
 
       toast({
-        title: "Berhasil",
-        description: "Profile admin berhasil diperbarui",
+        title: t.common_success,
+        description: t.admin_profile_updated,
         status: "success",
         duration: 3000,
         isClosable: true,
@@ -157,7 +152,7 @@ export default function AdminProfile() {
       console.error(err);
       toast({
         title: "Error",
-        description: err.message || "Gagal update profile",
+        description: err.message || t.admin_profile_failed_update,
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -169,10 +164,32 @@ export default function AdminProfile() {
 
   // ================= AVATAR CHANGE =================
   const handleAvatarChange = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setAvatar(file);
-  };
+  const file = e.target.files?.[0];
+  if (!file) return;
+
+  const allowedTypes = ["image/png", "image/jpeg", "image/webp"];
+  if (!allowedTypes.includes(file.type)) {
+    // bersihin input biar user bisa pilih ulang
+    if (fileInputRef.current) fileInputRef.current.value = "";
+
+    // panggil toast
+    toast({
+      title: t.admin_profile_invalid_format,
+      description: t.admin_profile_invalid_format_desc,
+      status: "warning",
+      duration: 3000,
+      isClosable: true,
+    });
+
+    return; // stop eksekusi
+  }
+
+  // revoke URL lama biar nggak memory leak
+  if (avatarPreview) URL.revokeObjectURL(avatarPreview);
+
+  setAvatar(file); // untuk save nanti
+  setAvatarPreview(URL.createObjectURL(file)); // untuk preview tanpa kedip
+};
 
   // ================= REMOVE AVATAR =================
   const handleAvatarRemove = async () => {
@@ -194,7 +211,7 @@ export default function AdminProfile() {
 
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error(err.message || "Gagal hapus foto");
+        throw new Error(err.message || t.admin_profile_failed_remove_photo);
       }
 
       const updated = await res.json();
@@ -207,8 +224,8 @@ export default function AdminProfile() {
       }
 
       toast({
-        title: "Berhasil",
-        description: "Foto profil berhasil dihapus",
+        title: t.common_success,
+        description: t.admin_profile_photo_removed,
         status: "success",
         duration: 3000,
         isClosable: true,
@@ -216,8 +233,8 @@ export default function AdminProfile() {
     } catch (err) {
       console.error(err);
       toast({
-        title: "Error",
-        description: err.message || "Gagal hapus foto",
+        title: t.common_error,
+        description: err.message ||  t.admin_profile_failed_remove_photo,
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -238,15 +255,21 @@ export default function AdminProfile() {
   if (!admin) {
     return (
       <Box p={6}>
-        <Text>Data admin tidak ditemukan.</Text>
+        <Text>{t.admin_profile_not_found}</Text>
       </Box>
     );
   }
 
-  const avatarSrc =
-    avatar instanceof File
-      ? URL.createObjectURL(avatar)
-      : avatar || undefined;
+  const avatarSrc = avatarPreview || (avatar instanceof File ? URL.createObjectURL(avatar) : avatar) || undefined;
+
+  const ROLE_LABELS = {
+    individual: "User",
+    moderator: "Moderator",
+    admin: "Admin",
+    editor: "Editor",
+    staff_verifikasi: "Staff Verifikasi",
+    staff_iklan: "Staff Iklan",
+  };
 
   const cardBg = colorMode === "light" ? "white" : "gray.900";
   const borderColor = colorMode === "light" ? "gray.200" : "whiteAlpha.200";
@@ -255,9 +278,9 @@ export default function AdminProfile() {
   return (
     <Box px={{ base: 4, md: 8 }} py={{ base: 4, md: 6 }} flex="1">
       <Stack spacing={1} mb={8}>
-        <Heading size="lg">Profil Admin</Heading>
+        <Heading size="lg">{t.admin_profile_title}</Heading>
         <Text fontSize="sm" color={labelColor}>
-          Kelola keamanan akun administrator
+          {t.admin_profile_subtitle}
         </Text>
       </Stack>
 
@@ -274,13 +297,13 @@ export default function AdminProfile() {
           <VStack spacing={6}>
             <Avatar
               size="2xl"
-              name={admin.email || ""}
+              name={admin.username || admin.email || "A"}
               src={avatarSrc}
             />
 
             <Stack spacing={1} textAlign="center">
               <Text fontWeight="semibold" fontSize="lg">
-                Administrator
+                {admin.username || "Administrator"}
               </Text>
               <Text fontSize="sm" color={labelColor}>
                 {admin.email}
@@ -298,7 +321,7 @@ export default function AdminProfile() {
                 leftIcon={<EditIcon />}
                 isDisabled={updating}
               >
-                Ganti foto
+                {t.admin_profile_change_photo}
               </Button>
 
               <input
@@ -317,7 +340,7 @@ export default function AdminProfile() {
                   variant="ghost"
                   colorScheme="red"
                   onClick={handleAvatarRemove}
-                  aria-label="remove avatar"
+                  aria-label={t.admin_profile_remove_avatar}
                   isLoading={updating}
                 />
               )}
@@ -328,18 +351,18 @@ export default function AdminProfile() {
             <VStack spacing={3} w="full" align="stretch">
               <Flex justify="space-between" align="center">
                 <Text fontSize="sm" color={labelColor}>
-                  Role
+                 {t.admin_profile_role}
                 </Text>
 
                 <Badge
                   px={3}
                   py={1}
                   rounded="full"
-                  bg="brand.50"
-                  color="brand.500"
+                  bg="brand.500"
+                  color="black"
                   fontWeight="semibold"
                 >
-                  ADMIN
+                  {ROLE_LABELS[admin.type] || t.common_unknown}
                 </Badge>
               </Flex>
             </VStack>
@@ -356,12 +379,12 @@ export default function AdminProfile() {
           shadow="sm"
         >
           <Stack spacing={6}>
-            <Heading size="md">Keamanan Akun</Heading>
+            <Heading size="md">{t.admin_profile_account_security}</Heading>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
               <Box>
                 <Text fontSize="sm" mb={1} color={labelColor}>
-                  Email
+                  {t.common_email}
                 </Text>
                 <Input value={admin.email || ""} isReadOnly />
               </Box>
@@ -369,12 +392,12 @@ export default function AdminProfile() {
 
             <Box>
               <Text fontSize="sm" mb={1} color={labelColor}>
-                Password baru
+               {t.admin_profile_new_password}
               </Text>
               <Input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Masukkan password baru"
+                placeholder={t.admin_profile_new_password_placeholder}
                 type="password"
               />
             </Box>
@@ -383,14 +406,14 @@ export default function AdminProfile() {
               <Button
                 leftIcon={<LockIcon />}
                 bg="brand.500"
-                color="white"
+                color="black"
                 _hover={{ bg: "brand.600" }}
                 _active={{ bg: "brand.600" }}
                 px={8}
                 onClick={handleUpdate}
                 isLoading={updating}
               >
-                Simpan perubahan
+               {t.common_save}
               </Button>
             </Flex>
           </Stack>
@@ -399,3 +422,4 @@ export default function AdminProfile() {
     </Box>
   );
 }
+

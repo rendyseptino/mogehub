@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Flex, Text, Icon } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 import { EmailIcon } from "@chakra-ui/icons";
 import * as jwt_decode from "jwt-decode"; // import semua sebagai object
 
@@ -52,6 +53,8 @@ export default function LoginInfo() {
       <Flex align="center" gap={3}>
         {loginMethod === "Google" ? (
           <Icon as={FcGoogle} boxSize={6} />
+        ) : loginMethod === "Facebook" ? (
+          <Icon as={FaFacebook} boxSize={6} color="#1877F2" />
         ) : (
           <EmailIcon boxSize={5} color="blue.500" />
         )}

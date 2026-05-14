@@ -6,15 +6,17 @@
   "freeAd": "Free Ad",
   "searchPlaceholder": "Search bike, brand, type...",
 
-  "loginBanner": "All you need is a wild riding.",
+  "loginBanner": "Built For Riders.",
   "signInGoogle": "Sign in with Google",
+  "signInFacebook":"Sign in with Facebook",
   "or": "or",
-  "emailOrUsername": "Email / Username",
+  "emailOrUsername": "Email or Username",
   "emailPlaceholder": "email ",
   "password": "Password",
   "passwordPlaceholder": "password",
   "togglePassword": "Toggle password",
   "forgotPassword": "Forgot password?",
+  "passwordResetSentWithEmail": "Link reset password sent successfully to {{email}}",
   "noAccount": "Don't have an account?",
   "registerNow": "Register now",
   "backToHome": "Back to Home",
@@ -22,17 +24,369 @@
   "loginFailed": "Login failed",
   "loginSuccess": "Login successful",
   "serverError": "Server error",
+  "accountNotFound": "Account not found. Please check your username or email.",
+  "wrongPassword": "Incorrect password",
+  "identityAndPasswordRequired": "Email or Username and password are required",
+  "emailNotFound": "Email not found",
+  "emailExists":"Email is already registered",
+  "usernameExists": "Username is already taken",
+  "usernameAvailable": "Username available",
+  "usernameNotAvailable": "Username not available",
+  "emailAvailable": "Email available",
+  "emailNotAvailable": "Email already registered",
+  "currentUsername":"Your current Username",
+  "postAd": "Post Ad",
+  "linkYoutubeAd":"If your product is on YouTube and you’d like it to be displayed on MogeHub, simply copy the URL and paste it here.",
+  "basicInfo":"Basic plan ads will be reviewed before being published.",
+
+  "premiumAdDescription": "Premium ads appear in the premium listing section. Boosted ads can also appear at the top for nearby buyers.",
+  "freeAdDescription": "Free ads will still be recommended to potential buyers.",
+
+  "report_ad": "Report Ad",
+  "please_login_to_report": "Please login to report this ad",
+  "reason": "Reason",
+  "description_optional": "Description (optional)",
+  "evidence_required": "Evidence (required)",
+  "submit_report": "Submit Report",
+
+  "select_reason": "Please select a reason",
+  "evidence_required_error": "Evidence is required",
+
+  "report_success": "Report submitted successfully",
+  "report_failed": "Failed to submit report",
+
+  "forum_subtitle": "Discussion, Q&A, and sharing about motorcycles",
+
+  "create_thread": "Create Thread",
+  "create_thread_now": "Create Thread Now",
+
+  "all_categories": "All Categories",
+  "all_tags": "All Tags",
+
+  "new_thread": "New Thread",
+  "edit_thread": "Edit Thread",
+
+  
+  "tag": "Tag",
+  "selected_tag": "Selected Tags",
+
+  "placeholder_title": "Enter thread title",
+  "placeholder_category": "Select category",
+  "placeholder_tag": "Add tag",
+
+  
+  "update_thread": "Update Thread",
+
+  "image_modal_title": "Insert Image",
+  "image_modal_intro": "You can:",
+  "image_modal_step_desktop": "1. Desktop",
+  "image_modal_step_desktop_desc": "Search on Google Images → right click → Copy image address",
+  "image_modal_step_mobile": "2. Mobile",
+  "image_modal_step_mobile_desc": "Search on Google Images → long press image → open image → copy image URL from the top",
+  "image_modal_step_input": "3. Insert Link",
+  "image_modal_step_input_desc": "Paste the image link below then click Insert",
+
+  "no_threads": "No threads yet",
+  "no_threads_desc": "Be the first to create a thread in this category",
+
+  "unknown_user": "Unknown",
+
+  "validation_required": "Title and content are required",
+
+  "confirm_delete": "Are you sure you want to delete this thread?",
+"youtube_modal_title": "Insert YouTube Video",
+  "youtube_modal_intro": "Copy the YouTube URL and paste it here.",
+  "youtube_modal_help": "Need help?",
+  "youtube_modal_help_link": "click here",
+  
+  "error_load_forum": "Failed to load forum",
+  "error_load_thread": "Failed to load thread",
+  "error_submit_thread": "Failed to submit thread",
+  "error_delete_thread": "Failed to delete thread",
+  "error_like": "Failed to update like",
+
+  "link_modal_title": "Insert Link",
+  "link_modal_intro": "Please select text in the editor first.",
+  "link_modal_how": "How to:",
+  "link_modal_step_1": "1. Highlight the text you want to add a link to in the editor",
+  "link_modal_step_2": "2. Enter the URL below",
+  "link_modal_step_3": "3. Click Apply",
+
+  
+  "success_create_thread": "Thread created successfully",
+  "success_update_thread": "Thread updated successfully",
+  "success_delete_thread": "Thread deleted",
+
+  "login_success": "Login successful",
+  "login_google": "Successfully logged in with Google",
+
+  "scam": "Scam / Fraud",
+  "fake": "Fake listing",
+  "spam": "Spam",
+  "inappropriate": "Inappropriate",
+  "other": "Other",
+
+  "login_required": "Please login to report this ad",
+
+  "describe_details": "Explain the details...",
+
+  "similar_ads": "Similar Ads",
+"loading_similar_ads": "Loading similar ads...",
+
+"activeads":"Active Ads",
+
+"loadMore":"Load More",
+
+   "year": "Year",
+   "typeDesc":"Select whether the product is for sale or for rent",
+   "durationDesc":"You selected rental duration (in days). Please enter numbers only.",
+
+  "understand":"I Understand",
+
+  "adsHelpDesc": "You can create ads to showcase various products or services you offer on MogeHub, such as motorcycles, helmets, apparel, repair services, and more. Choose the most relevant category so your ad is easier for potential buyers to find.\n\nEach ad will display complete information including description, price, images, and contact details. Potential buyers will contact you directly through the WhatsApp number you provide, allowing communication and transactions to happen directly.\n\nMake sure the information you provide is accurate, clear, and reflects the actual condition of the product to ensure a great experience for potential buyers. Well-structured and trustworthy ads will increase your chances of attracting more interest.",
+
+"adsHelpSubtitle":"How Ads Work on MogeHub",
+"adsHelpTitle":"Ad Information",
+  "previewAd":"Preview",
+
+  "back": "Back",
+  "not_found": "Ad not found",
+  "copied": "Link copied to clipboard",
+
+  "member_since": "Member since",
+  "hide_details": "Hide Details",
+  "ago": "ago",
+
+   "ad_number": "Ad Number",
+
+   "seller_details": "Seller Details",
+  "total_ads": "Total Ads",
+  "see_all_ads": "See All Ads",
+  "verification_status": "Verification Status",
+  
+  "unverified": "Unverified",
+  "active_packages": "Active Packages",
+
+  
+  "address_detail": "Full Address",
+
+  
+  "rental_date": "Rental Date",
+  "duration": "Duration",
+
+  
+  "marketplace": "Marketplace",
+  
+
+  "join_discussion": "Join Discussion",
+
+
+  "adminUsers": "MogeHub Users",
+
+  "headsUp":"Heads up — we’re MogeHub!",
+  "forMyTeam": "For My Team",
+  "teamSpirit1": "The only way to do great work is to love what you do. – Steve Jobs. Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+  "teamSpirit2": "It always seems impossible until it’s done. – Nelson Mandela. Coming together is a beginning, staying together is progress, and working together is success. – Henry Ford",
+  "teamSpirit3": "Believe you can and you're halfway there. – Theodore Roosevelt. Act as if what you do makes a difference. It does. – William James",
+  "teamSpirit4": "Don't watch the clock; do what it does. Keep going. – Sam Levenson",
+  "visionTitle": "Vision",
+  "visionContent": "Become the most complete and trusted motorcycle marketplace in Indonesia, connecting all motorcycle enthusiasts safely and easily.",
+  "missionTitle": "Mission",
+  "mission1Team": "Simplify the buying and selling process of motorcycles across Indonesia",
+  "mission2Team": "Provide safe, transparent, and fast features",
+  "mission3Team": "Build a solid and trusted motorcycle community",
+  "teamSpiritTitle": "Our Team Spirit",
+  "teamSpiritContent": "\"Together we are strong, together we move forward! Every member of Mogehub is part of the success. Spirit, collaboration, and creativity are our keys!\"",
+
+  
+  "totalActive": "Total Active",
+  "totalSuspended": "Total Suspended",
+
+  "searchUser": "Search user...",
+  
+  "suspended": "Suspended",
+
+  "tableNo": "No",
+  "tableUsername": "Username",
+  "tableEmail": "Email",
+  "tableLogin": "Login With",
+  "tableLastLogin": "Last Login",
+  "tableOnline": "Online",
+  "tableStatus": "Status",
+  "tableAction": "Action",
+
+  "manual": "Manual",
+
+  "online": "Online",
+  "offline": "Offline",
+  "userUnsuspended": "User has been unsuspended",
+
+  "suspend": "Suspend",
+  "unsuspend": "Unsuspend",
+
+
+  "adminAdsBannersApproval": "Admin Ads & Banners Approval",
+  
+  "seller": "Seller",
+  "categorySubcategory": "Category / Subcategory",
+  "media": "Media",
+  "status": "Status",
+  "action": "Action",
+  "pendingReview": "Pending Review",
+  "approve": "Approve",
+  "reject": "Reject",
+  "ad": "Ad",
+  "banner": "Banner",
+  "approved": "approved successfully",
+  "rejectReasonPrompt": "Enter the reason for rejection:",
+  "fetchAdsFailed": "Failed to fetch ads list",
+  "fetchBannersFailed": "Failed to fetch banners list",
+  "approveFailed": "Failed to approve",
+  "rejectFailed": "Failed to reject",
+  "rejectedLabel":"Rejected Media",
+
+
+   "tour": {
+    "step1": {
+      "title": "Welcome to Dashboard",
+      "desc": "Here you can start building your business by creating product ads and banners easily and quickly.",
+      "cta": "Go to the Product Ads or Banner Ads menu in the sidebar to get started."
+    },
+    "step2": {
+      "title": "Subscription Package",
+      "desc": "Upgrade your plan to post more than one ad, access premium features, and increase your reach.",
+      "cta": "Click the “Subscription” menu in the sidebar to view plans."
+    },
+    "step3": {
+      "title": "Boost Your Ads",
+      "desc": "After creating a product ad, you will see a Boost button. Click it to improve your ad performance and reach more users.",
+      "cta": "Create a product ad first to start boosting."
+    },
+    "step4": {
+      "title": "Verification Account",
+      "desc": "Get a blue verified badge to increase trust, credibility, and performance on the marketplace.",
+      "cta": "Go to the “Verification” menu in the sidebar to start the process."
+    },
+    "step5": {
+      "title": "Profile Settings",
+      "desc": "Manage your profile, change photo, email, and password to keep your account secure and updated.",
+      "cta": "Open “Profile Settings” in the sidebar to edit your account."
+    },
+    "skip": "Skip Tour",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish"
+  },
+
+  
+
+  "all_ads": "All Ads",
+  "filter": "Filter",
+  "searchProducts": "Search ads...",
+  "category": "Category",
+  "subcategory": "Subcategory",
+  "all": "All",
+  "highlight": "Highlight",
+  "regular": "Regular",
+  "allTypes": "All Types",
+  "reset": "Reset",
+  "user": "User",
+  "daysAgo": "days ago",
+  "hoursAgo": "hours ago",
+  "minutesAgo": "minutes ago",
+
+
+
+  "adminForum": "Admin Forum",
+  "adminForumThreads": "Admin Forum Threads",
+  "createThread": "Create Thread",
+  
+  "threadTitlePlaceholder": "Thread title",
+  
+  "selectCategoryOptional": "Select category (optional)",
+  "content": "Content",
+  "threadContentPlaceholder": "Write thread content...",
+  
+  "publish": "Publish",
+  "allCategories": "All categories",
+  "allTags": "All tags",
+  "noThreadsYet": "No threads yet",
+  "by": "by",
+  "unknown": "Unknown",
+  "editThread": "Edit Thread",
+  "editThreadContentPlaceholder": "Edit thread content...",
+  "save": "Save",
+  "titleAndContentRequired": "Title and content are required",
+  "failedFetchThreads": "Failed to fetch threads",
+  "failedFetchCategories": "Failed to fetch categories",
+  "failedFetchTags": "Failed to fetch tags",
+  "failedLoadForum": "Failed to load forum",
+  "failedCreateThread": "Failed to create thread",
+  "threadCreated": "Thread successfully created",
+  "failedUpdateThread": "Failed to update thread",
+  "threadUpdated": "Thread successfully updated",
+  "confirmDeleteThread": "Are you sure you want to delete this thread?",
+  "failedDeleteThread": "Failed to delete thread",
+
+  "apply": "Apply",
+
+  "searchDashboard": "Search dashboard...",
+
+  "usingDay": "Duration (Days)",
+  "durationDays": "Duration (Days)",
+  "durationRequired": "Duration is required",
+  "startDate":"Start Rent Date",
+  "endDate":"End Rent Date",
+  "license":"License",
+
+  "totalUsers": "Total User",
+  "totalAds": "Total Ads",
+  "verificationRequest": "VerificationRequest",
+  "adsRequest": "AdsRequest",
+  "threadsUser": "Forum",
+  "accountSettings": "Account Settings",
+  "blog": "Blog",
+  "welcomeAdmin": "Welcome Admin MogeHub",
+  "contentFor": "Content For",
+
+  "deleteAccount": "Delete Account",
+  "deleteAccountDesc": "Warning: Deleting your account will permanently remove all your activities, subscriptions, and content you’ve created. Once deleted, your username may become available for others to use. This action cannot be undone.",
+  "enterCode": "If you want to continue, please enter the following code to confirm",
+  "enterCodePlaceholder": "Enter code here",
+  "agreeTerms": "I agree to the MogeHub Privacy Policy and Terms of Service.",
+  "deleteAccountButton": "Delete Account",
+  "accountDeleted": "Account Deleted",
+  "accountDeletedDesc": "Your account and all data have been deleted.",
+  "tokenNotFound": "Token not found",
+  "invalidResponse": "Invalid response from server",
+  "deleteFailed": "Failed to delete account",
+  "somethingWentWrong": "Something went wrong while deleting your account",
+
+ 
+  "clearSearch": "Clear search",
+  "adsNotFound": "Ads not found",
+  "tryAnotherKeyword": "Try another keyword",
+
+  "safe_transaction": "Safe Transaction Tips",
+  "safe_tip_1": "Avoid paying before meeting the seller",
+  "safe_tip_2": "Meet in a public place for transactions",
+  "safe_tip_3": "Check seller profile and history",
+  "safe_tip_4": "Be cautious with prices that are too cheap",
+  "safe_tip_5": "Report suspicious listings to MogeHub",
+  "mogehub_warning": "MogeHub never asks for payments outside the platform.",
 
   "joinCommunity": "Join the community or post a Free Ad!",
   "signUpGoogle": "Sign up with Google",
+  "signUpFacebook":"Sign up with Facebook",
   "username": "Username",
   "usernamePlaceholder": "ex: Rendy Septino",
   "email": "Email",
   "emailPlaceholderReg": "email",
+  "fullNamePlaceholder": "ex: Rendy Septino",
   "phone": "Phone Number",
   "phonePlaceholder": "081234567890",
   "registerAs": "Register as",
-  "individual": "Individual",
+  "individual": "Individu",
   "dealer": "Dealer",
   "dealerName": "Dealer / Showroom Name",
   "enterDealerName": "Enter dealer name",
@@ -40,14 +394,14 @@
   "redirectingToLogin": "Redirecting you to login page",
 
   "forgotPasswordTitle": "Find Your Account",
-  "forgotPasswordDesc": "Enter your email so we can send you a new password.",
+  "forgotPasswordDesc": "Enter your email, and we'll send you a link to create a new password.",
   "sendNewPassword": "Send New Password",
   "cancel": "Cancel",
   "passwordResetSent": "Password reset link has been sent to your email",
 
   "resetPassword": "Reset Password",
   "resetPasswordDesc": "Enter a new password for your account.",
-  "newPassword": "New Password",
+  "newPassword": "Create New Password (for email login)",
   "newPasswordPlaceholder": "Enter new password",
   "confirmPassword": "Confirm Password",
   "confirmPasswordPlaceholder": "Re-enter new password",
@@ -56,8 +410,8 @@
 
   "ads": "Product Ads",
   "adsBanner": "Banner Ads",
-  "subscription": "Subscription Packages",
-  "verification": "Account Verification",
+  "subscription": "Subscription",
+  "verification": "Verification",
   "profileSettings": "Profile Settings",
   "manageProfileDesc": "Manage your account info and security settings",
   "changePhoto": "Change Photo",
@@ -68,8 +422,17 @@
   "saveChanges": "Save",
   "noChanges": "No changes made",
   "success": "Success",
+  "adDeleted":"Ad deleted",
+  "adDeletedDescription": "Your ad has been successfully deleted.",
+  "locationAds": "Location",
+  "dragMarker": "Type your city on the map (Search location), then drag the marker for a more precise address",
+  "errorDragMap": "Please drag the marker to specify your address",
+  "detailAddressMap": "Full Address",
+  "changeSpesificAddress": "You can edit this address if the map location isn’t precise",
+  "fillDetailAddress": "Please fill in your ad’s full address",
   "error": "Error",
   "info": "Info",
+  "login_to_view_location": "login to view location",
 
   "welcomeDashboard": "Welcome to MogeHub",
   "dashboardDesc": "This is the seller dashboard. Dashboard content will be displayed here.",
@@ -77,16 +440,21 @@
   "statsPlaceholder": "Placeholder for ads count, subscription packages, verification, etc.",
   "hello": "Hello",
   "openMenu": "Open Menu",
-  "darkMode": "Dark Mode",
-  "lightMode": "Light Mode",
+  "darkMode": "Dark Theme",
+  "lightMode": "Light Theme",
 
   "loginWith": "Login with",
   "lastLogin": "Last login",
 
+  "startDateLabel": "Start Date",
+  "endDateLabel": "End Date",
+  "useDateLabel": "Do you want to use date?",
+
   
   "failedLoadData": "Failed to load data",
   "wait": "Wait a minute",
-  "ktpRequired": "KTP / SIM is required",
+  "ktpRequired": "ID card / Driver’s License is required",
+  "productRequired": "Selfie with ID card / Driver's License is required",
   "failedSubmit": "Failed to submit verification",
   "verificationSent": "Verification data successfully sent, please check your email",
   "pending": "Pending",
@@ -94,15 +462,311 @@
   "rejected": "Rejected",
   "notVerified": "Not Verified",
   "accountVerification": "Account Verification",
-  "verificationDesc": "Upload KTP / SIM document, product example to advertise, and YouTube link (optional)",
+  "verificationDesc": "Get verified with a blue badge by uploading your ID card / driver’s license, ID selfie, and social media links (optional).",
   "verificationStatus": "Verification Status",
   "rejectionReason": "Rejection reason",
-  "ktpSim": "KTP / SIM *",
-  "productExample": "Product Example for Ads",
+  "ktpSim": "ID card / Driver’s License *",
+  "productExample": "Selfie with ID card / Driver’s License *",
   "removeFile": "Remove file",
   "addFile": "+ Add File",
   "socialLink": "Social Media Link (Optional)",
+  "socialLinkPlaceholder": "https://instagram.com/yourusername",
   "submitVerification": "Submit Verification",
+
+
+  "admin_forum_page_title": "Admin Forum – Mogehub",
+  "admin_forum_subtitle": "Discussions, Q&A, and sharing about the motorcycle world",
+  "admin_forum_create_thread": "Create Thread",
+
+  "admin_forum_all_categories": "All Categories",
+  "admin_forum_all_tags": "All Tags",
+
+  "admin_forum_edit_thread": "Edit Thread",
+  "admin_forum_new_thread": "New Thread",
+
+  "admin_forum_title": "Title",
+  "admin_forum_category": "Category",
+  "admin_forum_select_category": "Select category",
+
+  "admin_forum_content": "Content",
+
+  "admin_forum_tag": "Tag",
+  "admin_forum_add_tag": "Add tag",
+
+  "admin_forum_selected_tags": "Selected Tags",
+
+  "admin_forum_publish": "Publish",
+  "admin_forum_update_thread": "Update Thread",
+
+  "admin_forum_empty_title": "No threads yet",
+  "admin_forum_empty_description": "Create the first thread for this category",
+  "admin_forum_create_first_thread": "Create Thread Now",
+
+  "admin_forum_failed_load_forum": "Failed to load forum",
+  "admin_forum_title_content_required": "Title and content are required",
+  "admin_forum_failed_get_user_id": "Failed to get user ID",
+
+  "admin_forum_thread_created": "Thread created successfully",
+  "admin_forum_thread_updated": "Thread updated successfully",
+
+  "admin_forum_failed_submit_thread": "Failed to submit thread",
+
+  "admin_forum_delete_confirm": "Are you sure you want to delete this thread?",
+
+  "admin_forum_thread_deleted": "Thread deleted successfully",
+  "admin_forum_failed_delete_thread": "Failed to delete thread",
+
+  "admin_forum_failed_load_thread": "Failed to load thread",
+
+  "common_error": "Error",
+  "common_success": "Success",
+
+  "common_cancel": "Cancel",
+  "common_edit": "Edit",
+  "common_delete": "Delete",
+
+  "common_unknown": "Unknown",
+  "common_tag": "Tag",
+
+  "auth_login_required": "Please login first",
+
+ 
+  "accountSettingsDesc": "Manage your profile & preferences",
+
+
+  "maintenance_login_required": "Please login first!",
+
+  "maintenance_fetch_failed": "Failed to fetch maintenance",
+
+  "maintenance_required_fields": "All fields are required",
+
+  "maintenance_submit_failed": "Failed to submit maintenance",
+
+  "maintenance_created": "Maintenance created successfully",
+
+  "maintenance_updated": "Maintenance updated successfully",
+
+  "maintenance_delete_failed": "Failed to delete maintenance",
+
+  "maintenance_deleted": "Maintenance deleted",
+
+  "maintenance_page_title": "Maintenance Mode",
+
+  "maintenance_active_label": "Active Maintenance:",
+
+  "maintenance_title_placeholder": "Title",
+
+  "maintenance_start_label": "Maintenance Start",
+
+  "maintenance_start_placeholder": "Maintenance Start",
+
+  "maintenance_end_label": "Maintenance End",
+
+  "maintenance_end_placeholder": "Maintenance End",
+
+  "maintenance_create_button": "Create Maintenance",
+
+  "maintenance_update_button": "Update Maintenance",
+
+  "maintenance_list_title": "Maintenance List",
+
+  "common_active": "Active",
+
+  "common_admin_only": "Admin only",
+
+  "dashboard_fetch_failed": "Failed to fetch dashboard",
+
+  "dashboard_main_title": "MogeHub Statistics",
+
+  "dashboard_total_active_users": "Total Net Current Active Users",
+
+  "dashboard_total_historical_users": "Total Historical Users Register On MogeHub",
+
+  "dashboard_total_ads": "Total Ads (Product & Banner)",
+
+  "dashboard_total_boost_ads": "Total Boost Ads",
+
+  "dashboard_boost_overview": "Boost Package Overview",
+
+  "dashboard_active_boost_ads": "Active Boost Ads",
+
+  "revenueChart":"Revenue",
+
+  "dashboard_expired_boost_ads": "Expired Boost Ads",
+
+  "dashboard_revenue_breakdown": "Revenue Breakdown",
+
+  "dashboard_revenue_subscription": "Subscription Revenue",
+
+  "dashboard_revenue_boost": "Boost Revenue",
+
+  "dashboard_total_revenue": "Total Revenue",
+
+  "dashboard_ads_overview": "Ads Overview",
+
+  "dashboard_ads_product": "Product Ads",
+
+  "dashboard_ads_banner": "Banner Ads",
+
+  "dashboard_user_growth": "User Growth",
+
+  "dashboard_monthly_users": "User Register (this month)",
+
+  "dashboard_revenue_trend": "Revenue Trend",
+
+  "dashboard_subscription_packages": "Subscription Packages",
+
+  "dashboard_boost_packages": "Boost Packages",
+
+  "dashboard_top_forum_threads": "Top Forum Threads",
+
+  "dashboard_comments": "comments",
+
+  "dashboard_top_blog_posts": "Top Blog Posts",
+
+  "dashboard_created_label": "Created",
+
+  "dashboard_top_help_articles": "Top Help Center Articles",
+
+  "dashboard_boosted_ads_performance": "Boosted Ads Performance",
+
+  "dashboard_ad_label": "Ad",
+
+  "dashboard_user_label": "User",
+
+  "dashboard_impression": "Impression",
+
+  "dashboard_click": "Click",
+
+  "dashboard_seller_label": "Seller",
+
+
+
+  "admin_profile_not_found": "Loading...",
+
+  "admin_profile_title": "Admin Profile",
+  "admin_profile_subtitle": "Manage administrator account security",
+
+  "admin_profile_failed_load": "Failed to load admin profile",
+
+  "admin_profile_no_changes": "No changes detected",
+
+  "admin_profile_failed_update": "Failed to update profile",
+
+  "admin_profile_updated": "Admin profile updated successfully",
+
+  "admin_profile_invalid_format": "Unsupported format",
+  "admin_profile_invalid_format_desc": "Use PNG, JPG, or WEBP only",
+
+  "admin_profile_failed_remove_photo": "Failed to remove photo",
+
+  "admin_profile_photo_removed": "Profile photo removed successfully",
+
+  "admin_profile_administrator": "Administrator",
+
+  "admin_profile_change_photo": "Change photo",
+
+  "admin_profile_remove_avatar": "remove avatar",
+
+  "admin_profile_role": "Role",
+
+  "admin_profile_account_security": "Account Security",
+
+  "admin_profile_new_password": "New password",
+
+  "admin_profile_new_password_placeholder": "Enter new password",
+ "common_info": "Info",
+
+  "common_email": "Email",
+
+  "common_save": "Save",
+
+   "blog_admin_login_required": "User not authenticated. Please login first!",
+
+  "blog_admin_fetch_failed": "Failed to fetch blogs",
+
+  "blog_admin_required_fields": "All fields are required",
+
+  "blog_admin_create_failed": "Failed to create blog",
+
+  "blog_admin_created": "Blog created successfully",
+
+  "blog_admin_delete_failed": "Failed to delete blog",
+
+  "blog_admin_deleted": "Blog deleted",
+
+  "blog_admin_title": "Blog Management",
+
+  "blog_admin_title_placeholder": "Blog Title",
+
+  "blog_admin_excerpt_placeholder": "Excerpt (SEO description)",
+
+  "blog_admin_cover_placeholder": "Cover Image URL",
+
+  "blog_admin_preview_cover": "Preview Cover",
+
+  "blog_admin_invalid_image": "Invalid image or failed to load",
+
+  "blog_admin_create_button": "Publish Blog",
+
+  "blog_admin_list_title": "Blog List",
+
+
+  "info_ad_help_button": "Help",
+   "info_ad_help_title": "MogeHub Ad Information",
+  "info_ad_help_how_it_works": "What can be advertised?",
+
+  "info_ad_help_description_1": "On MogeHub, you can advertise various big bike and motorcycle-related needs including sport bikes, superbikes, touring motorcycles, spare parts, riding gear, accessories, apparel, as well as motorcycle-related services.",
+
+  "info_ad_help_description_2": "This includes showrooms, workshops, detailing, towing, modifications, maintenance services, custom parts, motorcycle rentals, communities, and many other related services.",
+
+  "info_ad_help_product_ad": "Motorcycle product & service ads",
+
+  "info_ad_help_banner_ad": "Promotional banners, events, launches, discounts, and business campaigns",
+
+  "info_ad_help_description_3": "In addition to regular ads, you can also use banner ads to increase brand visibility and reach more users across the platform.",
+
+  "info_ad_help_description_4": "Published product ads can also be boosted to appear at the top and gain higher exposure to potential buyers.",
+
+  "info_ad_help_description_5": "MogeHub also helps display ads based on nearby locations to make listings more relevant and easier for buyers to discover products or services around them.",
+  "info_ad_help_understand": "I Understand",
+
+
+  "notification_settings_fetch_failed": "Failed to fetch settings",
+
+  "notification_settings_login_required": "Token not found, please login first",
+
+  "notification_settings_update_failed": "Failed to update settings",
+
+  "notification_settings_saved": "Settings saved successfully",
+
+  "notification_settings_loading": "Loading settings...",
+
+  "notification_settings_title": "Notification Settings",
+
+  "notification_settings_subtitle": "Manage your notification sounds and preferences",
+
+  "notification_settings_enable_sound": "Enable Notification Sound",
+
+  "notification_settings_choose_sound": "Choose Sound",
+
+  "notification_settings_volume": "Volume",
+
+  "notification_settings_test_sound": "Test Sound",
+
+  "notification_settings_save": "Save Settings",
+
+  "notification_settings_preview": "Preview Notification",
+
+  "notification_settings_status": "Status",
+
+  "notification_settings_sound": "Sound",
+
+  "common_enabled": "Enabled",
+
+  "common_disabled": "Disabled",
+
+
 
   
   "subscriptionPackages": "Subscription Packages",
@@ -118,6 +782,7 @@
   "reviewPriority": "Review Priority",
   "fasterDisplay": "Ad Displayed Instantly",
   "upgradePackage": "Upgrade Package",
+  "downgradePackage":"Downgrade Package",
   "subscriptionHistory": "Subscription History",
   "close": "Close",
   "failedFetch": "Failed to fetch subscription",
@@ -126,7 +791,288 @@
   "upgradedTo": "Upgraded to",
   "forever": "Forever",
 
+  "payment_title": "Available Payment Methods",
+  "payment_subtitle": "Choose the payment method that best suits you. All transactions on Mogehub are processed automatically and protected with SSL encryption.",
+  "payment_channels": "Payment Channels",
+  "payment_selected": "Selected",
+  "payment_loading": "Loading payment methods...",
+  "payment_footer": "Payment methods may change at any time according to provider policies",
+  "payment_back": "Go Back",
+
+  "home": "Home",
+  "browse": "Browse",
+  "activity": "Activity",
+  "profile": "Profile",
+
+  "motorBaru": "New Motor",
+  "motorBekas": "Used Motor",
+
+  "motorYear":"Motorcycle Year",
+
+  "licenseIsRequired":"License is required",
+
+  "boostedAds": "Boosted Ads",
+  "viewAll": "View All",
+  "mostViewed": "Most Viewed",
+
+  "premiumProducts": "Premium Listings",
+  "freeProducts": "Recommended for You",
+  "viewAllForum": "View All Forum",
+  "latestForum": "Latest Forum",
+
+  "checkoutLoginTitle": "Login to continue checkout",
+
+  "loginGoogle": "Login or Register with Google",
+  "loginFacebook": "Login or Register with Facebook",
+  "accountNotFoundStay":"We couldn’t find your account. Please continue using social login.",
+
+  "loginButton": "Login & Continue",
+
+  "errorRequired": "This field is required",
+
+  "agreementText": "By continuing, you agree to",
+  "and": "and",
+
+  "termsLabel": "Terms & Conditions",
+  "privacyLabel": "Privacy Policy",
+
+
+  "ad_reports_title": "Ad Reports",
+
+  "ad_reports_search_placeholder": "Search...",
+
+  "ad_reports_filter_all": "All",
+  "ad_reports_filter_ads": "Ads",
+  "ad_reports_filter_banner": "Banner",
+
+  "ad_reports_status_pending": "Pending",
+  "ad_reports_status_resolved": "Resolved",
+  "ad_reports_status_ignored": "Ignored",
+  "ad_reports_status_unknown": "Unknown",
+
+  "ad_reports_label_type": "Type",
+  "ad_reports_label_user": "User",
+  "ad_reports_label_reason": "Reason",
+  "ad_reports_label_detail": "Detail",
+
   
+  "table_type": "Type",
+  "table_user": "User",
+  "table_target": "Target",
+  "table_reason": "Reason",
+  "table_detail": "Detail",
+  "table_evidence": "Evidence",
+  
+
+  "button_resolve": "Resolve",
+  "button_ignore": "Ignore",
+
+  
+  "toast_failed_update_report": "Failed update",
+  "toast_report_updated": "Updated",
+
+
+ "transaction_title": "💰 Transaction Dashboard",
+
+  "transaction_search_placeholder": "Search reference / customer",
+
+  "transaction_filter_all": "All",
+  "transaction_filter_pending": "Pending",
+  "transaction_filter_paid": "Paid",
+  "transaction_filter_expired": "Expired",
+
+  "transaction_label_reference": "Reference Number",
+  "transaction_label_buyer": "Buyer",
+  "transaction_label_created": "Created",
+  "transaction_label_expired": "Expired",
+
+  "transaction_status_paid": "PAID",
+  "transaction_status_pending": "PENDING",
+  "transaction_status_expired": "EXPIRED",
+
+  "transaction_toggle_hide_detail": "Hide Detail",
+  "transaction_toggle_view_detail": "View Detail",
+
+  "transaction_payment_method": "Method",
+  "transaction_payment_code": "Payment Code",
+  "transaction_amount_received": "Amount Received",
+
+  "transaction_fee_title": "Payment Gateway Fee",
+  "transaction_fee_merchant": "Paid by MogeHub",
+  "transaction_fee_customer": "Paid by Customer",
+  "transaction_fee_total": "Total",
+
+  "transaction_items": "Items",
+  "transaction_customer": "Customer",
+
+  "toast_error_title": "Error",
+
+   "no_ads_found": "No ads found",
+  "no_ads_found_desc": "Try searching with a different keyword",
+  "no_ads_for_keyword": "No ads found for \"{keyword}\"",
+  "no_ads_for_keyword_desc": "Try using a different or broader keyword",
+
+"user_role_title": "Manajemen User & Role",
+"user_add_button": "Add User",
+
+  "user_search_placeholder": "Search user...",
+  "user_input_username_placeholder": "Username",
+  "user_input_email_placeholder": "Email",
+  "user_input_password_placeholder": "Temporary Password",
+
+  "user_input_username_help": "Provide username for the user to be added",
+  "user_input_email_help": "Enter email of the user to be added",
+  "user_input_password_help": "Create a temporary password for the user",
+
+  "user_type_label": "User Type",
+
+  "role_user": "User",
+  "role_moderator": "Moderator",
+  "role_admin": "Admin",
+  "role_editor": "Editor",
+  "role_staff_verification": "Verification Staff",
+  "role_staff_ads": "Ads Staff",
+
+  "role_desc_user": "User will get login access to mogehub.com",
+  "role_desc_moderator": "Moderator can view admin dashboard but has limited edit and delete access on important pages",
+  "role_desc_editor": "Editor can manage most roles except admin and can create, edit, and delete important pages",
+  "role_desc_staff_verification": "Verification staff handles user account verification including approve and reject",
+  "role_desc_staff_ads": "Ads staff handles approval of advertisement requests from users",
+
+  "tooltip_admin_only": "Admin only",
+
+  "confirm_delete_user": "Are you sure you want to delete this user?",
+
+  "toast_fetch_failed_users": "Failed to fetch users",
+  "toast_required_fields": "Please fill all required fields",
+  "toast_invalid_role": "Invalid role selected",
+
+  "toast_user_created": "User created successfully",
+  "toast_user_updated": "User updated successfully",
+  "toast_user_deleted": "User deleted successfully",
+  "toast_request_failed": "Something went wrong",
+
+  "button_update": "Update",
+  "button_give_access": "Give Access",
+  "button_cancel": "Cancel",
+
+  
+  "table_role": "Role",
+  "table_actions": "Actions",
+
+  
+"verification_title": "Verification Requests",
+  "verification_session_expired": "Session expired, please login again",
+  "verification_fetch_error": "Failed to fetch verification data",
+  "verification_update_failed": "Failed to update status",
+
+  "verification_success": "Success",
+  "verification_approved_success": "Status successfully updated to approved",
+  "verification_rejected_success": "Status successfully updated to rejected",
+
+  "verification_reason_required": "Rejection reason is required",
+
+  "verification_requests": "Verification Requests",
+
+  "verification_filter_placeholder": "Filter Status",
+  "verification_search_placeholder": "Search Username / Email",
+
+  "status_pending": "Pending",
+  "status_verified": "Verified",
+  "status_rejected": "Rejected",
+  "status_not_verified": "Not Verified",
+
+  "table_no": "No",
+  "table_username": "Username",
+  "table_email": "Email",
+  "table_status": "Status",
+  "table_document": "KTP / ID Card",
+  "table_selfie": "KTP Selfie",
+  "table_social": "Social Media Link",
+  "table_action": "Action",
+
+  "action_view": "View",
+  "action_approve": "Approve",
+  "action_reject": "Reject",
+
+  "tooltip_role_only": "Admin / Editor / Verification Staff only",
+
+  "modal_document_title": "Document / File",
+  "modal_close": "Close",
+
+  "modal_reject_title": "Rejection Reason",
+  "modal_reject_placeholder": "Enter rejection reason",
+  "modal_reject_submit": "Submit Reject",
+  "modal_cancel": "Cancel",
+
+  
+
+
+  "adHistory": {
+    "title": "Ad History",
+    "empty": "No history available",
+    "status": {
+      "pending": "Under Review",
+      "rejected": "Rejected",
+      "active": "Active",
+      "inactive": "Inactive",
+      "expired": "Expired"
+    },
+    "type": {
+      "product": "Product Ad",
+      "banner": "Banner Ad"
+    },
+    "pagination": {
+      "prev": "Prev",
+      "next": "Next"
+    }
+  },
+
+
+  "wishlist_empty_description": "Save your favorite motorcycles, riding gear, spare parts, and premium listings to access them quickly anytime on MogeHub.",
+
+  "mogehubTitle": "MogeHub — Indonesia’s #1 Big Bike Platform",
+  "mogehubDescription": "MogeHub is an advertising and community forum platform for big bike enthusiasts in Indonesia. Users can easily sell, buy, and promote motorcycles, spare parts, and related services. It is also a place to discuss and share information among riders across Indonesia.",
+  "mogehubFeaturesTitle": "Features available on MogeHub",
+
+  "featureSearchTitle": "Search Feature",
+  "featureSearchDesc": "The search feature allows users to quickly and accurately find motorcycles, spare parts, and listings based on keywords, categories, price, and location.",
+
+  "featureFilterTitle": "Search Filter Feature",
+  "featureFilterDesc": "Users can filter search results by category, condition, price, and location to get more relevant results.",
+
+  "featureProductAdsTitle": "Product Advertising Feature",
+  "featureProductAdsDesc": "Users can easily create ads for motorcycles, spare parts, or services with images, descriptions, prices, and location details.",
+
+  "featureBannerAdsTitle": "Banner Ads Feature",
+  "featureBannerAdsDesc": "This feature allows users or brands to place banner ads on the homepage to reach a wider MogeHub audience.",
+
+  "featureSubscriptionTitle": "Subscription Package Feature",
+  "featureSubscriptionDesc": "MogeHub offers subscription packages that allow users to create more ads, from multiple posts to unlimited listings. This gives users more flexibility to grow their business or sales on the platform.",
+
+  "featureBoostTitle": "Boost Ads Feature",
+  "featureBoostDesc": "The Boost feature increases ad visibility so it appears at the top position and gains more attention from potential buyers. Boosted ads are prioritized for better transaction opportunities.",
+
+  "featureLocationTitle": "Nearby Location Feature",
+  "featureLocationDesc": "MogeHub displays ads based on user location, making products more relevant and geographically closer. This helps users find nearby items or motorcycles faster.",
+
+  "featureForumTitle": "Community Forum Feature",
+  "featureForumDesc": "The community forum allows users to discuss, share touring experiences, motorcycle reviews, and maintenance tips for big bikes.",
+
+  "featureFavoriteTitle": "Favorite Feature",
+  "featureFavoriteDesc": "Users can save ads or posts as favorites for easy access later.",
+
+  "featureTransactionTitle": "Direct Buyer & Seller Transaction",
+  "featureTransactionDesc": "MogeHub does not handle payments but connects buyers and sellers directly via phone or WhatsApp for faster and safer transactions.",
+
+  "desktopPreview":"Desktop Preview",
+   "mobilePreview":"Mobile Preview",
+
+  "invalidImageTitle": "Invalid Image",
+  "imageMinSize": "Minimum image size is 1200 x 275 px. You can resize the image using tools like Canva.",
+  "imageRatio": "Image ratio must be (1200 x 275 px) You can resize the image using tools like Canva.",
+  "imageInvalidGeneric": "Use minimum size 1200 x 275 px (horizontal banner)",
+
   "failedFetchMaster": "Failed to fetch master data.",
   "failedFetchBanners": "Failed to fetch banners.",
   "failedFetchHistory": "Failed to fetch history.",
@@ -138,24 +1084,625 @@
   "failedDeleteBanner": "Failed to delete banner.",
   "bannerDeleted": "Banner deleted successfully.",
   "editBanner": "Edit Banner",
-  "createBanner": "Create Banner",
-  "bannerInfo": "Upload banners carefully. Recommended size: 1080x300px.",
+  "createBanner": "Create Banner Ad",
+  "bannerInfo": "Upload banners carefully. Recommended size: 1200 x 275 px.",
   "selectParent": "Select Category",
   "selectSub": "Select Subcategory",
   "bannerTitle": "Banner Title",
   "selectCity": "Select City",
+  "bannerDescription": "Enter the details for this banner",
   "bannerLinkOptional": "Optional: Add link URL",
   "updateBanner": "Update Banner",
   "bannerList": "Banner List",
   "history": "History",
+  "bannerPhone": "WhatsApp Number",
   "noBanners": "No banners found.",
   "requiredField": "This field is required",
   "statusUpdated": "Status updated to",
   "inReview": "In Review",
   "rejectedByAdmin": "Rejected by admin:",
-  "failedUpdateStatus": "Failed to update banner status"
+  "failedUpdateStatus": "Failed to update banner status",
+  "terms": {
+    "title": "Terms & Conditions – MogeHub",
+    "lastUpdated": "Last updated: 27 February 2026",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "paragraphs": [
+          "These Terms and Conditions govern the use of the MogeHub platform, including community forum services and advertising services provided through MogeHub.",
+          "By accessing, registering, or using MogeHub, you agree to be legally bound by these Terms and Conditions.",
+          "If you do not agree with any part of these Terms, you must not use the MogeHub services."
+        ]
+      },
+      {
+        "title": "2. Definitions",
+        "paragraphs": [
+          "Platform refers to MogeHub.",
+          "User refers to any individual or legal entity accessing and using MogeHub.",
+          "Content refers to all information, text, images, links, videos, descriptions, advertisements, and other materials uploaded by Users.",
+          "Advertising Service refers to paid features that allow Users to promote products, services, and banners."
+        ]
+      },
+      {
+        "title": "3. User Eligibility",
+        "paragraphs": [
+          "MogeHub services are intended for users who are legally capable under applicable laws.",
+          "By using MogeHub, you represent that you have sufficient legal capacity under the laws of the Republic of Indonesia.",
+          "You are fully responsible for all activities conducted under your account."
+        ]
+      },
+      {
+        "title": "4. Account and Security",
+        "paragraphs": [
+          "Users must provide accurate and up-to-date information.",
+          "Users are responsible for maintaining the confidentiality of their accounts and credentials.",
+          "All activities under a user account are deemed to be conducted by the account owner."
+        ]
+      },
+      {
+        "title": "5. Community Forum Services",
+        "paragraphs": [
+          "MogeHub provides a community forum for discussions, experiences, and questions related to large motorcycles.",
+          "Users may upload text, image links, external links, and embedded videos.",
+          "MogeHub does not verify the accuracy or legality of user-generated content."
+        ]
+      },
+      {
+        "title": "6. Advertising Services",
+        "paragraphs": [
+          "MogeHub provides advertising services for products, services, and promotional banners.",
+          "Users must provide complete and accurate advertising information.",
+          "Users represent and warrant that the advertised products or services are real and valid.",
+          "Users confirm that they are the lawful owner or authorized representative of the advertised products or brands."
+        ]
+      },
+      {
+        "title": "7. Responsibility for Content and Advertisements",
+        "paragraphs": [
+          "All content uploaded by users is solely the responsibility of the respective users.",
+          "MogeHub is not responsible for the legality, accuracy, quality, or safety of any content or advertisements.",
+          "Users agree to indemnify and hold MogeHub harmless from any claims arising from their content or advertisements."
+        ]
+      },
+      {
+        "title": "8. Prohibited Content",
+        "paragraphs": [
+          "Users must not upload unlawful, abusive, hateful, pornographic, discriminatory, or harmful content.",
+          "Spam, unauthorized promotions, fraud, phishing, malware, and system abuse are strictly prohibited."
+        ]
+      },
+      {
+        "title": "9. Moderation and Enforcement",
+        "paragraphs": [
+          "MogeHub reserves the right to review, restrict, or remove content.",
+          "MogeHub may suspend or terminate accounts at its sole discretion."
+        ]
+      },
+      {
+        "title": "10. Content License",
+        "paragraphs": [
+          "By uploading content, users grant MogeHub a non-exclusive, royalty-free license to use and display such content for platform operations.",
+          "Users retain ownership of their content."
+        ]
+      },
+      {
+        "title": "11. Payments and Advertising Packages",
+        "paragraphs": [
+          "Advertising services are provided through quota-based packages.",
+          "Once payment is completed and advertising quotas are granted, payments are non-refundable.",
+          "Payments are processed through third-party payment gateways.",
+          "MogeHub is not responsible for failures of third-party payment systems."
+        ]
+      },
+      {
+        "title": "12. Relationship Between MogeHub and Users",
+        "paragraphs": [
+          "MogeHub does not act as a seller, agent, or representative of advertisers.",
+          "All transactions and communications between users are conducted at their own risk."
+        ]
+      },
+      {
+        "title": "13. Limitation of Liability",
+        "paragraphs": [
+          "MogeHub provides the service on an as-is basis.",
+          "MogeHub is not liable for any direct or indirect losses arising from the use of the platform."
+        ]
+      },
+      {
+        "title": "14. Indemnification",
+        "paragraphs": [
+          "Users agree to indemnify and hold MogeHub harmless from any claims, damages, or losses arising from violations of these Terms."
+        ]
+      },
+      {
+        "title": "15. Changes to Services and Terms",
+        "paragraphs": [
+          "MogeHub may modify these Terms at any time.",
+          "Changes will be effective upon publication on this page."
+        ]
+      },
+      {
+        "title": "16. Service Termination",
+        "paragraphs": [
+          "MogeHub may suspend or terminate services at any time without liability."
+        ]
+      },
+      {
+        "title": "17. Governing Law",
+        "paragraphs": [
+          "These Terms shall be governed by the laws of the Republic of Indonesia."
+        ]
+      },
+      {
+        "title": "18. Contact",
+        "paragraphs": [
+          "For questions regarding these Terms, users may contact MogeHub via an official email address to be announced."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "MogeHub Privacy Policy",
+    "lastUpdated": "Last updated: February 27, 2026",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "paragraphs": [
+          "This Privacy Policy explains how the operator of the MogeHub platform collects, uses, stores, processes, protects, and shares users' personal data.",
+          "By using MogeHub, you confirm that you have read, understood, and agreed to this Privacy Policy.",
+          "MogeHub is a large motorcycle (moge) community platform providing forum features and advertising services as its core feature."
+        ]
+      },
+      {
+        "title": "2. Platform Scope",
+        "paragraphs": [
+          "MogeHub provides a community forum for users to create threads, share experiences, ask questions, and interact using text, links, image links, and embedded YouTube videos.",
+          "MogeHub also provides advertising features for users to promote products, services, promotions, and banners."
+        ]
+      },
+      {
+        "title": "3. Data We Collect",
+        "paragraphs": [
+          "User identity data such as name, username, email address, and profile information.",
+          "User activity data including forum posts, comments, interactions, and feature usage.",
+          "User-generated content including text, links, images, embedded videos, and advertising materials.",
+          "Transaction data related to advertising package purchases.",
+          "Technical data such as IP address, device information, browser type, operating system, logs, cookies, and similar technologies."
+        ]
+      },
+      {
+        "title": "4. How We Collect Data",
+        "paragraphs": [
+          "Data is collected directly from users during registration, profile completion, content creation, advertising submission, and platform usage.",
+          "Data may also be collected automatically through system logs, cookies, and similar technologies."
+        ]
+      },
+      {
+        "title": "5. Purpose of Data Usage",
+        "paragraphs": [
+          "To operate, manage, maintain, and improve the MogeHub platform.",
+          "To display and manage forum content and advertisements.",
+          "To process advertising package transactions through third-party services.",
+          "To maintain security, prevent abuse, fraud, and policy violations.",
+          "To communicate important information related to the platform."
+        ]
+      },
+      {
+        "title": "6. Legal Basis for Processing",
+        "paragraphs": [
+          "Data is processed based on user consent, contractual necessity, legal obligations, and the legitimate interests of MogeHub."
+        ]
+      },
+      {
+        "title": "7. Data Retention",
+        "paragraphs": [
+          "User data is retained as long as the account remains active or as required for operational purposes.",
+          "Certain data may be retained longer if required by applicable laws."
+        ]
+      },
+      {
+        "title": "8. Data Security",
+        "paragraphs": [
+          "MogeHub implements reasonable technical and organizational measures to protect user data.",
+          "However, no electronic system can be guaranteed to be fully secure."
+        ]
+      },
+      {
+        "title": "9. Data Sharing with Third Parties",
+        "paragraphs": [
+          "MogeHub may share data with third-party service providers such as payment gateways, hosting providers, and infrastructure partners.",
+          "MogeHub does not sell personal data to any third party.",
+          "Data is shared only as necessary for operational purposes."
+        ]
+      },
+      {
+        "title": "10. Payment Gateway and Third Parties",
+        "paragraphs": [
+          "Advertising package transactions are processed through third-party payment service providers.",
+          "MogeHub is not a financial service provider.",
+          "The privacy policies of such providers apply to their respective data processing."
+        ]
+      },
+      {
+        "title": "11. User-Generated Content",
+        "paragraphs": [
+          "All user-generated content remains the sole responsibility of the user.",
+          "MogeHub only acts as a platform provider and does not guarantee the accuracy or legality of user content.",
+          "MogeHub may store, display, and process user content as necessary to operate the service."
+        ]
+      },
+      {
+        "title": "12. User Rights",
+        "paragraphs": [
+          "Users have the right to access and update their personal data through their account.",
+          "Users may request account deletion in accordance with platform policies and applicable laws.",
+          "Certain requests may be denied where legally required."
+        ]
+      },
+      {
+        "title": "13. Minimum Age",
+        "paragraphs": [
+          "MogeHub is intended only for users who are at least 17 years old.",
+          "By using the platform, users confirm that they meet the minimum age requirement."
+        ]
+      },
+      {
+        "title": "14. Data Storage and Transfer",
+        "paragraphs": [
+          "User data may be stored and processed on servers located inside or outside Indonesia in accordance with applicable regulations."
+        ]
+      },
+      {
+        "title": "15. Changes to This Policy",
+        "paragraphs": [
+          "MogeHub may update this Privacy Policy from time to time.",
+          "Updates will be announced through the platform and become effective immediately."
+        ]
+      },
+      {
+        "title": "16. Contact Us",
+        "paragraphs": [
+          "If you have any questions regarding this Privacy Policy, please contact us at: support@mogehub.com"
+        ]
+      },
+      {
+        "title": "17. Governing Law",
+        "paragraphs": [
+          "This Privacy Policy shall be governed by and interpreted in accordance with the laws of the Republic of Indonesia."
+        ]
+      }
+    ]
+  },
+  "footer": {
+  "description": "A big motorcycle (moge) community platform to share experiences, discussions, and promote products and services to the MogeHub community.",
+  "legal": "Legal",
+  "terms": "Terms & Conditions",
+  "privacy": "Privacy Policy",
+  "rights": "All rights reserved.",
+  "tagline": "Built for the big motorcycle community in Indonesia.",
+  "PaymentMethods":"Payment Methods",
+  "about":"About MogeHub",
+  "helpCenter":"Help Center"
+},
+"notSignedIn": {
+    "title": "You are not signed in",
+    "subtitle": "See your profile and content by logging in",
+    "login": "Login",
+    "signup": "Sign Up",
+    "language": "Language",
+    "helpLegal": "Help & Legal",
+    "privacy": "Privacy",
+    "terms": "Terms & Conditions",
+    "subscriptions": "Subscriptions"
+  },
+  "infoAdHeroTitle": "Post your motorcycle ads on MogeHub",
+  "infoAdHeroSubtitle": "Post for free, reach the right motorcycle community, and increase your chances of selling faster.",
+  "postAdNow": "Post ad now",
+  "seeExampleAds": "See example ads",
+  "exampleAds": "Example ads on MogeHub",
+  "exampleAdsDesc": "No ads yet? Don't worry, this is just a preview of free and paid ad layouts.",
+  "adBenefits": "Why post ads on MogeHub?",
+  "benefit1": "Free ad posting",
+  "benefit1Desc": "Start selling your motorcycle at no cost.",
+  "benefit2": "Targeted community",
+  "benefit2Desc": "Visitors are motorcycle enthusiasts.",
+  "benefit3": "Professional display",
+  "benefit3Desc": "Your ad looks neat and easy to see.",
+  "benefit4": "Upgrade to Premium",
+  "benefit4Desc": "Ad will appear in premium listing.",
+  "readyToPostAd": "Ready to post your ad?",
+  "readyToPostAdDesc": "Log in to your dashboard and start posting your first ad.",
+  "adTips": "Tips to get your ad noticed quickly",
+  "tip1": "Use clear photos",
+  "tip1Desc": "Take photos of your motorcycle from multiple angles with good lighting.",
+  "tip2": "Honest and short title",
+  "tip2Desc": "Include the bike model, year, and main condition.",
+  "tip3": "Realistic pricing",
+  "tip3Desc": "Compare with other ads to attract interest quickly.",
+  "footerHelp": "Help",
+  "footerTerms": "Terms & Conditions",
+  "footerPrivacy": "Privacy Policy",
+  "helpCenter": "Help Center",
+  "searchHelp": "Search help...",
+  "noArticles": "No articles found",
+  "helpBack": "Back to Help Center",
+  "helpArticleNotFound": "Article not found",
+  "helpArticleFeedback": "Was this article helpful?",
+  "helpYes": "Yes",
+  "helpNo": "No",
+  "subscriptionHeroTitle": "Choose Your Subscription",
+  "subscriptionHeroSubtitle": "Select the plan that fits you best and enjoy exclusive benefits.",
+  "newsTickerItem": "Latest Update",
+  "subscriptionCTA": "Ready to Upgrade Your Plan?",
+  "subscriptionCTADesc": "Get access to all premium features and content by upgrading now.",
+  "startFree": "Start Free",
+  "upgradeNow": "Upgrade Now",
+   "aboutHeroTitle": "About MogeHub",
+  "aboutHeroDesc": "MogeHub is a digital community platform built specifically for big motorcycle enthusiasts. A place where riders can discuss, share experiences, and promote products or services within the community.",
 
+  
+  "learnMore": "Learn More",
 
+  "ourStory": "Our Story",
+  "ourStoryDesc": "MogeHub started with a simple idea: creating an online space where big motorcycle enthusiasts can gather in one community. Many riders struggle to find a single platform where they can discuss motorcycles, share experiences, and promote products related to the motorcycle world. MogeHub aims to build an active, open, and supportive community for riders.",
 
+  "whatYouCanDo": "What You Can Do on MogeHub",
+
+  "feature1Title": "Community Forum",
+  "feature1Desc": "Join discussions with fellow riders and share experiences about big motorcycles.",
+
+  "feature2Title": "Promote Your Products",
+  "feature2Desc": "Members can promote products, services, or businesses related to the motorcycle world.",
+
+  "feature3Title": "Connect With Riders",
+  "feature3Desc": "Meet new people who share the same passion for motorcycles.",
+
+  "feature4Title": "Share Knowledge",
+  "feature4Desc": "Share riding tips, experiences, and motorcycle maintenance knowledge with the community.",
+
+  "ourVision": "Our Vision",
+  "visionDesc": "To become the leading digital community platform for big motorcycle enthusiasts.",
+
+  "ourMission": "Our Mission",
+
+  "mission1": "Build a strong and supportive rider community.",
+  "mission2": "Encourage open discussions and knowledge sharing about motorcycles.",
+  "mission3": "Provide space for members to promote their products and services.",
+  "mission4": "Continuously develop the platform based on community needs.",
+
+  "communityFirst": "Community Comes First",
+  "communityDesc": "MogeHub is built on one main principle: community comes first. The platform is designed to encourage healthy discussions, collaboration, and mutual support among motorcycle enthusiasts.",
+
+  "futureTitle": "The Future of MogeHub",
+  "futureDesc": "As the platform grows, MogeHub will continue introducing new features that help riders connect, share experiences, and promote their passion within the motorcycle community.",
+
+  "readyJoin": "Ready to Join the Community?",
+  "readyJoinDesc": "Become part of a growing network of big motorcycle enthusiasts.",
+  "joinMogehub": "Join MogeHub",
+  "exploreForum": "Explore Forum",
+  
+    
+    "failedSaveAd": "Failed to save ad",
+    "adUpdated": "Ad updated successfully",
+    "adCreated": "Ad created successfully",
+    "waitingAdminReview": "Waiting for admin review",
+    "failedDeleteAd": "Failed to delete ad",
+    "confirmDeleteAd": "Are you sure you want to delete this ad?",
+    
+    "createNewAd": "Create New Product Ad",
+    "editAd": "Edit Ad",
+    "basicPackageNotice": "Notice: Ads in the Basic package will be reviewed before being published.",
+    "selectCategory": "Select Category",
+    "categoryRequired": "Category is required",
+    "selectSubcategory": "Select Subcategory",
+    "subcategoryRequired": "Subcategory is required",
+    "motorCC": "Engine capacity (CC)",
+    "ccMin": "Minimum CC is 500",
+    "title": "Ad Title",
+    "Forumtitle":"Forum Thread Title",
+    "titleRequired": "Ad title is required",
+    "description": "Ad Description",
+    "descriptionRequired": "Ad description is required",
+    "type": "Type",
+    "typeRequired": "Type is required",
+    "uploadImages": "Upload Multiple Ad Images",
+    "sell": "Sell",
+    "rent": "Rent",
+    "price": "Price",
+    "priceRequired": "Price is required",
+    
+    "cityRequired": "City is required",
+    "rentalStartRequired": "Rental start date is required",
+    "rentalEndRequired": "Rental end date is required",
+    "youtubeLinkPlaceholder": "YouTube link (optional)",
+    "faqOptional": "FAQ for this Ad (Optional)",
+    "addFaq": "Add FAQ",
+    "noFaq": "No FAQ yet",
+    "faq": "FAQ",
+    "question": "Question",
+    "answer": "Answer",
+    "deleteFaq": "Delete FAQ",
+    "add": "Add",
+    "remove": "Remove",
+    "minOneImage": "At least 1 image must be uploaded",
+    "createAd": "Create Ad",
+    "updateAd": "Update Ad",
+    "adsList": "Ads List",
+    
+    "noAdsYet": "No ads yet",
+    "edit": "Edit",
+    "delete": "Delete",
+    "adPendingReview": "Ad is pending admin review",
+    "clickPencilToResubmit": "Click pencil icon to resubmit",
+
+    "titleHelpSubscription": "Subscription Plan Info",
+  "section_title_help_subscription": "What you get",
+  "understood_button": "I Understand",
+  "floating_help": "Help",
+
+  "wishlist_login_required": "Login required",
+  "wishlist_login_desc": "Please login to save to wishlist",
+  "wishlist_added": "Added to wishlist",
+  "wishlist_removed": "Removed from wishlist",
+  "wishlist_error": "Something went wrong",
+  "wishlist_button": "Wishlist",
+
+  "wishlist_page_title": "Wishlist Ads",
+  "wishlist_empty_title": "No wishlist yet",
+  "wishlist_empty_button": "Search Ads",
+
+  "pagination_prev": "Previous",
+  "pagination_next": "Next",
+  "pagination_page": "Page",
+
+  "wishlist_remove_button": "Remove from wishlist",
+
+  "choosePackage":"Choose Package",
+
+   "checkout_title": "Subscription Checkout",
+
+  "checkout_payment_required": "Please select a payment method first",
+
+  "checkout_phone_required": "Phone number is required",
+  "checkout_phone_required_desc": "Please enter an active WhatsApp/phone number",
+
+  "checkout_phone_invalid": "Invalid phone number format",
+  "checkout_phone_invalid_desc": "Example: 08123456789 or +628123456789",
+
+  "checkout_server_not_json": "Server did not return valid JSON",
+  "checkout_failed": "Checkout failed",
+  "checkout_reference_not_found": "Reference number not found",
+
+  "checkout_recommended": "Recommended",
+  "checkout_free": "Free",
+
+  "checkout_user_info": "Buyer Information",
+  "checkout_username": "Username",
+  "checkout_email": "Email",
+
+  "checkout_phone_label": "Phone Number",
+  "checkout_phone_placeholder": "Enter your phone number",
+
+  "checkout_payment_title": "Choose Payment Method & Continue",
+
+  "checkout_secure": "Secure SSL Encrypted",
+  "checkout_secure_desc": "Your payment information is protected and encrypted",
+
+  "checkout_confirm": "Confirm Purchase",
+  "checkout_cancel": "Cancel",
+
+  "checkout_subscription_item": "Subscription",
+
+  "support_ticket": {
+    "title": "Support Ticket",
+    "choose_subject": "Choose Subject",
+    "select_subject": "Select Subject",
+    "custom_subject_placeholder": "What is your question about?",
+    "priority_label": "Priority Issue",
+    "message_placeholder": "Describe your issue...",
+    "choose_file": "Choose File",
+    "create_ticket": "Create Ticket",
+    "send": "Send",
+    "select_ticket": "Select ticket",
+    "reference_help": "Please check the Transactions menu in the sidebar to find the reference number you need to enter.",
+
+     "validation": {
+    "subject_required": "Please select a subject",
+    "reference_required": "Please enter reference number",
+     "message_required": "Please describe your issue"
+  },
+  "reference_placeholder": "Enter reference number",
+
+    "toast": {
+      "success_create": "Ticket created successfully",
+      "error_create": "Failed to create ticket"
+    },
+
+    "subject_options": {
+      "payment": "Payment",
+      "product_ads": "Product Ads",
+      "banner_ads": "Banner Ads",
+      "subscription": "Subscription Package",
+      "boost": "Boost Package",
+      "others": "Others"
+    },
+
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    }
+  },
+
+  "bannerNotFound": "Banner not found",
+  "goBack": "Go Back",
+  "visitLink": "Visit Link",
+  "descriptionLabel": "Description",
+  "cityLabel": "City",
+  "categoryLabel": "Category",
+  "subcategoryLabel": "Subcategory",
+  "viewsLabel": "Views",
+  
+  "sellerInfo": "Seller Info",
+  "usernameLabel": "Username",
+  "verifiedLabel": "Verification Status",
+  "yesVerified": "Verified",
+  "noVerified": "Unverified",
+  
+  "bannerHelpTitle": "Promotion Banner Information",
+  "bannerHelpSubtitle": "How Banner Ads work in MogeHub",
+  "bannerHelpDesc": "Banner Ads is a promotional feature that allows you to display promo ads, events, or services on the MogeHub homepage.\n\nYou can also use this banner for:\n- Product or service promotion\n- Special events / campaigns\n- Discounts or limited-time offers\n\nWhen creating a banner, you can set:\n• A category that matches your promo type\n• A subcategory that corresponds to the category you selected earlier\n• The banner title you want to promote\n• A complete description of the banner information to be displayed\n• The start and end date of the promotion\n• The city where your promo, event, or service is taking place\n• A destination link if you want users to see more details about your promo or event (website / marketplace / WhatsApp / product details)\n\nMake sure to upload the banner with the recommended size.",
+  
+"bannerPreview": "Preview",
+  "mytransactions": "Transactions",
+
+  "transactions": {
+  "title": "My Transactions",
+  "search_placeholder": "Search reference number",
+  "filter_all": "All",
+  "filter_pending": "Pending",
+  "filter_paid": "Paid",
+  "filter_expired": "Expired",
+  "view_detail": "View Detail",
+  "hide_detail": "Hide Detail",
+  "payment_method": "Payment Method",
+  "items": "Items",
+  "Badgeempty":"No purchases yet",
+  "empty": "Your purchase transactions will appear here",
+  "reference_label": "Reference Number",
+  "created_at_label": "Created At",
+  "customer": "Customer",
+  "open_payment": "Open Payment App",
+  "no_data": "No data available",
+   "payment": {
+      "bank_label": "Virtual Account",
+      "va_number": "VA Number",
+      "wallet_label": "E-Wallet",
+      "retail_label": "Retail Payment",
+      "payment_code": "Payment Code",
+      "qr_label": "QR Payment",
+      "default_label": "Payment"
+    },
+  "status": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "expired": "Expired"
+    }
+},
+
+    "subscription_help": {
+  "description_paragraphs": [
+    "When you first register or join MogeHub, you will automatically receive a Basic plan for FREE permanently.",
+    "With the Basic plan, you can create 1 product ad and 1 banner ad. You can post more ads by upgrading to a subscription plan. The ad quota depends on the package details.",
+    "The higher the plan you choose, the more ads you can post on MogeHub. With paid plans, your ads will also appear instantly after being created.",
+    "If your paid plan expires and is not renewed, your account will automatically revert to the Basic plan without losing any account data. You can upgrade again at any time."
+  ]
+}
 
 }
+
+
+
+
+
+

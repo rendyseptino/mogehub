@@ -3,9 +3,11 @@
 const nextConfig = {
   reactCompiler: true,
   reactStrictMode: true,
-  output: 'export',       // wajib biar next export jalan
-  trailingSlash: true     // optional, biar URL /about/ bukan /about.html
+  output: undefined,
+  trailingSlash: true,
+  images: {
+    qualities: [75, 100],
+  },
 };
 
-// ESM export
 export default nextConfig;

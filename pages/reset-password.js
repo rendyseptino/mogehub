@@ -21,7 +21,7 @@ export default function ResetPassword() {
   const { colorMode } = useColorMode();
   const { t } = useLanguage();
   const router = useRouter();
-  const { token } = router.query; // ambil token dari query
+  const { token } = router.query;
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -33,6 +33,12 @@ export default function ResetPassword() {
     colorMode === "light"
       ? "/mogehubmasterlight.png"
       : "/mogehubmasterdark.png";
+
+  const pageBg = colorMode === "light" ? "gray.50" : "gray.900";
+  const cardBg = colorMode === "light" ? "white" : "gray.800";
+
+  const inputBgDesktop =
+    colorMode === "light" ? "gray.100" : "gray.700";
 
   const handleReset = async () => {
     setFieldError("");
@@ -51,11 +57,14 @@ export default function ResetPassword() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, password }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token, password }),
+        }
+      );
 
       const data = await res.json();
 
@@ -78,7 +87,7 @@ export default function ResetPassword() {
   };
 
   return (
-    <Box minH="100vh" bg={colorMode === "light" ? "gray.50" : "gray.900"}>
+    <Box minH="100vh" bg={pageBg}>
       {/* NAVBAR */}
       <Flex
         w="100%"
@@ -89,7 +98,12 @@ export default function ResetPassword() {
         bg={colorMode === "light" ? "white" : "gray.800"}
         boxShadow="md"
       >
-        <Image src={logoSrc} alt="Logo" h={{ base: "40px", md: "50px" }} objectFit="contain" />
+        <Image
+          src={logoSrc}
+          alt="Logo"
+          h={{ base: "40px", md: "50px" }}
+          objectFit="contain"
+        />
       </Flex>
 
       {/* CONTENT */}
@@ -97,18 +111,18 @@ export default function ResetPassword() {
         minH="calc(100vh - 80px)"
         justify="center"
         align="flex-start"
-        pt={{ base: 14, md: 32 }}
-        px={{ base: 4, md: 12 }}
+        pt={{ base: 14, lg: 32 }}
+        px={{ base: 4, lg: 12 }}
       >
         <Box
-          w={{ base: "100%", md: "450px" }}
-          bg={colorMode === "light" ? "white" : "gray.800"}
-          p={8}
-          borderRadius="xl"
-          shadow="lg"
+          w={{ base: "100%", lg: "450px" }}
+          bg={{ base: "transparent", lg: cardBg }}
+          p={{ base: 0, lg: 8 }}
+          borderRadius={{ base: "none", lg: "xl" }}
+          boxShadow={{ base: "none", lg: "lg" }}
         >
           <Heading
-            fontSize={{ base: "2xl", md: "3xl" }}
+            fontSize={{ base: "2xl", lg: "3xl" }}
             mb={2}
             color={colorMode === "light" ? "black" : "white"}
           >
@@ -121,6 +135,7 @@ export default function ResetPassword() {
             <FormLabel color={colorMode === "light" ? "black" : "white"}>
               {t.newPassword}
             </FormLabel>
+
             <Input
               placeholder={t.newPasswordPlaceholder}
               type="password"
@@ -130,8 +145,10 @@ export default function ResetPassword() {
                 setFieldError("");
               }}
               borderRadius="md"
-              bg={colorMode === "light" ? "gray.100" : "gray.700"}
-              _placeholder={{ color: colorMode === "light" ? "gray.500" : "gray.300" }}
+              bg={{ base: "transparent", lg: inputBgDesktop }}
+              _placeholder={{
+                color: colorMode === "light" ? "gray.500" : "gray.300",
+              }}
               _focus={{ borderColor: "brand.500" }}
               mb={4}
             />
@@ -139,6 +156,7 @@ export default function ResetPassword() {
             <FormLabel color={colorMode === "light" ? "black" : "white"}>
               {t.confirmPassword}
             </FormLabel>
+
             <Input
               placeholder={t.confirmPasswordPlaceholder}
               type="password"
@@ -148,11 +166,14 @@ export default function ResetPassword() {
                 setFieldError("");
               }}
               borderRadius="md"
-              bg={colorMode === "light" ? "gray.100" : "gray.700"}
-              _placeholder={{ color: colorMode === "light" ? "gray.500" : "gray.300" }}
+              bg={{ base: "transparent", lg: inputBgDesktop }}
+              _placeholder={{
+                color: colorMode === "light" ? "gray.500" : "gray.300",
+              }}
               _focus={{ borderColor: "brand.500" }}
               mb={4}
             />
+
             <FormErrorMessage>{fieldError}</FormErrorMessage>
           </FormControl>
 
@@ -164,7 +185,12 @@ export default function ResetPassword() {
 
           <Flex gap={4}>
             <Link href="/login" passHref>
-              <Button flex={1} bg="gray.400" color="white" _hover={{ bg: "gray.500" }}>
+              <Button
+                flex={1}
+                bg="gray.400"
+                color="white"
+                _hover={{ bg: "gray.500" }}
+              >
                 {t.cancel}
               </Button>
             </Link>

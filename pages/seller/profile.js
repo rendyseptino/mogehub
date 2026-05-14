@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Box,
   Flex,
@@ -10,6 +12,9 @@ import {
   Avatar,
   IconButton,
   useColorMode,
+  InputGroup,
+  InputRightElement,
+  Icon,
   useToast,
   Spinner,
   Divider,
@@ -18,24 +23,31 @@ import {
   Select,
 } from "@chakra-ui/react";
 import { SmallCloseIcon, EditIcon } from "@chakra-ui/icons";
+import { IoIosCheckmarkCircle } from "react-icons/io";
+import { CgUnavailable } from "react-icons/cg";
 import { useState, useEffect, useRef } from "react";
 
 // ==== IMPORT LOGIN INFO COMPONENT ====
 import LoginInfo from "../../components/LoginInfo";
+import VerifiedBadge from "../../components/VerifiedBadge";
 
 // ================= IMPORT LANGUAGE CONTEXT =================
 import { useLanguageContext } from "../../context/LanguageContext";
+
+import { useUser } from "../../context/UserContext";
 import en from "../../locales/en.json";
 import id from "../../locales/id.json";
 const translations = { en, id };
 
-export default function Profile({ onUserUpdate }) {
+export default function Profile() {
   const { colorMode } = useColorMode();
+  
   const toast = useToast();
-
-  // ================= USE LANGUAGE CONTEXT =================
   const { language } = useLanguageContext();
   const t = translations[language] || translations.id;
+
+  
+  const { user: contextUser, login: updateUserContext } = useUser();
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -44,14 +56,25 @@ export default function Profile({ onUserUpdate }) {
   const [avatar, setAvatar] = useState(null);
   const [updating, setUpdating] = useState(false);
 
-  const [type, setType] = useState(""); 
-  const [tempDealerName, setTempDealerName] = useState(""); 
-  const [showDealerInput, setShowDealerInput] = useState(false); 
+  
 
-  const backendUrl = process.env.NEXT_PUBLIC_API_URL; // backend local
-  const s3BucketUrl = "https://mogehub-uploads.s3.ap-southeast-1.amazonaws.com"; // S3 public URL
+  const [type, setType] = useState("");
+  const [tempDealerName, setTempDealerName] = useState("");
+  const [showDealerInput, setShowDealerInput] = useState(false);
+
+
+  // ==================== LIVE CHECK USERNAME STATE ====================
+  const [editingUsername, setEditingUsername] = useState(false);
+  const [usernameInput, setUsernameInput] = useState("");
+  const [usernameStatus, setUsernameStatus] = useState(null); // "checking", "available", "taken"
+  const usernameInputRef = useRef(null);  // Ref ke input username
+  const [hasEditedUsername, setHasEditedUsername] = useState(false); // Cek user udah mulai ketik
+
+  const backendUrl = process.env.NEXT_PUBLIC_API_URL;
   const [storedUser, setStoredUser] = useState(null);
   const fileInputRef = useRef(null);
+
+  
 
   // ================= INIT LOCAL STORAGE =================
   useEffect(() => {
@@ -61,61 +84,81 @@ export default function Profile({ onUserUpdate }) {
     }
   }, []);
 
+
+  
+
   // ================= FETCH USER =================
+useEffect(() => {
+  if (!storedUser?.id) return;
+
+  async function fetchUser() {
+    try {
+      const res = await fetch(`${backendUrl}/seller/profile`, {
+        headers: { "x-user-id": storedUser.id },
+      });
+      if (!res.ok) throw new Error(t.error);
+      const data = await res.json();
+
+      // ===== SET STATE LOKAL =====
+      setUser(data);
+      setPhone(data.phone || "");
+      setType(data.type || "individual");
+      if (data.type === "dealer" && !data.dealerName) setShowDealerInput(true);
+      if (typeof window !== "undefined") setAvatar(data.profilePhoto || null);
+
+      // sync usernameInput
+      if (data.username) setUsernameInput(data.username);
+
+    } catch (err) {
+      console.error("Error fetching user:", err);
+      toast({
+        title: t.error,
+        description: t.userDataNotFound,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  fetchUser();
+}, [storedUser, toast, t, backendUrl]);
+
+
+
+  // ===== VERIFICATION STATE =====
+  const [verification, setVerification] = useState(null);
   useEffect(() => {
     if (!storedUser?.id) return;
 
-    async function fetchUser() {
+    async function fetchVerification() {
       try {
-        const res = await fetch(`${backendUrl}/seller/profile`, {
+        const res = await fetch(`${backendUrl}/seller/verification`, {
           headers: { "x-user-id": storedUser.id },
         });
-
-        if (!res.ok) throw new Error(t.error);
+        if (!res.ok) throw new Error("Failed to fetch verification");
         const data = await res.json();
-
-        setUser(data);
-        setPhone(data.phone || "");
-        setType(data.type || "individual");
-
-        if (data.type === "dealer" && !data.dealerName) setShowDealerInput(true);
-
-        // 🔹 Sesuaikan avatar untuk S3
-        if (data.profilePhoto) {
-          if (data.profilePhoto.startsWith("s3://")) {
-            const path = data.profilePhoto.replace(/^s3:\/\/[^/]+/, "");
-            setAvatar(`${s3BucketUrl}${path}`);
-          } else if (data.profilePhoto.startsWith("/uploads")) {
-            setAvatar(`${backendUrl}${data.profilePhoto}`);
-          } else {
-            setAvatar(data.profilePhoto);
-          }
-        } else {
-          setAvatar(null);
-        }
-
+        setVerification(data);
       } catch (err) {
         console.error(err);
-        toast({
-          title: t.error,
-          description: t.userDataNotFound,
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        });
-      } finally {
-        setLoading(false);
       }
     }
 
-    fetchUser();
-  }, [storedUser, toast, t]);
+    fetchVerification();
+  }, [storedUser?.id]);
 
   // ===== HELPER AVATAR =====
-  const getAvatarSrc = (user, avatar) => {
-    if (!user) return undefined;
-    if (avatar instanceof File) return URL.createObjectURL(avatar);
-    return avatar || undefined; 
+  const getAvatarSrc = (avatar) => {
+    if (!avatar) return undefined;
+    if (avatar instanceof File && avatar.type.startsWith("image/")) {
+      return URL.createObjectURL(avatar);
+    }
+    if (typeof avatar === "string" && avatar.match(/\.(jpg|jpeg|png|webp|gif)$/i)) {
+      return avatar;
+    }
+    return undefined;
   };
 
   const getInitials = (username) => {
@@ -129,6 +172,29 @@ export default function Profile({ onUserUpdate }) {
 
   const getPlaceholderBg = () => "brand.500";
 
+  // ================= LIVE CHECK USERNAME =================
+  useEffect(() => {
+    if (!editingUsername || !usernameInput.trim()) {
+      setUsernameStatus(null);
+      return;
+    }
+
+    const timeout = setTimeout(async () => {
+      setUsernameStatus("checking");
+      try {
+        const res = await fetch(
+          `${backendUrl}/seller/check-username?username=${encodeURIComponent(usernameInput.trim())}`
+        );
+        const data = await res.json();
+        setUsernameStatus(data.available ? "available" : "taken");
+      } catch {
+        setUsernameStatus("taken");
+      }
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [usernameInput, editingUsername, backendUrl]);
+
   // ================= HANDLE UPDATE =================
   const handleUpdate = async () => {
     if (!storedUser?.id) return;
@@ -138,14 +204,10 @@ export default function Profile({ onUserUpdate }) {
     const hasAvatarChange = avatar instanceof File;
     const hasTypeChange = type !== user.type;
     const hasDealerChange = showDealerInput && tempDealerName.trim() !== "";
+    const hasUsernameChange =
+      editingUsername && usernameStatus === "available" && usernameInput.trim() !== user.username;
 
-    if (
-      !hasPhoneChange &&
-      !hasPasswordChange &&
-      !hasAvatarChange &&
-      !hasTypeChange &&
-      !hasDealerChange
-    ) {
+    if (!hasPhoneChange && !hasPasswordChange && !hasAvatarChange && !hasTypeChange && !hasDealerChange && !hasUsernameChange) {
       toast({
         title: t.info,
         description: t.noChanges,
@@ -173,9 +235,25 @@ export default function Profile({ onUserUpdate }) {
       const formData = new FormData();
       if (hasPhoneChange) formData.append("phone", phone || "");
       if (hasPasswordChange) formData.append("password", password);
-      if (hasAvatarChange) formData.append("photo", avatar);
-      if (hasTypeChange) formData.append("type", type);
-      if (hasDealerChange) formData.append("dealerName", tempDealerName);
+      formData.append("type", type);
+      if (type === "dealer" && tempDealerName.trim() !== "") formData.append("dealerName", tempDealerName.trim());
+      if (hasUsernameChange) formData.append("username", usernameInput.trim());
+
+      if (avatar instanceof File) {
+        const originalName = avatar.name.replace(/\.[^/.]+$/, "");
+        let extension = avatar.name.split(".").pop();
+        if (!extension.match(/(jpg|jpeg|png|heic|webp)/i)) extension = "jpg";
+        const safeName = originalName.replace(/[^a-zA-Z0-9-_\.]/g, "_") + "." + extension;
+        const safeFile = new File([avatar], safeName, { type: avatar.type });
+        formData.append("photo", safeFile);
+      }
+      
+
+      console.log("===== DEBUG FormData =====");
+      for (let pair of formData.entries()) {
+        console.log(pair[0] + ": " + pair[1]);
+      }
+      console.log("==========================");
 
       const res = await fetch(`${backendUrl}/seller/profile`, {
         method: "PATCH",
@@ -193,34 +271,28 @@ export default function Profile({ onUserUpdate }) {
       setPhone(updated.phone || "");
       setPassword("");
       setType(updated.type || "individual");
-      setTempDealerName("");
-      setShowDealerInput(false);
 
-      // 🔹 Update avatar sesuai S3
-      if (updated.profilePhoto) {
-        if (updated.profilePhoto.startsWith("s3://")) {
-          const path = updated.profilePhoto.replace(/^s3:\/\/[^/]+/, "");
-          setAvatar(`${s3BucketUrl}${path}`);
-        } else if (updated.profilePhoto.startsWith("/uploads")) {
-          setAvatar(`${backendUrl}${updated.profilePhoto}`);
-        } else {
-          setAvatar(updated.profilePhoto);
-        }
+      if (updated.type === "dealer") {
+        setShowDealerInput(true);
+        setTempDealerName(updated.dealerName || "");
       } else {
-        setAvatar(null);
+        setShowDealerInput(false);
+        setTempDealerName("");
       }
 
+      if (typeof window !== "undefined") setAvatar(updated.profilePhoto || null);
       if (fileInputRef.current) fileInputRef.current.value = "";
 
-      if (onUserUpdate) {
-        onUserUpdate({
+      if (updateUserContext) {
+        updateUserContext({
           ...updated,
-          profilePhoto: avatar || null,
+          profilePhoto: updated.profilePhoto
+            ? `${process.env.NEXT_PUBLIC_API_URL}${updated.profilePhoto}?t=${Date.now()}`
+            : null,
           initials: getInitials(updated.username),
           placeholderBg: getPlaceholderBg(),
         });
       }
-      localStorage.setItem("user", JSON.stringify(updated));
 
       toast({
         title: t.success,
@@ -229,8 +301,9 @@ export default function Profile({ onUserUpdate }) {
         duration: 3000,
         isClosable: true,
       });
+      setEditingUsername(false);
     } catch (err) {
-      console.error(err);
+      console.error("Update error:", err);
       toast({
         title: t.error,
         description: err.message || t.error,
@@ -243,12 +316,31 @@ export default function Profile({ onUserUpdate }) {
     }
   };
 
+  // ================= HANDLE AVATAR CHANGE =================
   const handleAvatarChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    setAvatar(file);
+    if (!file.type.startsWith("image/")) {
+      toast({
+        title: t.error,
+        description: "File harus berupa gambar (jpg/png).",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
+    const originalName = file.name.replace(/\.[^/.]+$/, "");
+    let extension = file.name.split(".").pop();
+    if (!extension.match(/(jpg|jpeg|png|heic|webp)/i)) extension = "jpg";
+    const safeName = originalName.replace(/[^a-zA-Z0-9-_\.]/g, "_") + "." + extension;
+    const safeFile = new File([file], safeName, { type: file.type });
+
+    setAvatar(safeFile);
   };
 
+  // ================= HANDLE AVATAR REMOVE =================
   const handleAvatarRemove = async () => {
     if (!storedUser?.id) return;
 
@@ -272,18 +364,16 @@ export default function Profile({ onUserUpdate }) {
       const updated = await res.json();
       setUser(updated);
       setAvatar(null);
-
       if (fileInputRef.current) fileInputRef.current.value = "";
 
-      if (onUserUpdate) {
-        onUserUpdate({
+      if (updateUserContext) {
+        updateUserContext({
           ...updated,
           profilePhoto: null,
           initials: getInitials(updated.username),
           placeholderBg: getPlaceholderBg(),
         });
       }
-      localStorage.setItem("user", JSON.stringify(updated));
 
       toast({
         title: t.success,
@@ -293,7 +383,7 @@ export default function Profile({ onUserUpdate }) {
         isClosable: true,
       });
     } catch (err) {
-      console.error(err);
+      console.error("Remove photo error:", err);
       toast({
         title: t.error,
         description: err.message || t.error,
@@ -322,9 +412,8 @@ export default function Profile({ onUserUpdate }) {
     );
   }
 
-  const avatarSrc = getAvatarSrc(user, avatar);
-
-  const cardBg = colorMode === "light" ? "white" : "gray.900";
+  const avatarSrc = getAvatarSrc(avatar);
+  const cardBg = colorMode === "light" ? "white" : "gray.700";
   const borderColor = colorMode === "light" ? "gray.200" : "whiteAlpha.200";
   const labelColor = colorMode === "light" ? "gray.600" : "gray.400";
 
@@ -336,14 +425,15 @@ export default function Profile({ onUserUpdate }) {
 
       <Stack spacing={1} mb={8}>
         <Heading size="lg">{t.profileSettings}</Heading>
-        <Text fontSize="sm" color={labelColor}>{t.manageProfileDesc}</Text>
+        <Text fontSize="sm" color={labelColor}>
+          {t.manageProfileDesc}
+        </Text>
       </Stack>
 
       <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} alignItems="start">
         {/* LEFT CARD */}
         <Box bg={cardBg} borderWidth="1px" borderColor={borderColor} rounded="2xl" p={8} shadow="sm">
           <VStack spacing={6}>
-            {/* AVATAR */}
             <Avatar
               size="2xl"
               name={user.username || ""}
@@ -352,10 +442,16 @@ export default function Profile({ onUserUpdate }) {
               color={!avatarSrc ? "black" : undefined}
             />
 
-            <Stack spacing={1} textAlign="center">
-              <Text fontWeight="semibold" fontSize="lg">{user.username}</Text>
-              <Text fontSize="sm" color={labelColor}>{user.email}</Text>
-            </Stack>
+            <HStack spacing={2} justify="center">
+              <Text fontWeight="semibold" fontSize="lg">
+                {user.username}
+              </Text>
+              <VerifiedBadge show={verification?.status === "approved"} />
+            </HStack>
+
+            <Text fontSize="sm" color={labelColor}>
+              {user.email}
+            </Text>
 
             <HStack>
               <Button
@@ -371,14 +467,7 @@ export default function Profile({ onUserUpdate }) {
                 {t.changePhoto}
               </Button>
 
-              <input
-                ref={fileInputRef}
-                type="file"
-                id="avatar-upload"
-                style={{ display: "none" }}
-                accept="image/*"
-                onChange={handleAvatarChange}
-              />
+              <input ref={fileInputRef} type="file" id="avatar-upload" style={{ display: "none" }} onChange={handleAvatarChange} />
 
               {avatar && (
                 <IconButton
@@ -397,7 +486,9 @@ export default function Profile({ onUserUpdate }) {
 
             <VStack spacing={3} w="full" align="stretch">
               <Flex justify="space-between" align="center">
-                <Text fontSize="sm" color={labelColor}>{t.accountType}</Text>
+                <Text fontSize="sm" fontWeight="bold" bgGradient="linear(to-r, #3182ce, #e53e3e)" bgClip="text">
+                  {t.accountType}
+                </Text>
 
                 <Select
                   value={type}
@@ -418,19 +509,21 @@ export default function Profile({ onUserUpdate }) {
 
               {showDealerInput && (
                 <Box>
-                  <Text fontSize="sm" mb={1} color={labelColor}>{t.dealerName}</Text>
-                  <Input
-                    value={tempDealerName}
-                    onChange={(e) => setTempDealerName(e.target.value)}
-                    placeholder={t.enterDealerName}
-                  />
+                  <Text fontSize="sm" mb={1} color={labelColor}>
+                    {t.dealerName}
+                  </Text>
+                  <Input value={tempDealerName} onChange={(e) => setTempDealerName(e.target.value)} placeholder={t.enterDealerName} />
                 </Box>
               )}
 
               {!showDealerInput && type === "dealer" && user.dealerName && (
                 <Flex justify="space-between">
-                  <Text fontSize="sm" color={labelColor}>{t.dealerName}</Text>
-                  <Text fontSize="sm" fontWeight="medium">{user.dealerName}</Text>
+                  <Text fontSize="sm" color={labelColor}>
+                    {t.dealerName}
+                  </Text>
+                  <Text fontSize="sm" fontWeight="medium">
+                    {user.dealerName}
+                  </Text>
                 </Flex>
               )}
             </VStack>
@@ -444,42 +537,111 @@ export default function Profile({ onUserUpdate }) {
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
               <Box>
-                <Text fontSize="sm" mb={1} color={labelColor}>{t.username}</Text>
+                <Flex justify="space-between" align="center" mb={1}>
+                  <Text fontSize="sm" color={labelColor}>
+                    {t.username}
+                  </Text>
+                  <Button
+                  variant="link"
+                  size="sm"
+                  onClick={() => {
+                    if (editingUsername) {
+                      // 🔹 Kalau lagi editing, berarti ini Cancel
+                      setUsernameInput(user.username || ""); // reset ke username asli
+                      setUsernameStatus(null); // reset status live check
+                      setHasEditedUsername(false); // reset flag live check
+                    } else {
+                      // 🔹 Kalau belum editing, ini Edit
+                      setHasEditedUsername(false); // siap live check baru
+                    }
+
+                    setEditingUsername((v) => !v); // toggle edit mode
+
+                    setTimeout(() => {
+                      if (usernameInputRef.current) {
+                        usernameInputRef.current.focus();
+                        usernameInputRef.current.select(); // select text biar langsung ketik
+                      }
+                    }, 0);
+                  }}
+                >
+                  {editingUsername ? t.cancel : t.edit}
+                </Button>
+                </Flex>
+
+                <InputGroup>
                 <Input
-                  value={user.username || ""}
-                  isReadOnly
-                  _focus={{ borderColor: "brand.500", boxShadow: "0 0 0 1px var(--chakra-colors-brand-500)" }}
+                  ref={usernameInputRef} // auto-focus
+                  value={usernameInput}
+                  onChange={(e) => {
+                    setUsernameInput(e.target.value);
+                    setHasEditedUsername(true); // user mulai edit
+                  }}
+                  isReadOnly={!editingUsername}
+                  placeholder={editingUsername && !hasEditedUsername ? usernameInput : ""}
+                  _focus={{ borderColor: "#90cdf4", boxShadow: "0 0 0 1px #90cdf4" }}
                 />
+                <InputRightElement>
+                  {editingUsername && hasEditedUsername && usernameInput !== user.username && usernameStatus === "checking" && (
+                    <Spinner size="sm" />
+                  )}
+                  {editingUsername && hasEditedUsername && usernameInput !== user.username && usernameStatus === "available" && (
+                    <Icon as={IoIosCheckmarkCircle} color="green.400" />
+                  )}
+                  {editingUsername && hasEditedUsername && usernameInput !== user.username && usernameStatus === "taken" && (
+                    <Icon as={CgUnavailable} color="red.400" />
+                  )}
+                </InputRightElement>
+              </InputGroup>
+
+              {/* Feedback text */}
+              {editingUsername && hasEditedUsername && usernameInput !== user.username && usernameStatus === "available" && (
+                <Text fontSize="sm" color="green.400" mt={1}>
+                  {t.usernameAvailable}
+                </Text>
+              )}
+              {editingUsername && hasEditedUsername && usernameInput !== user.username && usernameStatus === "taken" && (
+                <Text fontSize="sm" color="red.400" mt={1}>
+                  {t.usernameNotAvailable}
+                </Text>
+              )}
+              {editingUsername && !hasEditedUsername && (
+                <Text fontSize="sm" color="gray.400" mt={1}>
+                  {t.currentUsername}
+                </Text>
+              )}
               </Box>
 
               <Box>
-                <Text fontSize="sm" mb={1} color={labelColor}>{t.email}</Text>
-                <Input
-                  value={user.email || ""}
-                  isReadOnly
-                  _focus={{ borderColor: "brand.500", boxShadow: "0 0 0 1px var(--chakra-colors-brand-500)" }}
-                />
+                <Text fontSize="sm" mb={1} color={labelColor}>
+                  {t.email}
+                </Text>
+                <Input value={user.email || ""} isReadOnly _focus={{ borderColor: "#90cdf4", boxShadow: "0 0 0 1px #90cdf4" }} />
               </Box>
             </SimpleGrid>
 
             <Box>
-              <Text fontSize="sm" mb={1} color={labelColor}>{t.phoneNumber}</Text>
+              <Text fontSize="sm" mb={1} color={labelColor}>
+                {t.phoneNumber}
+              </Text>
               <Input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder={t.phonePlaceholder}
-                _focus={{ borderColor: "brand.500", boxShadow: "0 0 0 1px var(--chakra-colors-brand-500)" }}
+                _focus={{ borderColor: "#90cdf4", boxShadow: "0 0 0 1px #90cdf4" }}
               />
             </Box>
 
             <Box>
-              <Text fontSize="sm" mb={1} color={labelColor}>{t.newPassword}</Text>
+              <Text fontSize="sm" mb={1} color={labelColor}>
+                {t.newPassword}
+              </Text>
               <Input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={t.passwordPlaceholder}
                 type="password"
-                _focus={{ borderColor: "brand.500", boxShadow: "0 0 0 1px var(--chakra-colors-brand-500)" }}
+                _focus={{ borderColor: "#90cdf4", boxShadow: "0 0 0 1px #90cdf4" }}
               />
             </Box>
 

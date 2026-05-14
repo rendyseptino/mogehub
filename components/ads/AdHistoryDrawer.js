@@ -7,18 +7,36 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Spinner,
+  useColorModeValue,
   Box,
   Text,
   Badge,
   Image,
   Flex,
 } from "@chakra-ui/react";
+import { timeAgo } from "@/utils/timeAgo";
+import { useLanguageContext } from "@/context/LanguageContext";
+import en from "@/locales/en.json";
+import id from "@/locales/id.json";
+const translations = { en, id };
+
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function AdHistoryDrawer({ isOpen, onClose, loadHistory }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const pageSize = 7;
+  const { language } = useLanguageContext();
+  const t = translations[language] || translations.id;
+  const timeAgoColor = useColorModeValue("gray.500", "gray.200");
+
+
+  useEffect(() => {
+  if (isOpen) setPage(1);
+}, [isOpen]);
+  
 
   useEffect(() => {
     if (!isOpen) return;
@@ -79,6 +97,11 @@ export default function AdHistoryDrawer({ isOpen, onClose, loadHistory }) {
       .finally(() => setLoading(false));
   }, [isOpen, loadHistory]);
 
+  const paginatedItems = items.slice(
+    (page - 1) * pageSize,
+    page * pageSize
+  );
+
   const getBadgeColor = (status) => {
     if (status === "pending_review") return "yellow";
     if (status === "rejected") return "red";
@@ -88,31 +111,31 @@ export default function AdHistoryDrawer({ isOpen, onClose, loadHistory }) {
     return "gray";
   };
 
-  const getStatusLabel = (status) => {
-    if (status === "pending_review") return "Dalam Review";
-    if (status === "rejected") return "Ditolak";
-    if (status === "active") return "Aktif";
-    if (status === "inactive") return "Nonaktif";
-    if (status === "expired") return "Expired";
-    return status;
-  };
+ const getStatusLabel = (status) => {
+  if (status === "pending_review") return t.adHistory.status.pending;
+  if (status === "rejected") return t.adHistory.status.rejected;
+  if (status === "active") return t.adHistory.status.active;
+  if (status === "inactive") return t.adHistory.status.inactive;
+  if (status === "expired") return t.adHistory.status.expired;
+  return status;
+};
 
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader>History Iklan</DrawerHeader>
+        <DrawerHeader>{t.adHistory.title}</DrawerHeader>
 
         <DrawerBody>
           {loading && <Spinner />}
 
           {!loading && items.length === 0 && (
-            <Text fontSize="sm">Belum ada history.</Text>
+            <Text fontSize="sm">{t.adHistory.empty}</Text>
           )}
 
           {!loading &&
-            items.map((i) => (
+            paginatedItems.map((i) => (
               <Box
                 key={`${i.type || "ad"}-${i.id}`}
                 borderWidth="1px"
@@ -133,9 +156,30 @@ export default function AdHistoryDrawer({ isOpen, onClose, loadHistory }) {
                   )}
 
                   <Box flex="1">
-                    <Text fontWeight="bold" mb={1} noOfLines={2}>
+                    <Box position="relative">
+  
+                    {/* BADGE TYPE (POJOK KANAN) */}
+                    <Badge
+                      position="absolute"
+                      top="0"
+                      right="0"
+                      fontSize="xs"
+                      colorScheme={i.type === "banner" ? "purple" : "blue"}
+                    >
+                      {i.type === "banner"
+                      ? t.adHistory.type.banner
+                      : t.adHistory.type.product}
+                    </Badge>
+
+                    <Text fontWeight="bold" mb={1} noOfLines={2} pr={16}>
                       {i.title}
                     </Text>
+
+                    <Text fontSize="xs" color={timeAgoColor}>
+                      {timeAgo(i.createdAt, language)}
+                    </Text>
+
+                  </Box>
 
                     <Badge colorScheme={getBadgeColor(i.status)}>
                       {getStatusLabel(i.status)}
@@ -150,6 +194,34 @@ export default function AdHistoryDrawer({ isOpen, onClose, loadHistory }) {
                 </Flex>
               </Box>
             ))}
+            {/* 🔥 PAGINATION TARUH DI SINI (PALING BAWAH LIST) */}
+          {items.length > pageSize && (
+            <Flex justify="center" mt={4} gap={2}>
+              
+              <Badge
+                cursor="pointer"
+                onClick={() => setPage((p) => Math.max(p - 1, 1))}
+              >
+                 {t.adHistory.pagination.prev}
+              </Badge>
+
+              <Text fontSize="sm">
+                {page} / {Math.ceil(items.length / pageSize)}
+              </Text>
+
+              <Badge
+                cursor="pointer"
+                onClick={() =>
+                  setPage((p) =>
+                    Math.min(p + 1, Math.ceil(items.length / pageSize))
+                  )
+                }
+              >
+               {t.adHistory.pagination.next}
+              </Badge>
+
+            </Flex>
+          )}
         </DrawerBody>
       </DrawerContent>
     </Drawer>

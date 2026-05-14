@@ -13,6 +13,7 @@ import {
   Spinner,
   useToast,
   useColorMode,
+  useColorModeValue,
   Container,
   Alert,
   AlertIcon,
@@ -23,6 +24,11 @@ import { useState, useEffect } from "react";
 import { useLanguageContext } from "../../context/LanguageContext";
 import en from "../../locales/en.json";
 import id from "../../locales/id.json";
+import SubscriptionCheckout from "../../components/subscriptionCheckout";
+import { isMobileCard, isTabletCard, isDesktopCard } from "../../utils/responsiveCard";
+import SubscriptionHistory from "../../components/SubscriptionHistory";
+import SubscriptionHelp from "@/components/subscriptionHelp";
+
 
 const translations = { en, id };
 
@@ -36,12 +42,21 @@ const PACKAGES = [
   { plan: "Ultimate", price: 1200000, duration: "1 Tahun", productQuota: "Unlimited", bannerQuota: "Unlimited" },
 ];
 
+const PLAN_ORDER = {
+  Basic: 0,
+  Essential: 1,
+  Deluxe: 2,
+  Gold: 3,
+  Ultimate: 4,
+};
+
 export default function SubscriptionPage() {
   const { colorMode } = useColorMode();
   const toast = useToast();
   const { language } = useLanguageContext();
   const t = translations[language] || translations.id;
-
+  const [selectedPackage, setSelectedPackage] = useState(null);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [activeSubscription, setActiveSubscription] = useState(null);
@@ -49,6 +64,25 @@ export default function SubscriptionPage() {
   const [loading, setLoading] = useState(true);
   const [upgradeLoading, setUpgradeLoading] = useState(false);
   const [openHistory, setOpenHistory] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const subscriptionBg = useColorModeValue(
+  "url('/subscription-light.png')",
+  "url('/subscription-dark.png')"
+);
+
+  useEffect(() => {
+    const update = () => {
+      setIsMobile(isMobileCard());
+      setIsTablet(isTabletCard());
+      setIsDesktop(isDesktopCard());
+    };
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -86,30 +120,22 @@ export default function SubscriptionPage() {
     if (user && token) fetchSubscription();
   }, [user, token]);
 
-  const handleUpgrade = async (pkg) => {
-    if (!user || !token) return toast({ title: t.loginFirst || "Login dulu", status: "error" });
-    if (activeSubscription?.plan === pkg.plan) return;
+  const openCheckout = (pkg) => {
+  const currentPlan = activeSubscription?.plan;
+  const currentRank = PLAN_ORDER[currentPlan] ?? -1;
+  const targetRank = PLAN_ORDER[pkg.plan];
 
-    setUpgradeLoading(true);
+  const isUpgrade = targetRank > currentRank;
+  const isDowngrade = targetRank < currentRank;
+  const isSame = targetRank === currentRank;
 
-    try {
-      const res = await fetch(`${API}/subscription/upgrade`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ userId: user.id, plan: pkg.plan }),
-      });
+  let action = "upgrade";
+  if (targetRank < currentRank) action = "downgrade";
+  if (targetRank === currentRank) action = "same";
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || t.failedUpgrade || "Gagal upgrade paket");
-
-      toast({ title: `${t.upgradedTo || "Berhasil upgrade ke"} ${pkg.plan}`, status: "success", duration: 2000 });
-      await fetchSubscription();
-    } catch (err) {
-      toast({ title: err.message, status: "error" });
-    } finally {
-      setUpgradeLoading(false);
-    }
-  };
+  setSelectedPackage({ ...pkg, action });
+  setCheckoutOpen(true);
+};
 
   const formatDateID = (dateStr) => {
     if (!dateStr) return t.forever || "Selamanya";
@@ -130,9 +156,22 @@ export default function SubscriptionPage() {
     );
   }
 
-  return (
-    <Box py={12} position="relative">
-      <Container maxW="6xl">
+  
+   
+ return (
+  <Box
+    w="100%"
+    minH="100vh"
+    py={12}
+    position="relative"
+    overflow="hidden"
+    bgImage={subscriptionBg}
+    bgSize="cover"
+    bgPosition="center"
+    bgRepeat="no-repeat"
+    bgAttachment="fixed"
+  >
+      <Container maxW="6xl" position="relative">
         {/* HEADER + ALERT */}
         <Flex
           align="center"
@@ -166,34 +205,51 @@ export default function SubscriptionPage() {
         <Divider mb={8} borderColor={colorMode === "light" ? "gray.200" : "gray.600"} />
 
         {/* GRID PAKET */}
-        <SimpleGrid minChildWidth="260px" spacing={10} justifyItems="center">
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 3 }}
+          spacing={{ base: 6, md: 8, lg: 10 }}
+          justifyItems="center"
+        >
           {PACKAGES.map((pkg) => {
             const isActive = activeSubscription?.plan === pkg.plan;
             const isRecommended = pkg.plan === "Deluxe";
+            const currentPlan = activeSubscription?.plan;
+            const currentRank = PLAN_ORDER[currentPlan] ?? -1;
+            const targetRank = PLAN_ORDER[pkg.plan] ?? -1;
+
+            const isUpgrade = targetRank > currentRank;
+            const isDowngrade = targetRank < currentRank;
+            const isSame = targetRank === currentRank;
+
+            const isBasic = pkg.plan === "Basic";
+            const hasPaidPlan =
+              activeSubscription &&
+              activeSubscription.plan !== "Basic";
 
             return (
-              <Box
-                key={pkg.plan}
-                position="relative"
-                w="100%"
-                maxW="280px"
-                borderRadius="2xl"
-                overflow="hidden"
-                bg={colorMode === "light" ? "white" : "gray.800"}
-                borderWidth="1px"
-                borderColor={
-                  isActive
-                    ? "brand.500"
-                    : isRecommended
-                    ? "brand.400"
-                    : colorMode === "light"
-                    ? "gray.200"
-                    : "gray.700"
-                }
-                boxShadow={isRecommended ? "2xl" : "lg"}
-                transition="all .25s ease"
-                _hover={{ transform: "translateY(-8px)", boxShadow: "2xl" }}
-              >
+             <Box
+              key={pkg.plan}
+              position="relative"
+              w="100%"
+              maxW="320px"
+              mx="auto"
+              borderRadius="2xl"
+              overflow="hidden"
+              bg={colorMode === "light" ? "white" : "gray.800"}
+              borderWidth="1px"
+              borderColor={
+                isActive
+                  ? "brand.500"
+                  : isRecommended
+                  ? "brand.400"
+                  : colorMode === "light"
+                  ? "gray.200"
+                  : "gray.700"
+              }
+              boxShadow={isRecommended ? "2xl" : "lg"}
+              transition="all .25s ease"
+              _hover={{ transform: "translateY(-8px)", boxShadow: "2xl" }}
+            >
                 {isRecommended && (
                   <Box
                     position="absolute"
@@ -273,6 +329,7 @@ export default function SubscriptionPage() {
                     )}
                   </VStack>
 
+                  {!(isBasic && hasPaidPlan) && (
                   <Button
                     w="full"
                     mt="auto"
@@ -281,12 +338,19 @@ export default function SubscriptionPage() {
                     _hover={{ bg: "brand.600" }}
                     _active={{ bg: "brand.700" }}
                     isLoading={upgradeLoading}
-                    onClick={() => handleUpgrade(pkg)}
+                    onClick={() => openCheckout(pkg)}
                     disabled={isActive}
                     opacity={isActive ? 0.8 : 1}
                   >
-                    {isActive ? t.activePackage || "Paket Aktif" : t.upgradePackage || "Upgrade Paket"}
+                    {isActive
+                    ? t.activePackage || "Paket Aktif"
+                    : isUpgrade
+                      ? t.upgradePackage || "Upgrade Paket"
+                      : isDowngrade
+                        ? t.downgradePackage || "Downgrade Paket"
+                        : "Pilih Paket"}
                   </Button>
+                )}
                 </VStack>
               </Box>
             );
@@ -295,42 +359,21 @@ export default function SubscriptionPage() {
       </Container>
 
       {/* HISTORY MODAL */}
-      <Box
-        position="fixed"
-        top={0}
-        right={openHistory ? 0 : "-100%"}
-        h="100vh"
-        w={{ base: "80%", md: "400px" }}
-        bg={colorMode === "light" ? "white" : "gray.800"}
-        boxShadow="xl"
-        zIndex={9998}
-        transition="right 0.3s ease-in-out"
-        overflowY="auto"
-        p={6}
-      >
-        <Flex justify="space-between" mb={4}>
-          <Heading size="md">{t.subscriptionHistory || "History Subscription"}</Heading>
-          <Button size="sm" onClick={() => setOpenHistory(false)}>{t.close || "Close"}</Button>
-        </Flex>
-        <VStack spacing={4} align="stretch">
-          {allSubscriptions.map((sub) => (
-            <Box
-              key={sub.id}
-              p={4}
-              borderRadius="md"
-              bg={colorMode === "light" ? "gray.100" : "gray.700"}
-            >
-              <Flex justify="space-between">
-                <Text fontWeight="bold">{sub.plan}</Text>
-                <Badge colorScheme={sub.status === "active" ? "green" : "gray"}>{sub.status}</Badge>
-              </Flex>
-              <Text fontSize="sm">
-                {formatDateID(sub.startDate)} - {sub.endDate ? formatDateID(sub.endDate) : t.forever || "Selamanya"}
-              </Text>
-            </Box>
-          ))}
-        </VStack>
-      </Box>
+      <SubscriptionHistory
+          isOpen={openHistory}
+          onClose={() => setOpenHistory(false)}
+          data={allSubscriptions}
+        />
+       <SubscriptionCheckout
+        isOpen={checkoutOpen}
+        onClose={() => setCheckoutOpen(false)}
+        selectedPackage={selectedPackage}
+        user={user}
+        token={token}
+        onSuccess={fetchSubscription}
+      />
+      <SubscriptionHelp />
+
     </Box>
   );
 }

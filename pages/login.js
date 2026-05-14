@@ -1,3 +1,5 @@
+"use client";
+import Head from "next/head";
 import {
   Box,
   Flex,
@@ -16,37 +18,121 @@ import {
   FormErrorMessage,
   Link as ChakraLink,
   IconButton,
-  Image,
+  Stack,
 } from "@chakra-ui/react";
-import { EmailIcon, LockIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import {
+  EmailIcon,
+  LockIcon,
+  ViewIcon,
+  ViewOffIcon,
+  SunIcon,
+  MoonIcon,
+} from "@chakra-ui/icons";
 import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-// ===== Import hook bahasa =====
-import useLanguage from "../hooks/useLanguage";
+import Image from "next/image";
+import { useLanguageContext } from "@/context/LanguageContext";
+import en from "@/locales/en.json";
+import id from "@/locales/id.json";
+import { useUser } from "../context/UserContext";
+import { processGoogleCallback } from "../utils/googleHandler";
+import { handleFacebookLogin } from "../utils/facebookLogin";
+const translations = { en, id };
 
 export default function LoginPage() {
-  const { colorMode } = useColorMode();
+  const { colorMode, setColorMode } = useColorMode();
   const router = useRouter();
+  const { user, login } = useUser();
 
   const [showPassword, setShowPassword] = useState(false);
   const [identity, setIdentity] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [fieldErrors, setFieldErrors] = useState({});
+  const { language } = useLanguageContext();
+  const t = translations[language] || translations.id;
+  const pageTitle =
+  language === "en"
+    ? "Login Page - MogeHub"
+    : "Halaman Login - MogeHub";
+  
 
-  const { t } = useLanguage(); // ===== gunakan hook bahasa =====
 
   const pageBg = colorMode === "light" ? "gray.50" : "gray.900";
   const cardBg = colorMode === "light" ? "white" : "gray.800";
-  const inputBg = colorMode === "light" ? "gray.100" : "gray.700";
+
   const inputText = colorMode === "light" ? "gray.800" : "white";
-  const placeholderColor = colorMode === "light" ? "gray.500" : "gray.400";
+  const placeholderColor =
+    colorMode === "light" ? "gray.500" : "gray.400";
+  const inputBorder =
+    colorMode === "light" ? "gray.300" : "gray.600";
 
-  const backendUrl = process.env.NEXT_PUBLIC_API_URL;
+  const disabledBtnBg =
+    colorMode === "light" ? "gray.300" : "gray.600";
+  const disabledBtnColor =
+    colorMode === "light" ? "gray.600" : "gray.300";
 
+  const isDisabled = !identity.trim() || !password.trim() || loading;
+
+  const logoSrc =
+    colorMode === "light"
+      ? "/mogehubmasterlight.png"
+      : "/mogehubmasterdark.png";
+
+  const linkColor =
+    colorMode === "light" ? "gray.800" : "brand.500";
+
+  // ================= GOOGLE CALLBACK =================
+  useEffect(() => {
+    if (!router.isReady) return;
+    processGoogleCallback(
+      router.query,
+      (user) => {
+        if (user?.token)
+          localStorage.setItem("token", user.token);
+        if (user) {
+          localStorage.setItem("user", JSON.stringify(user));
+          login(user);
+          router.replace("/seller/dashboard");
+        }
+      },
+      router
+    );
+  }, [router.isReady, router.query, login, router]);
+
+  // ================= FACEBOOK CALLBACK =================
+  useEffect(() => {
+    const token = router.query.token;
+    if (!token) return;
+
+    const fetchFacebookUser = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/auth/me`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+        const data = await res.json();
+        if (res.ok && data.user) {
+          login(data.user);
+          localStorage.setItem("token", token);
+          localStorage.setItem("user", JSON.stringify(data.user));
+          router.replace("/seller/dashboard");
+        }
+      } catch (err) {
+        console.error("Facebook login error:", err);
+      }
+    };
+
+    fetchFacebookUser();
+  }, [router.query, login, router]);
+
+  // ================= VALIDATION =================
   const validateFields = () => {
     const errors = {};
     if (!identity.trim()) errors.identity = t.fillAllFields;
@@ -54,6 +140,7 @@ export default function LoginPage() {
     return errors;
   };
 
+  // ================= LOGIN =================
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -62,25 +149,35 @@ export default function LoginPage() {
       setFieldErrors(errors);
       return;
     }
+
     setFieldErrors({});
     setLoading(true);
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ identity, password }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ identity, password }),
+        }
+      );
 
       const data = await res.json();
 
       if (!res.ok) {
-        setFieldErrors({ form: data.message || t.loginFailed });
+        const msg =
+          data.code ? t[data.code] : data.message || t.loginFailed;
+        setFieldErrors({ form: msg });
         return;
       }
 
-      if (data.token) localStorage.setItem("token", data.token);
-      if (data.user) localStorage.setItem("user", JSON.stringify(data.user));
+      if (data.token)
+        localStorage.setItem("token", data.token);
+      if (data.user) {
+        localStorage.setItem("user", JSON.stringify(data.user));
+        login(data.user);
+      }
 
       router.replace("/seller/dashboard");
     } catch (err) {
@@ -91,189 +188,388 @@ export default function LoginPage() {
     }
   };
 
-  const handleGoogleLogin = () => {
+  const handleGoogle = () => {
     window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/google`;
   };
 
-  const logoSrc =
-    colorMode === "light"
-      ? "/mogehubmasterlight.png"
-      : "/mogehubmasterdark.png";
+  const handleFacebook = () => {
+  window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/facebook?redirect=dashboard`;
+};
 
   return (
     <Box minH="100vh" bg={pageBg}>
-      <Flex
-        minH="100vh"
-        align={{ base: "flex-start", md: "center" }}
-        justify="center"
-        px={4}
-        pt={{ base: 12, md: 0 }}
-      >
-        <Box
-          w="full"
-          maxW="900px"
-          display="flex"
-          flexDir={{ base: "column", md: "row" }}
-          gap={{ base: 6, md: 12 }}
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
+      <Flex minH="100vh" align="stretch">
+        
+        {/* ================= LEFT (SAMA ADMIN) ================= */}
+        <Flex
+          flex={1}
+          direction="column"
+          justify="center"
+          align="center"
+          bg={colorMode === "light" ? "blue.50" : "gray.800"}
+          position="relative"
+          p={8}
+          display={{ base: "none", lg: "flex" }}
         >
-          {/* Left side banner */}
-          <Flex
-            direction="column"
-            justify="flex-start"
-            pt={{ base: 0, md: 16 }}
-            flex={1}
-            px={{ base: 4, md: 0 }}
-            display={{ base: "none", md: "flex" }}
-          >
-            <Image src={logoSrc} alt="Logo" w="300px" h="100px" mb={4} />
+          {/* TOGGLE */}
+          <IconButton
+            position="absolute"
+            top="4"
+            right="4"
+            aria-label="Toggle color mode"
+            icon={
+              colorMode === "light" ? <MoonIcon /> : <SunIcon />
+            }
+            onClick={() =>
+              setColorMode(
+                colorMode === "light" ? "dark" : "light"
+              )
+            }
+          />
+
+          <Link href="/">
+          <Box position="absolute" top="4" left="4" cursor="pointer" lineHeight={0}>
+            <Image
+              src={logoSrc}
+              alt="Logo"
+              width={140}
+              height={50}
+              priority
+              unoptimized
+              loading="eager"
+              decoding="async"
+              style={{
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
+          </Box>
+        </Link>
+          <Box w="full" maxW="400px" textAlign="center">
             <Text
               fontSize="2xl"
               fontWeight="bold"
-              color={colorMode === "light" ? "gray.700" : "gray.300"}
+              mb={4}
+              color={
+                colorMode === "light" ? "gray.700" : "gray.300"
+              }
             >
               {t.loginBanner}
             </Text>
-          </Flex>
 
-          {/* Form */}
-          <Flex flex={1} justify="center" w="full" direction="column">
-            <Box display={{ base: "block", md: "none" }} mb={4} textAlign="center">
-              <Image src={logoSrc} alt="Logo" w="200px" h="70px" mx="auto" mb={2} />
-              <Text
-                fontSize="lg"
-                fontWeight="bold"
-                color={colorMode === "light" ? "gray.700" : "gray.300"}
-              >
-                {t.loginBanner}
-              </Text>
-            </Box>
-
-            <Box
-              w={{ base: "full", md: "420px" }}
-              mx="auto"
-              bg={cardBg}
-              p={8}
-              borderRadius="xl"
-              boxShadow={{ base: "none", md: "xl" }}
+            <Text
+              color={
+                colorMode === "light" ? "gray.700" : "gray.300"
+              }
             >
-              <Button
-                w="full"
-                variant="outline"
-                mb={5}
-                leftIcon={<Icon as={FcGoogle} boxSize="20px" />}
-                _hover={{
-                  bg: colorMode === "light" ? "gray.100" : "whiteAlpha.100",
+              Login to start exploring MogeHub.
+            </Text>
+
+            <Flex mt={8} justify="center">
+              <Box
+              maxW="300px"
+              w="100%"
+              borderRadius="8px"
+              overflow="hidden"
+            >
+              <Image
+                src="/userlogin.png"
+                alt="Illustration"
+                width={300}
+                height={300}
+                priority
+                unoptimized
+                loading="eager"
+                decoding="async"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
                 }}
-                onClick={handleGoogleLogin}
+              />
+            </Box>
+            </Flex>
+          </Box>
+        </Flex>
+
+        <Divider
+          orientation="vertical"
+          display={{ base: "none", lg: "block" }}
+        />
+
+        {/* ================= RIGHT FORM ================= */}
+        <Flex
+          flex={1}
+          direction="column"
+          justify={{ base: "flex-start", lg: "center" }}
+          align="center"
+          px={4}
+          pt={{ base: 12, lg: 0 }}
+        >
+
+          {/* ================= MOBILE HEADER ================= */}
+          <Box
+            display={{ base: "flex", lg: "none" }}
+            flexDir="column"
+            alignItems="center"
+            mb={6}
+          >
+            <Link href="/">
+              <Image
+              src={logoSrc}
+              alt="Logo"
+              width={140}
+              height={50}
+              priority
+              unoptimized
+              loading="eager"
+              decoding="async"
+              style={{
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
+            </Link>
+
+            <Text
+              fontSize="2xl"
+              fontWeight="bold"
+              textAlign="center"
+              color={colorMode === "light" ? "gray.800" : "brand.500"}
+            >
+              {t.loginBanner}
+            </Text>
+          </Box>
+          <Box
+            w="full"
+            maxW="420px"
+            bg={{ base: "transparent", lg: cardBg }}
+            p={{ base: 0, lg: 8 }}
+            borderRadius={{ base: "none", lg: "xl" }}
+            boxShadow={{ base: "none", lg: "xl" }}
+          >
+            {/* SOCIAL */}
+            <Stack direction="column" spacing={4} mb={5}>
+              <Button
+                variant="outline"
+                leftIcon={<Icon as={FcGoogle} />}
+                borderRadius="full"
+                onClick={handleGoogle}
               >
                 {t.signInGoogle}
               </Button>
 
-              <HStack mb={5}>
-                <Divider />
-                <Text fontSize="sm" color="gray.500">{t.or}</Text>
-                <Divider />
-              </HStack>
+              <Button
+                variant="outline"
+                leftIcon={
+                  <Icon as={FaFacebook} color="#1877F2" />
+                }
+                borderRadius="full"
+                onClick={handleFacebook}
+              >
+                {t.signInFacebook}
+              </Button>
+            </Stack>
 
-              <form onSubmit={handleLogin}>
-                <FormControl mb={4} isInvalid={!!fieldErrors.identity}>
-                  <FormLabel>{t.emailOrUsername}</FormLabel>
-                  <InputGroup>
-                    <InputLeftElement pointerEvents="none">
-                      <EmailIcon color="gray.400" />
-                    </InputLeftElement>
-                    <Input
-                      type="text"
-                      placeholder={t.emailPlaceholder}
-                      bg={inputBg}
-                      color={inputText}
-                      _placeholder={{ color: placeholderColor }}
-                      value={identity}
-                      onChange={(e) => {
-                        setIdentity(e.target.value);
-                        setFieldErrors((prev) => ({ ...prev, identity: "" }));
-                      }}
-                      border="1px solid"
-                      borderColor="transparent"
-                      _focus={{
-                        borderColor: "brand.500",
-                        boxShadow: "0 0 0 1px var(--chakra-colors-brand-500)",
-                      }}
+            <HStack mb={5}>
+              <Divider />
+              <Text fontSize="sm" color="gray.500">
+                {t.or}
+              </Text>
+              <Divider />
+            </HStack>
+
+            <form onSubmit={handleLogin}>
+              {/* EMAIL */}
+              <FormControl
+                mb={4}
+                isInvalid={!!fieldErrors.identity}
+              >
+                <FormLabel>{t.emailOrUsername}</FormLabel>
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none">
+                    <EmailIcon color="gray.400" />
+                  </InputLeftElement>
+                  <Input
+                    placeholder={t.emailPlaceholder}
+                    color={inputText}
+                    _placeholder={{ color: placeholderColor }}
+                    border="1px solid"
+                    borderColor={inputBorder}
+                    borderRadius="full"
+                    value={identity}
+                    onChange={(e) => {
+                      setIdentity(e.target.value);
+                      setFieldErrors((prev) => ({
+                        ...prev,
+                        identity: "",
+                      }));
+                    }}
+                  />
+                </InputGroup>
+                <FormErrorMessage>
+                  {fieldErrors.identity}
+                </FormErrorMessage>
+              </FormControl>
+
+              {/* PASSWORD */}
+              <FormControl
+                mb={3}
+                isInvalid={!!fieldErrors.password}
+              >
+                <FormLabel>{t.password}</FormLabel>
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none">
+                    <LockIcon color="gray.400" />
+                  </InputLeftElement>
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    placeholder={t.passwordPlaceholder}
+                    color={inputText}
+                    _placeholder={{ color: placeholderColor }}
+                    border="1px solid"
+                    borderColor={inputBorder}
+                    borderRadius="full"
+                    pr="3rem"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      setFieldErrors((prev) => ({
+                        ...prev,
+                        password: "",
+                      }));
+                    }}
+                  />
+                  <InputRightElement>
+                    <IconButton
+                      size="sm"
+                      variant="ghost"
+                      icon={
+                        showPassword
+                          ? <ViewOffIcon />
+                          : <ViewIcon />
+                      }
+                      onClick={() =>
+                        setShowPassword((v) => !v)
+                      }
                     />
-                  </InputGroup>
-                  <FormErrorMessage>{fieldErrors.identity}</FormErrorMessage>
-                </FormControl>
+                  </InputRightElement>
+                </InputGroup>
+                <FormErrorMessage>
+                  {fieldErrors.password}
+                </FormErrorMessage>
+              </FormControl>
 
-                <FormControl mb={3} isInvalid={!!fieldErrors.password}>
-                  <FormLabel>{t.password}</FormLabel>
-                  <InputGroup>
-                    <InputLeftElement pointerEvents="none">
-                      <LockIcon color="gray.400" />
-                    </InputLeftElement>
-                    <Input
-                      type={showPassword ? "text" : "password"}
-                      placeholder={t.passwordPlaceholder}
-                      bg={inputBg}
-                      color={inputText}
-                      _placeholder={{ color: placeholderColor }}
-                      value={password}
-                      onChange={(e) => {
-                        setPassword(e.target.value);
-                        setFieldErrors((prev) => ({ ...prev, password: "" }));
-                      }}
-                      border="1px solid"
-                      borderColor="transparent"
-                      pr="3rem"
-                      _focus={{
-                        borderColor: "brand.500",
-                        boxShadow: "0 0 0 1px var(--chakra-colors-brand-500)",
-                      }}
-                    />
-                    <InputRightElement>
-                      <IconButton
-                        size="sm"
-                        variant="ghost"
-                        aria-label={t.togglePassword}
-                        icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
-                        onClick={() => setShowPassword((v) => !v)}
-                      />
-                    </InputRightElement>
-                  </InputGroup>
-                  <FormErrorMessage>{fieldErrors.password}</FormErrorMessage>
-                </FormControl>
-
-                {fieldErrors.form && (
-                  <Text color="red.500" textAlign="center" mb={3}>
-                    {fieldErrors.form}
-                  </Text>
-                )}
-
-                <Flex justify="flex-end" mb={6}>
-                  <ChakraLink as={Link} href="/forgot-password" fontSize="sm" color="brand.500">
-                    {t.forgotPassword}
-                  </ChakraLink>
-                </Flex>
-
-                <Button type="submit" w="full" bg="brand.500" color="black" _hover={{ bg: "brand.600" }} mb={4} isLoading={loading}>
-                  {t.login}
-                </Button>
-
-                <Text fontSize="sm" textAlign="center" color="gray.500">
-                  {t.noAccount}{" "}
-                  <ChakraLink as={Link} href="/register" color="brand.500" fontWeight="semibold">
-                    {t.registerNow}
-                  </ChakraLink>
+              {fieldErrors.form && (
+                <Text
+                  color="red.500"
+                  textAlign="center"
+                  mb={3}
+                >
+                  {fieldErrors.form}
                 </Text>
-              </form>
-            </Box>
+              )}
 
-            <Box mt={4} textAlign="center">
-              <ChakraLink as={Link} href="/" color="brand.500" fontSize="sm">
-                &larr; {t.backToHome}
+              {/* FORGOT PASSWORD */}
+              <Flex justify="flex-end" mb={6}>
+                <ChakraLink
+                  as={Link}
+                  href="/forgot-password"
+                  fontSize="sm"
+                  color={linkColor}
+                >
+                  {t.forgotPassword}
+                </ChakraLink>
+              </Flex>
+
+              <Button
+                type="submit"
+                w="full"
+                mb={4}
+                isLoading={loading}
+                isDisabled={isDisabled}
+                bg={
+                  isDisabled
+                    ? disabledBtnBg
+                    : "brand.500"
+                }
+                color={
+                  isDisabled
+                    ? disabledBtnColor
+                    : "black"
+                }
+                borderRadius="xl"
+              >
+                {t.login}
+              </Button>
+              <Text fontSize="sm" textAlign="center" color="gray.500">
+              {t.noAccount}{" "}
+              <ChakraLink
+                as={Link}
+                href="/register"
+                color={linkColor}
+                fontWeight="semibold"
+                _hover={{ textDecoration: "underline" }}
+              >
+                {t.registerNow}
               </ChakraLink>
-            </Box>
-          </Flex>
-        </Box>
+            </Text>
+            {/* DIVIDER */}
+  <Divider
+    my={5}
+    borderColor={
+      colorMode === "light"
+        ? "gray.200"
+        : "whiteAlpha.200"
+    }
+  />
+
+  {/* AGREEMENT */}
+  <Text
+    fontSize="sm"
+    textAlign="center"
+    color={
+      colorMode === "light"
+        ? "gray.500"
+        : "gray.400"
+    }
+    lineHeight="1.8"
+    px={{ base: 2, md: 6 }}
+  >
+    {t.agreementText}{" "}
+
+    <Text
+      as="span"
+       color={colorMode === "light" ? "gray.800" : "#90cdf4"}
+      fontWeight="semibold"
+      cursor="pointer"
+      onClick={() => router.push("/terms")}
+      _hover={{ opacity: 0.8 }}
+    >
+      {t.termsLabel}
+    </Text>{" "}
+
+    {t.and}{" "}
+
+    <Text
+      as="span"
+      color={colorMode === "light" ? "gray.800" : "#90cdf4"}
+      fontWeight="semibold"
+      cursor="pointer"
+      onClick={() => router.push("/privacy")}
+      _hover={{ opacity: 0.8 }}
+    >
+      {t.privacyLabel}
+    </Text>{" "}
+
+    MogeHub.
+  </Text>
+            </form>
+          </Box>
+        </Flex>
       </Flex>
     </Box>
   );
